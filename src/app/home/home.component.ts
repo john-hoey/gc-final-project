@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { VoteService } from '../vote.service';
 
 @Component({
@@ -13,6 +14,8 @@ export class HomeComponent implements OnInit {
   electionId: string = '2000';
   state: string = 'MI';
   legislators: any;
+  proStatements: string = 'NRA';
+  statements: any;
 
   constructor(private voteService: VoteService) {}
 
@@ -20,6 +23,7 @@ export class HomeComponent implements OnInit {
     this.getAndSetElections();
     this.getAndSetVoterInfo();
     this.getAndSetLegislators();
+    this.getAndSetStatements();
   }
   getAndSetElections = () => {
     this.voteService.getElections().subscribe((response) => {
@@ -42,5 +46,13 @@ export class HomeComponent implements OnInit {
       console.log(response.response.legislator[0]['@attributes']);
       this.legislators = response.response.legislator;
     });
+  };
+  getAndSetStatements = () => {
+    this.voteService
+      .getStatements(this.proStatements)
+      .subscribe((response: any) => {
+        console.log(response.results);
+        this.statements = response.results;
+      });
   };
 }

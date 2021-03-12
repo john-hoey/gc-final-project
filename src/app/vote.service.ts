@@ -13,6 +13,9 @@ export class VoteService {
   googleCivicKey: string = secret.key;
   openSecretsURL: string = 'http://www.opensecrets.org/api/';
   openSecretsKey: string = secret.apikey;
+  proPublicaUrl: string =
+    'https://api.propublica.org/congress/v1/statements/search.json';
+  headerProPublica: string = secret.headers;
 
   constructor(private http: HttpClient) {}
 
@@ -41,6 +44,16 @@ export class VoteService {
         method: 'getLegislators',
         id: state,
         output: 'json',
+      },
+    });
+  };
+  getStatements = (statement: string) => {
+    return this.http.get(this.proPublicaUrl, {
+      headers: {
+        'X-API-Key': this.headerProPublica,
+      },
+      params: {
+        query: statement,
       },
     });
   };
