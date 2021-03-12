@@ -1,0 +1,10 @@
+<ul>
+  <app-api-test
+    *ngFor="let election of elections?.elections"
+    [electionRef]="election"
+  ></app-api-test>
+  <app-api-test2
+    *ngFor="let legislator of legislators"
+    [legislatorRef]="legislator"
+  ></app-api-test2>
+</ul>
