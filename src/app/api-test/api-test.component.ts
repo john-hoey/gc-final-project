@@ -7,9 +7,30 @@ import { VoteService } from '../vote.service';
   styleUrls: ['./api-test.component.css'],
 })
 export class ApiTestComponent implements OnInit {
-  @Input() electionRef: any;
+  elections: any;
+  address: string = '34131 beechnut westland michigan 48186';
+  electionId: string = '2000';
+  voterInfo: any;
 
   constructor(private voteService: VoteService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAndSetElections();
+    this.getAndSetVoterInfo();
+  }
+  getAndSetElections = () => {
+    this.voteService.getElections().subscribe((response) => {
+      console.log(response);
+      this.elections = response;
+    });
+  };
+
+  getAndSetVoterInfo = () => {
+    this.voteService
+      .getVoterInfo(this.address, this.electionId)
+      .subscribe((response) => {
+        console.log(response);
+        this.voterInfo = response;
+      });
+  };
 }
