@@ -33,4 +33,15 @@ export class ApiTestComponent implements OnInit {
         this.voterInfo = response;
       });
   };
+
+  onElectionTermSubmit = (electionId: string) => {
+    this.electionId = electionId;
+    this.voteService
+      .searchVoterInfo(this.address, electionId)
+      .subscribe((response) => {
+        console.log(response);
+        this.voterInfo = response;
+        this.getAndSetVoterInfo();
+      });
+  };
 }

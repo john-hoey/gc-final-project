@@ -1,0 +1,7 @@
+<form
+  #electionSearchForm="ngForm"
+  (ngSubmit)="emitElectionTerm(electionSearchForm)"
+>
+  <label for="electionSearch">Search by election ID</label>
+  <input type="text" name="electionSearch" id="electionSearch" ngModel />
+</form>

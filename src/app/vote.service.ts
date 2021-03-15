@@ -89,4 +89,14 @@ export class VoteService {
     });
     console.log(statement);
   };
+
+  searchVoterInfo = (address: string, electionId: string) => {
+    return this.http.get(this.googleCivicVoterUrl, {
+      params: {
+        key: this.googleCivicKey,
+        address: address,
+        electionId: electionId,
+      },
+    });
+  };
 }
