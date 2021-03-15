@@ -57,4 +57,15 @@ export class VoteService {
       },
     });
   };
+
+  searchLegislatorsbyState = (stateId: string): any => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'getLegislators',
+        id: stateId,
+        output: 'json',
+      },
+    });
+  };
 }

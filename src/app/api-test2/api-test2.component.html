@@ -1,7 +1,22 @@
-<ul>
-  <li *ngFor="let legislator of legislators">
-    <p>{{ legislator["@attributes"].cid }}</p>
-    <p>{{ legislator["@attributes"].firstlast }}</p>
-    <p>{{ legislator["@attributes"].party }}</p>
-  </li>
-</ul>
+<div class="searchStateLegislator-bar">
+  <app-search-legislators
+    (searchLegislatorsByStateEvent)="onStateSearchSubmit($event)"
+  ></app-search-legislators>
+  <!-- <select
+    (change)="selectOption($event.target.value)"
+    [(ngModel)]="selected"
+    class="selector"
+  >
+    <option [value]="item.id" *ngFor="let item of displayQtys">
+      {{ item.name }}
+    </option>
+  </select>
+</div> -->
+  <ul>
+    <li *ngFor="let legislator of legislators">
+      <p>{{ legislator["@attributes"].cid }}</p>
+      <p>{{ legislator["@attributes"].firstlast }}</p>
+      <p>{{ legislator["@attributes"].party }}</p>
+    </li>
+  </ul>
+</div>
