@@ -1,5 +1,20 @@
+<div>
+  <app-election-info
+    (electionSearchEvent)="onElectionTermSubmit($event)"
+  ></app-election-info>
+</div>
+
 <ul>
   <li *ngFor="let election of elections?.elections">
     <p>{{ election.id }}</p>
+    <p>{{ election.name }}</p>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <p>{{ voterInfo?.election.id }}</p>
+    <p>{{ voterInfo?.election.name }}</p>
+    <p>{{ voterInfo?.election.electionDay }}</p>
   </li>
 </ul>
