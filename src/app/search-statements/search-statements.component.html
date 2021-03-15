@@ -1,0 +1,14 @@
+<form
+  #statementSearchForm="ngForm"
+  (ngSubmit)="emitStatementSearch(statementSearchForm)"
+>
+  <label for="statementSearchTerm">Search for statments by term</label>
+  <input
+    type="text"
+    id="statementSearchTerm"
+    name="statementSearchTerm"
+    placeholder="Enter statment by term"
+    ngModle
+  />
+  <button>Search</button>
+</form>

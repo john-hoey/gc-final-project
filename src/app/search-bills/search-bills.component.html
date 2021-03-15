@@ -1,0 +1,11 @@
+<form #billSearchForm="ngForm" (ngSubmit)="emitBillSearch(billSearchForm)">
+  <label for="billSearchTerm">Search for bills by term</label>
+  <input
+    type="text"
+    id="billSearchTerm"
+    name="billSearchTerm"
+    placeholder="Enter bill by term"
+    ngModel
+  />
+  <button>Search</button>
+</form>
