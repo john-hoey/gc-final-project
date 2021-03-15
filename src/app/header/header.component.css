@@ -1,0 +1,28 @@
+.header-buy {
+  text-decoration: none;
+  color: black;
+}
+
+.header-google {
+  text-decoration: none;
+  color: black;
+}
+
+.header-open {
+  text-decoration: none;
+  color: black;
+}
+
+.header-pro {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-bar {
+  display: flex;
+}
+.list-container {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-between;
+}

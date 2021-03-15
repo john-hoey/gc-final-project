@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { ApiTest2Component } from './api-test2/api-test2.component';
 import { ApiTest3Component } from './api-test3/api-test3.component';
 import { SearchLegislatorsComponent } from './search-legislators/search-legislators.component';
+import { SearchStatementsComponent } from './search-statements/search-statements.component';
+import { SearchBillsComponent } from './search-bills/search-bills.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { SearchLegislatorsComponent } from './search-legislators/search-legislat
     ApiTest2Component,
     ApiTest3Component,
     SearchLegislatorsComponent,
+    SearchStatementsComponent,
+    SearchBillsComponent,
   ],
   imports: [
     BrowserModule,

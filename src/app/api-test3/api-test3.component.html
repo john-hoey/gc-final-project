@@ -1,5 +1,16 @@
-<ul>
+<div class="search-bill-bar">
+  <app-search-bills
+    (searchBillEvent)="onBillSearchSubmit($event)"
+  ></app-search-bills>
+</div>
+<!-- <ul>
   <li *ngFor="let statement of statements">
     <p>{{ statement.url }}</p>
+  </li>
+</ul> -->
+
+<ul>
+  <li *ngFor="let bill of bills">
+    <p>{{ bill.title }}</p>
   </li>
 </ul>
