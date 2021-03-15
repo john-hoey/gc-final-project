@@ -1,3 +1,5 @@
-<li>
-  <p>{{ statementRef.url }}</p>
-</li>
+<ul>
+  <li *ngFor="let statement of statements">
+    <p>{{ statement.url }}</p>
+  </li>
+</ul>

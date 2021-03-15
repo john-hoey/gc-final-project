@@ -1,3 +1,5 @@
-<li>
-  <p>{{ electionRef?.id }}</p>
-</li>
+<ul>
+  <li *ngFor="let election of elections?.elections">
+    <p>{{ election.id }}</p>
+  </li>
+</ul>

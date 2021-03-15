@@ -1,5 +1,7 @@
-<li>
-  <p>{{ legislatorRef["@attributes"].cid }}</p>
-  <p>{{ legislatorRef["@attributes"].firstlast }}</p>
-  <p>{{ legislatorRef["@attributes"].party }}</p>
-</li>
+<ul>
+  <li *ngFor="let legislator of legislators">
+    <p>{{ legislator["@attributes"].cid }}</p>
+    <p>{{ legislator["@attributes"].firstlast }}</p>
+    <p>{{ legislator["@attributes"].party }}</p>
+  </li>
+</ul>
