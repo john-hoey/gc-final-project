@@ -11,6 +11,8 @@ export class ApiTest2Component implements OnInit {
   // @Input() legislatorRef: any;
   state: string = 'MI';
   legislators: any;
+  stateLegislatorData: any;
+  stateLegislatorDataShown: any;
 
   constructor(private voteService: VoteService) {}
 
@@ -22,5 +24,16 @@ export class ApiTest2Component implements OnInit {
       console.log(response.response.legislator[0]['@attributes']);
       this.legislators = response.response.legislator;
     });
+  };
+  onStateSearchSubmit = (stateId: string): void => {
+    this.state = stateId;
+    this.voteService
+      .searchLegislatorsbyState(stateId)
+      .subscribe((response: any) => {
+        this.stateLegislatorData = response;
+        console.log(response);
+        // console.log(this.stateLegislatorDataShown);
+        this.getAndSetLegislators();
+      });
   };
 }
