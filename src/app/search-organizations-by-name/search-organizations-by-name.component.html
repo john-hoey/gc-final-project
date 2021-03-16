@@ -1,0 +1,14 @@
+<form
+  #searchOrgsByNameForm="ngForm"
+  (ngSubmit)="emitOrgSearchName(searchOrgsByNameForm)"
+>
+  <label for="orgSearchTerm">Search for Organization by Name:</label>
+  <input
+    type="text"
+    id="orgSearchTerm"
+    name="orgSearchTerm"
+    placeholder="Enter Organization Name"
+    ngModel
+  />
+  <button>Search</button>
+</form>

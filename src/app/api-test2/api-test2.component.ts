@@ -17,6 +17,8 @@ export class ApiTest2Component implements OnInit {
   candidateId: string = 'N00039533';
   organizations: any;
   organizationName: string = 'cash';
+  orgData: any;
+  orgDataShown: any;
 
   constructor(private voteService: VoteService) {}
 
@@ -24,6 +26,7 @@ export class ApiTest2Component implements OnInit {
     // this.getAndSetLegislators();
     // this.getAndSetTop10ContributingIndByCandidate();
     this.getAndSetOrgsByName();
+    this.onOrgsByNameSearchSubmit('cash');
   }
   getAndSetLegislators = () => {
     this.voteService.getLegislators(this.state).subscribe((response: any) => {
@@ -43,6 +46,8 @@ export class ApiTest2Component implements OnInit {
   };
 
   getAndSetOrgsByName = () => {
+    console.log(this.organizationName);
+
     this.voteService
       .getOrgsByName(this.organizationName)
       .subscribe((response: any) => {
@@ -51,7 +56,7 @@ export class ApiTest2Component implements OnInit {
         this.organizations = response.response.organization;
       });
   };
-  onStateSearchSubmit = (stateId: string): void => {
+  onLegislatorsByStateSearchSubmit = (stateId: string): void => {
     this.state = stateId;
     this.voteService
       .searchLegislatorsbyState(stateId)
@@ -60,6 +65,16 @@ export class ApiTest2Component implements OnInit {
         console.log(response);
         // console.log(this.stateLegislatorDataShown);
         this.getAndSetLegislators();
+      });
+  };
+  onOrgsByNameSearchSubmit = (orgNameSearchTerm: string): void => {
+    this.organizationName = orgNameSearchTerm;
+    this.voteService
+      .searchOrgsByName(this.organizationName)
+      .subscribe((response: any) => {
+        this.orgData = response.response.organization;
+        console.log(response.response.organization);
+        this.getAndSetOrgsByName();
       });
   };
 }
