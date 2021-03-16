@@ -99,6 +99,17 @@ export class VoteService {
       },
     });
   };
+  searchOrgsByName = (orgNameSearchTerm: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'getOrgs',
+        org: orgNameSearchTerm,
+        output: 'json',
+      },
+    });
+  };
+
   searchStatements = (statement: string) => {
     return this.http.get(this.proPublicaUrl, {
       headers: {

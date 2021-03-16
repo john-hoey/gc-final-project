@@ -1,7 +1,12 @@
-<div class="searchStateLegislator-bar">
+<!-- <div class="searchStateLegislator-bar">
   <app-search-legislators
-    (searchLegislatorsByStateEvent)="onStateSearchSubmit($event)"
+    (searchLegislatorsByStateEvent)="onLegislatorsByStateSearchSubmit($event)"
   ></app-search-legislators>
+</div> -->
+<div class="search-org-by-name-bar">
+  <app-search-organizations-by-name
+    (searchOrgsByNameEvent)="onOrgsByNameSearchSubmit($event)"
+  ></app-search-organizations-by-name>
 </div>
 <!-- <ul>
   <li *ngFor="let legislator of legislators">
