@@ -110,6 +110,17 @@ export class VoteService {
     });
   };
 
+  getOrgSummaryById = (orgId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'orgSummary',
+        id: orgId,
+        output: 'json',
+      },
+    });
+  };
+
   searchStatements = (statement: string) => {
     return this.http.get(this.proPublicaUrl, {
       headers: {
