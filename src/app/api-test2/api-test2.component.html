@@ -2,25 +2,16 @@
   <app-search-legislators
     (searchLegislatorsByStateEvent)="onStateSearchSubmit($event)"
   ></app-search-legislators>
-  <!-- <select
-    (change)="selectOption($event.target.value)"
-    [(ngModel)]="selected"
-    class="selector"
-  >
-    <option [value]="item.id" *ngFor="let item of displayQtys">
-      {{ item.name }}
-    </option>
-  </select>-->
 </div>
-<ul>
+<!-- <ul>
   <li *ngFor="let legislator of legislators">
     <p>Candidate ID: {{ legislator["@attributes"].cid }}</p>
     <p>Candidate Name: {{ legislator["@attributes"].firstlast }}</p>
     <p>Candidate Party: {{ legislator["@attributes"].party }}</p>
   </li>
-</ul>
+</ul> -->
 
-<ul>
+<!-- <ul>
   <li *ngFor="let contributingInd of contributingInds">
     <p>Industry Name: {{ contributingInd["@attributes"].industry_name }}</p>
     <p>Industry Code: {{ contributingInd["@attributes"].industry_code }}</p>
@@ -29,5 +20,12 @@
     </p>
     <p>PAC Contributions: ${{ contributingInd["@attributes"].pacs }}</p>
     <p>Total Contributions: ${{ contributingInd["@attributes"].total }}</p>
+  </li>
+</ul> -->
+
+<ul>
+  <li *ngFor="let organization of organizations">
+    <p>{{ organization["@attributes"].orgname }}</p>
+    <p>{{ organization["@attributes"].orgid }}</p>
   </li>
 </ul>
