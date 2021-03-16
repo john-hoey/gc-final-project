@@ -18,3 +18,12 @@
     <p>{{ voterInfo?.election.electionDay }}</p>
   </li>
 </ul>
+
+<ul>
+  <li *ngFor="let voter of voterInfo?.contests">
+    <p>{{ voter.office }}</p>
+    <div *ngFor="let candidate of voter?.candidates">
+      <p>{{ candidate.name }}</p>
+    </div>
+  </li>
+</ul>
