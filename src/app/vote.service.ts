@@ -46,6 +46,18 @@ export class VoteService {
       },
     });
   };
+
+  getCandidateSummary = (candId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'candSummary',
+        cid: candId,
+        cycle: '2020',
+        output: 'json',
+      },
+    });
+  };
   getStatements = (statement: string) => {
     return this.http.get(`${this.proPublicaUrl}statements/search.json`, {
       headers: {
