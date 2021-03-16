@@ -3,6 +3,10 @@
     (searchBillEvent)="onBillSearchSubmit($event)"
   ></app-search-bills>
 </div>
+<div>
+  <app-house-and-senate (houseAndSenateEvent)="setSearchTerm($event)">
+  </app-house-and-senate>
+</div>
 <!-- <ul>
   <li *ngFor="let statement of statements">
     <p>{{ statement.url }}</p>
@@ -12,5 +16,23 @@
 <ul>
   <li *ngFor="let bill of bills">
     <p>{{ bill.title }}</p>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let blank of senateDataShown">
+    <p>{{ blank.first_name }}</p>
+    <p>{{ blank.last_name }}</p>
+    <!-- <p>{{ blank.state }}</p> -->
+    <p>Senator from {{ blank.state }}</p>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let house of houseDataShown">
+    <p>{{ house.first_name }}</p>
+    <p>{{ house.last_name }}</p>
+    <!-- <p>{{ house.state }}</p> -->
+    <p>House member from {{ house.state }}</p>
   </li>
 </ul>
