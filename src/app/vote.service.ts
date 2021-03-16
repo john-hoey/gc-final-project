@@ -78,6 +78,16 @@ export class VoteService {
       },
     });
   };
+  getTop10ContributingIndByCandidate = (candidateId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'candIndustry',
+        cid: candidateId,
+        output: 'json',
+      },
+    });
+  };
   searchStatements = (statement: string) => {
     return this.http.get(this.proPublicaUrl, {
       headers: {

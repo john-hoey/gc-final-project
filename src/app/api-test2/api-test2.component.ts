@@ -13,17 +13,30 @@ export class ApiTest2Component implements OnInit {
   legislators: any;
   stateLegislatorData: any;
   stateLegislatorDataShown: any;
+  contributingInds: any;
+  candidateId: string = 'N00039533';
 
   constructor(private voteService: VoteService) {}
 
   ngOnInit(): void {
     this.getAndSetLegislators();
+    this.getAndSetTop10ContributingIndByCandidate();
   }
   getAndSetLegislators = () => {
     this.voteService.getLegislators(this.state).subscribe((response: any) => {
       console.log(response.response.legislator[0]['@attributes']);
       this.legislators = response.response.legislator;
     });
+  };
+
+  getAndSetTop10ContributingIndByCandidate = () => {
+    this.voteService
+      .getTop10ContributingIndByCandidate(this.candidateId)
+      .subscribe((response: any) => {
+        console.log(response.response.industries);
+        console.log(response.response.industries.industry);
+        this.contributingInds = response.response.industries.industry;
+      });
   };
   onStateSearchSubmit = (stateId: string): void => {
     this.state = stateId;
