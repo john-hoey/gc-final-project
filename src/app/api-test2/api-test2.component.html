@@ -34,3 +34,55 @@
     <p>{{ organization["@attributes"].orgid }}</p>
   </li>
 </ul>
+
+<ul>
+  <li>
+    <p><b>Org Name:</b> {{ organization?.orgname }}</p>
+    <p><b>CRP OrgID:</b> {{ organization?.orgid }}</p>
+    <p><b>Most Recent Cycle:</b> {{ organization?.cycle }}</p>
+    <p><b>Total Contributions:</b> ${{ organization?.total }}</p>
+    <p>
+      <b>Total Contributions From Individuals:</b> ${{ organization?.indivs }}
+    </p>
+    <p><b>Total Contributions From PACs:</b> ${{ organization?.pacs }}</p>
+    <p><b>Total Soft Money:</b> ${{ organization?.soft }}</p>
+    <p><b>Total From 527 Organizations:</b> ${{ organization?.tot527 }}</p>
+    <p>
+      <b>
+        Total Contributions to Democractic Candidates and Party Committees:</b
+      >
+      ${{ organization?.dems }}
+    </p>
+    <p>
+      <b> Total Contributions to Republican Candidates and Party Committees:</b>
+      ${{ organization?.repubs }}
+    </p>
+    <p>
+      <b> Total Lobbying Money for 2 Years of Cycle:</b> ${{
+        organization?.lobbying
+      }}
+    </p>
+    <p>
+      <b>Total Spent on Independent Expenditures:</b> ${{
+        organization?.outside
+      }}
+    </p>
+    <p>
+      <b> Number of Members Invested in This Organization:</b>
+      {{ organization?.mems_invested }}
+    </p>
+    <p><b>Total Given to PACs:</b> ${{ organization?.gave_to_pac }}</p>
+    <p>
+      <b>Total $ Given to Party Committees:</b> ${{
+        organization?.gave_to_party
+      }}
+    </p>
+    <p>
+      <b>Total $ Given to 527 Organizations:</b> ${{
+        organization?.gave_to_527
+      }}
+    </p>
+    <p><b>Total $ Given to Candidates:</b> ${{ organization?.gave_to_cand }}</p>
+    <p><b>Link to Source Data on OpenSecrets:</b> {{ organization?.source }}</p>
+  </li>
+</ul>

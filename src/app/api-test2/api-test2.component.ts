@@ -16,17 +16,20 @@ export class ApiTest2Component implements OnInit {
   contributingInds: any;
   candidateId: string = 'N00039533';
   organizations: any;
+  organization: any;
   organizationName: string = 'cash';
   orgData: any;
   orgDataShown: any;
+  orgId: string = 'D000000082';
 
   constructor(private voteService: VoteService) {}
 
   ngOnInit(): void {
     // this.getAndSetLegislators();
     // this.getAndSetTop10ContributingIndByCandidate();
-    this.getAndSetOrgsByName();
-    this.onOrgsByNameSearchSubmit('cash');
+    // this.getAndSetOrgsByName();
+    // this.onOrgsByNameSearchSubmit('cash');
+    this.getAndSetOrgSummaryById();
   }
   getAndSetLegislators = () => {
     this.voteService.getLegislators(this.state).subscribe((response: any) => {
@@ -54,6 +57,16 @@ export class ApiTest2Component implements OnInit {
         console.log(response.response.organization);
         // console.log(response.response.organization['@attributes']);
         this.organizations = response.response.organization;
+      });
+  };
+
+  getAndSetOrgSummaryById = () => {
+    console.log(this.orgId);
+    this.voteService
+      .getOrgSummaryById(this.orgId)
+      .subscribe((response: any) => {
+        console.log(response.response.organization['@attributes']);
+        this.organization = response.response.organization['@attributes'];
       });
   };
   onLegislatorsByStateSearchSubmit = (stateId: string): void => {
