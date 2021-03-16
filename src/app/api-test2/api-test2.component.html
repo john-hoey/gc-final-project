@@ -28,14 +28,14 @@
   </li>
 </ul> -->
 
-<ul>
+<!-- <ul>
   <li *ngFor="let organization of organizations">
     <p>{{ organization["@attributes"].orgname }}</p>
     <p>{{ organization["@attributes"].orgid }}</p>
   </li>
-</ul>
+</ul> -->
 
-<ul>
+<!-- <ul>
   <li>
     <p><b>Org Name:</b> {{ organization?.orgname }}</p>
     <p><b>CRP OrgID:</b> {{ organization?.orgid }}</p>
@@ -84,5 +84,24 @@
     </p>
     <p><b>Total $ Given to Candidates:</b> ${{ organization?.gave_to_cand }}</p>
     <p><b>Link to Source Data on OpenSecrets:</b> {{ organization?.source }}</p>
+  </li>
+</ul> -->
+<ul>
+  <li>
+    <p><b>Candidate Name: </b>{{ candSummary?.cand_name }}</p>
+    <p><b>Candidate ID: </b>{{ candSummary?.cid }}</p>
+    <p><b>Cycle: </b>{{ candSummary?.cycle }}</p>
+    <p><b>State: </b>{{ candSummary?.state }}</p>
+    <p><b>Party: </b>{{ candSummary?.party }}</p>
+    <p><b>Chamber: </b>{{ candSummary?.chamber }}</p>
+    <p><b>First ELected: </b>{{ candSummary?.first_elected }}</p>
+    <p><b>Next Election: </b>{{ candSummary?.next_election }}</p>
+    <p><b>Total Receipts Reported: $</b>{{ candSummary?.total }}</p>
+    <p><b>Total Expenditures Reported: $</b>{{ candSummary?.spent }}</p>
+    <p><b>Total Cash on Hand Reported: $</b>{{ candSummary?.cash_on_hand }}</p>
+    <p><b>Total Debts Reported: $</b>{{ candSummary?.debt }}</p>
+    <p><b>Source of Attribution: </b>{{ candSummary?.origin }}</p>
+    <p><b>Link to Source Data on OpenSecrets: </b>{{ candSummary?.source }}</p>
+    <p><b>Date of Last Filed Report: </b>{{ candSummary?.last_updated }}</p>
   </li>
 </ul>

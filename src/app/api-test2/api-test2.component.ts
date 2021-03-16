@@ -21,6 +21,8 @@ export class ApiTest2Component implements OnInit {
   orgData: any;
   orgDataShown: any;
   orgId: string = 'D000000082';
+  candId: string = 'N00039533';
+  candSummary: any;
 
   constructor(private voteService: VoteService) {}
 
@@ -29,7 +31,8 @@ export class ApiTest2Component implements OnInit {
     // this.getAndSetTop10ContributingIndByCandidate();
     // this.getAndSetOrgsByName();
     // this.onOrgsByNameSearchSubmit('cash');
-    this.getAndSetOrgSummaryById();
+    // this.getAndSetOrgSummaryById();
+    this.getAndSetCandSummaryById();
   }
   getAndSetLegislators = () => {
     this.voteService.getLegislators(this.state).subscribe((response: any) => {
@@ -67,6 +70,16 @@ export class ApiTest2Component implements OnInit {
       .subscribe((response: any) => {
         console.log(response.response.organization['@attributes']);
         this.organization = response.response.organization['@attributes'];
+      });
+  };
+
+  getAndSetCandSummaryById = () => {
+    console.log(this.candId);
+    this.voteService
+      .getCandidateSummary(this.candId)
+      .subscribe((response: any) => {
+        console.log(response);
+        this.candSummary = response.response.summary['@attributes'];
       });
   };
   onLegislatorsByStateSearchSubmit = (stateId: string): void => {
