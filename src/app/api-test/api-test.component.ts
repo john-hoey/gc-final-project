@@ -11,6 +11,7 @@ export class ApiTestComponent implements OnInit {
   address: string = '34131 beechnut westland michigan 48186';
   electionId: string = '2000';
   voterInfo: any;
+  candidates: any;
 
   constructor(private voteService: VoteService) {}
 
@@ -30,6 +31,7 @@ export class ApiTestComponent implements OnInit {
       .getVoterInfo(this.address, this.electionId)
       .subscribe((response) => {
         console.log(response);
+        this.candidates = response;
         this.voterInfo = response;
       });
   };
@@ -41,6 +43,7 @@ export class ApiTestComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
         this.voterInfo = response;
+
         this.getAndSetVoterInfo();
       });
   };
