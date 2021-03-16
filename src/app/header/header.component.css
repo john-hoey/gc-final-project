@@ -1,3 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+
+  align-items: center;
+}
+
 .header-buy {
   text-decoration: none;
   color: black;
@@ -24,5 +32,4 @@
 .list-container {
   display: flex;
   list-style-type: none;
-  justify-content: space-between;
 }
