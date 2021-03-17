@@ -135,6 +135,19 @@ export class VoteService {
     });
   };
 
+  getCongCmteIndus = (cmteId: string, indCode: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'congCmteIndus',
+        congno: '117',
+        indus: indCode,
+        cmte: cmteId,
+        output: 'json',
+      },
+    });
+  };
+
   getOrgsByName = (orgName: string) => {
     return this.http.get(this.openSecretsURL, {
       params: {
