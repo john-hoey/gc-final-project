@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 import { VoteService } from '../vote.service';
 
@@ -8,51 +9,52 @@ import { VoteService } from '../vote.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  // elections: any;
-  // voterInfo: any;
-  // address: string = '34131 beechnut westland michigan 48186';
-  // electionId: string = '2000';
-  // state: string = 'MI';
-  // legislators: any;
-  // proStatements: string = 'NRA';
-  // statements: any;
-
+  address: string;
+  state: string;
+  elections: any;
+  electionId: string;
+  voterInfo: any;
   constructor(private voteService: VoteService) {}
 
   ngOnInit(): void {
-    // this.getAndSetElections();
-    // this.getAndSetVoterInfo();
-    // this.getAndSetLegislators();
-    // this.getAndSetStatements();
+    this.getAndSetElections();
   }
-  // getAndSetElections = () => {
-  //   this.voteService.getElections().subscribe((response) => {
-  //     console.log(response);
-  //     this.elections = response;
-  //   });
-  // };
 
+  getAndSetValues = (form: NgForm) => {
+    this.address = form.form.value.address;
+    this.state = form.form.value.state;
+  };
   // getAndSetVoterInfo = () => {
   //   this.voteService
   //     .getVoterInfo(this.address, this.electionId)
   //     .subscribe((response) => {
   //       console.log(response);
+  //       this.candidates = response;
   //       this.voterInfo = response;
   //     });
   // };
 
-  // getAndSetLegislators = () => {
-  //   this.voteService.getLegislators(this.state).subscribe((response: any) => {
-  //     console.log(response.response.legislator[0]['@attributes']);
-  //     this.legislators = response.response.legislator;
-  //   });
-  // };
-  // getAndSetStatements = () => {
-  //   this.voteService
-  //     .getStatements(this.proStatements)
-  //     .subscribe((response: any) => {
-  //       console.log(response.results);
-  //       this.statements = response.results;
-  //     });
-  // };
+  getAndSetElections = () => {
+    this.voteService.getElections().subscribe((response) => {
+      console.log(response);
+      this.elections = response;
+    });
+  };
+
+  getAndSetElectionId = (form: NgForm) => {
+    this.electionId = form.form.value.election;
+  };
+
+  getAndSetVoterInfo = () => {
+    this.voteService
+      .getVoterInfo(this.address, this.electionId)
+      .subscribe((response) => {
+        console.log(response);
+        this.voterInfo = response;
+      });
+  };
+  setGlobalAddress = () => {
+    this.voteService.setAddress(this.address);
+    console.log(this.voteService.getAddress());
+  };
 }

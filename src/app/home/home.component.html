@@ -1,14 +1,35 @@
-<!-- <ul>
-  <app-api-test
-    *ngFor="let election of elections?.elections"
-    [electionRef]="election"
-  ></app-api-test>
-  <app-api-test2
-    *ngFor="let legislator of legislators"
-    [legislatorRef]="legislator"
-  ></app-api-test2>
-  <app-api-test3
-    *ngFor="let statement of statements"
-    [statementRef]="statement"
-  ></app-api-test3>
+<form
+  #addressStateForm="ngForm"
+  (ngSubmit)="getAndSetValues(addressStateForm); setGlobalAddress()"
+>
+  <label for="address">Enter your Address</label>
+  <input type="text" name="address" id="address" ngModel />
+  <!-- <label for="state">Enter your State</label>
+  <input type="text" name="state" id="state" ngModel /> -->
+  <button>Search</button>
+</form>
+
+<ul>
+  <li *ngFor="let election of elections?.elections">
+    <p>{{ election.name }}</p>
+    <p>{{ election.id }}</p>
+    <p>{{ election.election_date }}</p>
+  </li>
+</ul>
+<!-- <form
+  #electionForm="ngForm"
+  (ngSubmit)="getAndSetElectionId(electionForm); getAndSetVoterInfo()"
+>
+  <label for="election">Get more Info</label>
+  <input type="text" name="election" id="election" ngModel />
+  <button>Submit</button>
+</form>
+
+<ul>
+  <li *ngFor="let voter of voterInfo?.contests">
+    <p>{{ voter.office }}</p>
+    <div *ngFor="let candidate of voter?.candidates">
+      <p>{{ candidate.name }}</p>
+    </div>
+  </li>
 </ul> -->
