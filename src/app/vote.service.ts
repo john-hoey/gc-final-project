@@ -46,6 +46,30 @@ export class VoteService {
       },
     });
   };
+
+  getCandidateSummary = (candId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'candSummary',
+        cid: candId,
+        cycle: '2020',
+        output: 'json',
+      },
+    });
+  };
+
+  getCandTopContributors = (candId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'candContrib',
+        cid: candId,
+        cycle: '2020',
+        output: 'json',
+      },
+    });
+  };
   getStatements = (statement: string) => {
     return this.http.get(`${this.proPublicaUrl}statements/search.json`, {
       headers: {
@@ -94,6 +118,17 @@ export class VoteService {
       params: {
         apikey: this.openSecretsKey,
         method: 'candIndustry',
+        cid: candidateId,
+        output: 'json',
+      },
+    });
+  };
+
+  getTotalSectorContributionsByCandidate = (candidateId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'candSector',
         cid: candidateId,
         output: 'json',
       },

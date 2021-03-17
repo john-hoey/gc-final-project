@@ -21,6 +21,12 @@ export class ApiTest2Component implements OnInit {
   orgData: any;
   orgDataShown: any;
   orgId: string = 'D000000082';
+  candId: string = 'N00039533';
+  candSummary: any;
+  candTopContributors: any;
+  candTopContributor: any[] = [];
+  candTopIndustries: any;
+  candTopIndustry: any[] = [];
 
   constructor(private voteService: VoteService) {}
 
@@ -29,7 +35,10 @@ export class ApiTest2Component implements OnInit {
     // this.getAndSetTop10ContributingIndByCandidate();
     // this.getAndSetOrgsByName();
     // this.onOrgsByNameSearchSubmit('cash');
-    this.getAndSetOrgSummaryById();
+    // this.getAndSetOrgSummaryById();
+    // this.getAndSetCandSummaryById();
+    // this.getAndSetCandTopContributorsById();
+    this.getAndSetTotalSectorContributionsByCandidate();
   }
   getAndSetLegislators = () => {
     this.voteService.getLegislators(this.state).subscribe((response: any) => {
@@ -67,6 +76,59 @@ export class ApiTest2Component implements OnInit {
       .subscribe((response: any) => {
         console.log(response.response.organization['@attributes']);
         this.organization = response.response.organization['@attributes'];
+      });
+  };
+
+  getAndSetCandSummaryById = () => {
+    console.log(this.candId);
+    this.voteService
+      .getCandidateSummary(this.candId)
+      .subscribe((response: any) => {
+        console.log(response);
+        this.candSummary = response.response.summary['@attributes'];
+      });
+  };
+
+  getAndSetCandTopContributorsById = () => {
+    console.log(this.candId);
+    this.voteService
+      .getCandTopContributors(this.candId)
+      .subscribe((response: any) => {
+        console.log(
+          response.response.contributors.contributor[0]['@attributes']
+        );
+        console.log(response);
+
+        this.candTopContributors =
+          response.response.contributors['@attributes'];
+        for (
+          let i = 0;
+          i < response.response.contributors.contributor.length;
+          i++
+        ) {
+          this.candTopContributor.push(
+            response.response.contributors.contributor[i]['@attributes']
+          );
+          console.log(this.candTopContributor);
+        }
+      });
+  };
+
+  getAndSetTotalSectorContributionsByCandidate = () => {
+    console.log(this.candId);
+    this.voteService
+      .getTotalSectorContributionsByCandidate(this.candId)
+      .subscribe((response: any) => {
+        console.log(response.response.sectors.sector[0]['@attributes']);
+        console.log(response);
+
+        this.candTopIndustries = response.response.sectors['@attributes'];
+        for (let i = 0; i < response.response.sectors.sector.length; i++) {
+          this.candTopIndustry.push(
+            response.response.sectors.sector[i]['@attributes']
+          );
+          console.log(this.candTopIndustry);
+        }
       });
   };
   onLegislatorsByStateSearchSubmit = (stateId: string): void => {
