@@ -47,4 +47,9 @@ export class ApiTestComponent implements OnInit {
         this.getAndSetVoterInfo();
       });
   };
+
+  onAddressSubmit = (address: string) => {
+    this.address = address;
+    this.getAndSetVoterInfo();
+  };
 }

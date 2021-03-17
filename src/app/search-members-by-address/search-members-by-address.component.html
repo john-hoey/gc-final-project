@@ -1,0 +1,5 @@
+<form #addressSearchForm="ngForm" (ngSubmit)="emitAddress(addressSearchForm)">
+  <label for="address">Search by address</label>
+  <input type="text" name="address" id="address" ngModel />
+  <button>Search</button>
+</form>
