@@ -92,6 +92,17 @@ export class VoteService {
     });
   };
 
+  getRecentBillsByMember = (memberId: string) => {
+    return this.http.get(
+      `${this.proPublicaUrl}members/${memberId}/bills/introduced.json`,
+      {
+        headers: {
+          'X-API-Key': this.headerProPublica,
+        },
+      }
+    );
+  };
+
   searchLegislatorsbyState = (stateId: string): any => {
     return this.http.get(this.openSecretsURL, {
       params: {
@@ -108,6 +119,30 @@ export class VoteService {
         apikey: this.openSecretsKey,
         method: 'candIndustry',
         cid: candidateId,
+        output: 'json',
+      },
+    });
+  };
+
+  getTotalSectorContributionsByCandidate = (candidateId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'candSector',
+        cid: candidateId,
+        output: 'json',
+      },
+    });
+  };
+
+  getCongCmteIndus = (cmteId: string, indCode: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'congCmteIndus',
+        congno: '117',
+        indus: indCode,
+        cmte: cmteId,
         output: 'json',
       },
     });

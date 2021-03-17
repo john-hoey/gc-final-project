@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { filter } from 'txml';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
 import { VoteService } from '../vote.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { VoteService } from '../vote.service';
   styleUrls: ['./api-test3.component.css'],
 })
 export class ApiTest3Component implements OnInit {
+  @Output() memberIdEvent = new EventEmitter<string>();
   proStatement: string = 'NRA';
   statements: any;
   statementTerm: any;
@@ -26,6 +27,9 @@ export class ApiTest3Component implements OnInit {
   specificBillData: any;
   specificBillDataShown: any;
 
+  memberId: string = '';
+  billsById: any;
+  showHouseAndSenate: boolean = true;
   constructor(private voteService: VoteService) {}
 
   ngOnInit(): void {
@@ -33,6 +37,7 @@ export class ApiTest3Component implements OnInit {
     this.getAndSetBills();
     this.getAndSetHouseAndSenate();
     this.getAndSetSpecificBills();
+    // this.getAndSetBillsById();
   }
 
   getAndSetStatements = () => {
@@ -131,5 +136,19 @@ export class ApiTest3Component implements OnInit {
   };
   updateSpecificBill = () => {
     this.specificBillDataShown = this.filterSpecificBill(this.specificBillTerm);
+  };
+
+  getAndSetBillsById = (memberId) => {
+    console.log(memberId);
+    return this.voteService
+      .getRecentBillsByMember(memberId)
+      .subscribe((response: any) => {
+        console.log(response);
+        this.billsById = response.results[0].bills;
+      });
+  };
+
+  displaySenate = () => {
+    this.showHouseAndSenate = !this.showHouseAndSenate;
   };
 }

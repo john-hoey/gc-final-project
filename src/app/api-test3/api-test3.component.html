@@ -24,20 +24,25 @@
   </li>
 </ul>
 
-<ul>
+<ul *ngIf="showHouseAndSenate">
   <li *ngFor="let blank of senateDataShown">
     <p>{{ blank.first_name }}</p>
     <p>{{ blank.last_name }}</p>
-    <!-- <p>{{ blank.state }}</p> -->
+    <button (click)="getAndSetBillsById(blank.id); displaySenate()">
+      {{ blank.id }}
+    </button>
+
     <p>Senator from {{ blank.state }}</p>
   </li>
 </ul>
 
-<ul>
+<ul *ngIf="showHouseAndSenate">
   <li *ngFor="let house of houseDataShown">
     <p>{{ house.first_name }}</p>
     <p>{{ house.last_name }}</p>
-    <!-- <p>{{ house.state }}</p> -->
+    <button (click)="getAndSetBillsById(house.id); displaySenate()">
+      {{ house.id }}
+    </button>
     <p>House member from {{ house.state }}</p>
   </li>
 </ul>
@@ -45,5 +50,15 @@
 <ul>
   <li *ngFor="let specific of specificBillDataShown">
     <p>{{ specific.name }}</p>
+  </li>
+</ul>
+
+<ul *ngIf="showHouseAndSenate === false">
+  <button (click)="displaySenate()">Close</button>
+  <li *ngFor="let bills of billsById">
+    <p>{{ bills.sponsor_name }}</p>
+    <p>{{ bills.bill_id }}</p>
+    <p>{{ bills.short_title }}</p>
+    <a href="{{ bills.govtrack_url }}">Want More Info?</a>
   </li>
 </ul>

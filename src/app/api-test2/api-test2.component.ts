@@ -25,6 +25,12 @@ export class ApiTest2Component implements OnInit {
   candSummary: any;
   candTopContributors: any;
   candTopContributor: any[] = [];
+  candTopIndustries: any;
+  candTopIndustry: any[] = [];
+  cmteId: string = 'HBUD';
+  indCode: string = 'E01';
+  cmteSummary: any;
+  cmteMembers: any[] = [];
 
   constructor(private voteService: VoteService) {}
 
@@ -35,7 +41,9 @@ export class ApiTest2Component implements OnInit {
     // this.onOrgsByNameSearchSubmit('cash');
     // this.getAndSetOrgSummaryById();
     // this.getAndSetCandSummaryById();
-    this.getAndSetCandTopContributorsById();
+    // this.getAndSetCandTopContributorsById();
+    // this.getAndSetTotalSectorContributionsByCandidate();
+    this.getAndSetCommitteeIndustryContributionsSummary();
   }
   getAndSetLegislators = () => {
     this.voteService.getLegislators(this.state).subscribe((response: any) => {
@@ -107,6 +115,45 @@ export class ApiTest2Component implements OnInit {
             response.response.contributors.contributor[i]['@attributes']
           );
           console.log(this.candTopContributor);
+        }
+      });
+  };
+
+  getAndSetTotalSectorContributionsByCandidate = () => {
+    console.log(this.candId);
+    this.voteService
+      .getTotalSectorContributionsByCandidate(this.candId)
+      .subscribe((response: any) => {
+        console.log(response.response.sectors.sector[0]['@attributes']);
+        console.log(response);
+
+        this.candTopIndustries = response.response.sectors['@attributes'];
+        for (let i = 0; i < response.response.sectors.sector.length; i++) {
+          this.candTopIndustry.push(
+            response.response.sectors.sector[i]['@attributes']
+          );
+          console.log(this.candTopIndustry);
+        }
+      });
+  };
+
+  getAndSetCommitteeIndustryContributionsSummary = () => {
+    console.log(this.cmteId);
+    console.log(this.indCode);
+
+    this.voteService
+      .getCongCmteIndus(this.cmteId, this.indCode)
+      .subscribe((response: any) => {
+        console.log(response.response.committee['@attributes']);
+        console.log(response.response.committee.member);
+
+        this.cmteSummary = response.response.committee['@attributes'];
+        for (let i = 0; i < response.response.committee.member.length; i++) {
+          this.cmteMembers.push(
+            response.response.committee.member[i]['@attributes']
+          );
+          console.log(this.cmteSummary);
+          console.log(this.cmteMembers);
         }
       });
   };

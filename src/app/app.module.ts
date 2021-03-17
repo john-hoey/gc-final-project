@@ -18,6 +18,8 @@ import { ElectionInfoComponent } from './election-info/election-info.component';
 import { SearchOrganizationsByNameComponent } from './search-organizations-by-name/search-organizations-by-name.component';
 import { HouseAndSenateComponent } from './house-and-senate/house-and-senate.component';
 import { SpecificBillsComponent } from './specific-bills/specific-bills.component';
+import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.component';
+import { SearchMembersByAddressComponent } from './search-members-by-address/search-members-by-address.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { SpecificBillsComponent } from './specific-bills/specific-bills.componen
     SearchOrganizationsByNameComponent,
     HouseAndSenateComponent,
     SpecificBillsComponent,
+    BillsFromMemberComponent,
+    SearchMembersByAddressComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,7 @@ import { SpecificBillsComponent } from './specific-bills/specific-bills.componen
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ApiTest3Component, BillsFromMemberComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
