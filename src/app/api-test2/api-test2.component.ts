@@ -21,7 +21,7 @@ export class ApiTest2Component implements OnInit {
   orgData: any;
   orgDataShown: any;
   orgId: string = 'D000000082';
-  candId: string = 'N00039533';
+  candId: string = 'N00007360';
   candSummary: any;
   candTopContributors: any;
   candTopContributor: any[] = [];
@@ -31,6 +31,10 @@ export class ApiTest2Component implements OnInit {
   indCode: string = 'E01';
   cmteSummary: any;
   cmteMembers: any[] = [];
+  memberPFD: any;
+  memberPFDAssets: any[] = [];
+  memberPFDTransactions: any[] = [];
+  memberPFDPositions: any[] = [];
 
   constructor(private voteService: VoteService) {}
 
@@ -43,7 +47,8 @@ export class ApiTest2Component implements OnInit {
     // this.getAndSetCandSummaryById();
     // this.getAndSetCandTopContributorsById();
     // this.getAndSetTotalSectorContributionsByCandidate();
-    this.getAndSetCommitteeIndustryContributionsSummary();
+    // this.getAndSetCommitteeIndustryContributionsSummary();
+    this.getAndSetMemberPFD();
   }
   getAndSetLegislators = () => {
     this.voteService.getLegislators(this.state).subscribe((response: any) => {
@@ -157,6 +162,55 @@ export class ApiTest2Component implements OnInit {
         }
       });
   };
+
+  getAndSetMemberPFD = () => {
+    console.log(this.candId);
+    this.voteService
+      .getMemberPublicFinancialDisclosure(this.candId)
+      .subscribe((response: any) => {
+        console.log(response.response);
+        console.log(response.response.member_profile['@attributes']);
+        console.log(response.response.member_profile.assets.asset);
+        console.log(response.response.member_profile.positions.position);
+        console.log(response.response.member_profile.transactions.transaction);
+        this.memberPFD = response.response.member_profile['@attributes'];
+        for (
+          let i = 0;
+          i < response.response.member_profile.assets.asset.length;
+          i++
+        ) {
+          this.memberPFDAssets.push(
+            response.response.member_profile.assets.asset[i]['@attributes']
+          );
+          console.log(this.memberPFDAssets);
+        }
+        for (
+          let i = 0;
+          i < response.response.member_profile.positions.position.length;
+          i++
+        ) {
+          this.memberPFDPositions.push(
+            response.response.member_profile.positions.position[i][
+              '@attributes'
+            ]
+          );
+          console.log(this.memberPFDPositions);
+        }
+        for (
+          let i = 0;
+          i < response.response.member_profile.transactions.transaction.length;
+          i++
+        ) {
+          this.memberPFDTransactions.push(
+            response.response.member_profile.transactions.transaction[i][
+              '@attributes'
+            ]
+          );
+          console.log(this.memberPFDTransactions);
+        }
+      });
+  };
+
   onLegislatorsByStateSearchSubmit = (stateId: string): void => {
     this.state = stateId;
     this.voteService
