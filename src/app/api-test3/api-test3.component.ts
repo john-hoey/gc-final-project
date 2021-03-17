@@ -26,6 +26,8 @@ export class ApiTest3Component implements OnInit {
   specificBillTerm: string = '';
   specificBillData: any;
   specificBillDataShown: any;
+  memberPosition: any;
+  memberPositionId: string = 'K000388';
 
   memberId: string = '';
   billsById: any;
@@ -38,6 +40,7 @@ export class ApiTest3Component implements OnInit {
     // this.getAndSetHouseAndSenate();
     // this.getAndSetSpecificBills();
     // this.getAndSetBillsById();
+    this.getAndSetMemberPosition();
   }
 
   getAndSetStatements = () => {
@@ -150,5 +153,14 @@ export class ApiTest3Component implements OnInit {
 
   displaySenate = () => {
     this.showHouseAndSenate = !this.showHouseAndSenate;
+  };
+
+  getAndSetMemberPosition = () => {
+    return this.voteService
+      .getMemberPosition(this.memberPositionId)
+      .subscribe((response: any) => {
+        console.log(response);
+        this.memberPosition = response.results;
+      });
   };
 }

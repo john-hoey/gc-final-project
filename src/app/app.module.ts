@@ -21,6 +21,7 @@ import { SpecificBillsComponent } from './specific-bills/specific-bills.componen
 import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.component';
 import { SearchMembersByAddressComponent } from './search-members-by-address/search-members-by-address.component';
 import { NationalCongressComponent } from './national-congress/national-congress.component';
+import { MemberPositionComponent } from './member-position/member-position.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { NationalCongressComponent } from './national-congress/national-congress
     BillsFromMemberComponent,
     SearchMembersByAddressComponent,
     NationalCongressComponent,
+    MemberPositionComponent,
   ],
   imports: [
     BrowserModule,

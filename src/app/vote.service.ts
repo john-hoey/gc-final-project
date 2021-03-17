@@ -246,6 +246,17 @@ export class VoteService {
     });
   };
 
+  getMemberPosition = (memberId: string) => {
+    return this.http.get(
+      `${this.proPublicaUrl}members/${memberId}/votes.json`,
+      {
+        headers: {
+          'X-API-Key': this.headerProPublica,
+        },
+      }
+    );
+  };
+
   setAddress = (address: string) => {
     this.GcivAddress = address;
   };
