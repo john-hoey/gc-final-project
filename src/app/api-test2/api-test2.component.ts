@@ -25,6 +25,8 @@ export class ApiTest2Component implements OnInit {
   candSummary: any;
   candTopContributors: any;
   candTopContributor: any[] = [];
+  candTopIndustries: any;
+  candTopIndustry: any[] = [];
 
   constructor(private voteService: VoteService) {}
 
@@ -35,7 +37,8 @@ export class ApiTest2Component implements OnInit {
     // this.onOrgsByNameSearchSubmit('cash');
     // this.getAndSetOrgSummaryById();
     // this.getAndSetCandSummaryById();
-    this.getAndSetCandTopContributorsById();
+    // this.getAndSetCandTopContributorsById();
+    this.getAndSetTotalSectorContributionsByCandidate();
   }
   getAndSetLegislators = () => {
     this.voteService.getLegislators(this.state).subscribe((response: any) => {
@@ -107,6 +110,24 @@ export class ApiTest2Component implements OnInit {
             response.response.contributors.contributor[i]['@attributes']
           );
           console.log(this.candTopContributor);
+        }
+      });
+  };
+
+  getAndSetTotalSectorContributionsByCandidate = () => {
+    console.log(this.candId);
+    this.voteService
+      .getTotalSectorContributionsByCandidate(this.candId)
+      .subscribe((response: any) => {
+        console.log(response.response.sectors.sector[0]['@attributes']);
+        console.log(response);
+
+        this.candTopIndustries = response.response.sectors['@attributes'];
+        for (let i = 0; i < response.response.sectors.sector.length; i++) {
+          this.candTopIndustry.push(
+            response.response.sectors.sector[i]['@attributes']
+          );
+          console.log(this.candTopIndustry);
         }
       });
   };

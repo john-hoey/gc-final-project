@@ -105,7 +105,7 @@
     <p><b>Date of Last Filed Report: </b>{{ candSummary?.last_updated }}</p>
   </li>
 </ul> -->
-<ul>
+<!-- <ul>
   <li>
     <p><b>Candidate Name (Party): </b>{{ candTopContributors?.cand_name }}</p>
     <p><b>Candidate ID:</b>{{ candTopContributors?.cid }}</p>
@@ -115,10 +115,28 @@
     <p><b>Explanatory Text: </b>{{ candTopContributors?.notice }}</p>
   </li>
   <li *ngFor="let contributor of candTopContributor; index as i">
-    <!-- <li> -->
+    <!-- <li> 
     <p><b>Org Name: </b>{{ contributor?.org_name }}</p>
     <p><b>Total From All Itemized Source: </b>${{ contributor?.total }}</p>
     <p><b>Total PAC Contributions: </b>${{ contributor?.pacs }}</p>
     <p><b>Total Individual Contributions: </b>${{ contributor?.indivs }}</p>
+  </li>
+</ul> -->
+<ul>
+  <li>
+    <p><b>Candidate Name (Party): </b>{{ candTopIndustries?.cand_name }}</p>
+    <p><b>Candidate ID:</b>{{ candTopIndustries?.cid }}</p>
+    <p><b>Cycle Year: </b>{{ candTopIndustries?.cycle }}</p>
+    <p><b>Attribution Origin: </b>{{ candTopIndustries?.origin }}</p>
+    <p><b>Link to Data: </b>{{ candTopIndustries?.source }}</p>
+    <p><b>Last Updated: </b>{{ candTopIndustries?.last_updated }}</p>
+  </li>
+  <li *ngFor="let industry of candTopIndustry; index as i">
+    <!-- <li> -->
+    <p><b>Sector Name: </b>{{ industry?.sector_name }}</p>
+    <p><b>SectorID: </b>${{ industry?.sectorid }}</p>
+    <p><b>Total Individual Contributions: </b>${{ industry?.indivs }}</p>
+    <p><b>Total PAC Contributions: </b>${{ industry?.pacs }}</p>
+    <p><b>Total Itemized Contributions: </b>${{ industry?.total }}</p>
   </li>
 </ul>
