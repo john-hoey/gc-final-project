@@ -86,7 +86,7 @@
     <p><b>Link to Source Data on OpenSecrets:</b> {{ organization?.source }}</p>
   </li>
 </ul> -->
-<ul>
+<!-- <ul>
   <li>
     <p><b>Candidate Name: </b>{{ candSummary?.cand_name }}</p>
     <p><b>Candidate ID: </b>{{ candSummary?.cid }}</p>
@@ -103,5 +103,22 @@
     <p><b>Source of Attribution: </b>{{ candSummary?.origin }}</p>
     <p><b>Link to Source Data on OpenSecrets: </b>{{ candSummary?.source }}</p>
     <p><b>Date of Last Filed Report: </b>{{ candSummary?.last_updated }}</p>
+  </li>
+</ul> -->
+<ul>
+  <li>
+    <p><b>Candidate Name (Party): </b>{{ candTopContributors?.cand_name }}</p>
+    <p><b>Candidate ID:</b>{{ candTopContributors?.cid }}</p>
+    <p><b>Cycle Year: </b>{{ candTopContributors?.cycle }}</p>
+    <p><b>Attribution Origin: </b>{{ candTopContributors?.origin }}</p>
+    <p><b>Link to Data: </b>{{ candTopContributors?.source }}</p>
+    <p><b>Explanatory Text: </b>{{ candTopContributors?.notice }}</p>
+  </li>
+  <li *ngFor="let contributor of candTopContributor; index as i">
+    <!-- <li> -->
+    <p><b>Org Name: </b>{{ contributor?.org_name }}</p>
+    <p><b>Total From All Itemized Source: </b>${{ contributor?.total }}</p>
+    <p><b>Total PAC Contributions: </b>${{ contributor?.pacs }}</p>
+    <p><b>Total Individual Contributions: </b>${{ contributor?.indivs }}</p>
   </li>
 </ul>

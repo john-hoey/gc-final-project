@@ -58,6 +58,18 @@ export class VoteService {
       },
     });
   };
+
+  getCandTopContributors = (candId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'candContrib',
+        cid: candId,
+        cycle: '2020',
+        output: 'json',
+      },
+    });
+  };
   getStatements = (statement: string) => {
     return this.http.get(`${this.proPublicaUrl}statements/search.json`, {
       headers: {

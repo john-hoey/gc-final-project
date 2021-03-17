@@ -23,6 +23,8 @@ export class ApiTest2Component implements OnInit {
   orgId: string = 'D000000082';
   candId: string = 'N00039533';
   candSummary: any;
+  candTopContributors: any;
+  candTopContributor: any[] = [];
 
   constructor(private voteService: VoteService) {}
 
@@ -32,7 +34,8 @@ export class ApiTest2Component implements OnInit {
     // this.getAndSetOrgsByName();
     // this.onOrgsByNameSearchSubmit('cash');
     // this.getAndSetOrgSummaryById();
-    this.getAndSetCandSummaryById();
+    // this.getAndSetCandSummaryById();
+    this.getAndSetCandTopContributorsById();
   }
   getAndSetLegislators = () => {
     this.voteService.getLegislators(this.state).subscribe((response: any) => {
@@ -80,6 +83,31 @@ export class ApiTest2Component implements OnInit {
       .subscribe((response: any) => {
         console.log(response);
         this.candSummary = response.response.summary['@attributes'];
+      });
+  };
+
+  getAndSetCandTopContributorsById = () => {
+    console.log(this.candId);
+    this.voteService
+      .getCandTopContributors(this.candId)
+      .subscribe((response: any) => {
+        console.log(
+          response.response.contributors.contributor[0]['@attributes']
+        );
+        console.log(response);
+
+        this.candTopContributors =
+          response.response.contributors['@attributes'];
+        for (
+          let i = 0;
+          i < response.response.contributors.contributor.length;
+          i++
+        ) {
+          this.candTopContributor.push(
+            response.response.contributors.contributor[i]['@attributes']
+          );
+          console.log(this.candTopContributor);
+        }
       });
   };
   onLegislatorsByStateSearchSubmit = (stateId: string): void => {
