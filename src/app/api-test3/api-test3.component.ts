@@ -22,6 +22,9 @@ export class ApiTest3Component implements OnInit {
   searchTerm: string = '';
   senateDataShown: any;
   houseDataShown: any;
+  specificBillTerm: string = '';
+  specificBillData: any;
+  specificBillDataShown: any;
 
   constructor(private voteService: VoteService) {}
 
@@ -29,6 +32,7 @@ export class ApiTest3Component implements OnInit {
     // this.getAndSetStatements();
     this.getAndSetBills();
     this.getAndSetHouseAndSenate();
+    this.getAndSetSpecificBills();
   }
 
   getAndSetStatements = () => {
@@ -45,6 +49,17 @@ export class ApiTest3Component implements OnInit {
       this.bills = response.results[0].bills;
     });
   };
+
+  getAndSetSpecificBills = () => {
+    this.voteService
+      .getSpecificBillSubject(this.specificBillTerm)
+      .subscribe((response: any) => {
+        console.log(response.results[0].subjects);
+        this.specificBillData = response.results[0].subjects;
+        this.specificBillDataShown = this.specificBillData;
+      });
+  };
+
   // onStatementSearchSubmit = (statementTerm: string): void => {
   //   this.proStatement = statementTerm;
   //   this.voteService
@@ -84,6 +99,12 @@ export class ApiTest3Component implements OnInit {
     this.updateHouse();
   };
 
+  setSpecificBillSearchTerm = (specificBillTerm: string) => {
+    console.log(specificBillTerm);
+    this.specificBillTerm = specificBillTerm;
+    this.updateSpecificBill();
+  };
+
   filterSenate = (term: string) => {
     return this.senateData.filter((item: any) => {
       let currentTerm = item.first_name.toLowerCase().trim();
@@ -101,5 +122,14 @@ export class ApiTest3Component implements OnInit {
   };
   updateHouse = () => {
     this.houseDataShown = this.filterHouse(this.searchTerm);
+  };
+  filterSpecificBill = (term: string) => {
+    return this.specificBillData.filter((item: any) => {
+      let currentTerm = item.name.toLowerCase().trim();
+      return currentTerm.includes(term.toLowerCase().trim());
+    });
+  };
+  updateSpecificBill = () => {
+    this.specificBillDataShown = this.filterSpecificBill(this.specificBillTerm);
   };
 }

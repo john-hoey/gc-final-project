@@ -168,23 +168,27 @@ export class VoteService {
   };
 
   getHouse = () => {
-    return this.http.get(
-      `${(this, this.proPublicaUrl)}117/house/members.json`,
-      {
-        headers: {
-          'X-API-Key': this.headerProPublica,
-        },
-      }
-    );
+    return this.http.get(`${this.proPublicaUrl}117/house/members.json`, {
+      headers: {
+        'X-API-Key': this.headerProPublica,
+      },
+    });
   };
   getSenate = () => {
-    return this.http.get(
-      `${(this, this.proPublicaUrl)}117/senate/members.json`,
-      {
-        headers: {
-          'X-API-Key': this.headerProPublica,
-        },
-      }
-    );
+    return this.http.get(`${this.proPublicaUrl}117/senate/members.json`, {
+      headers: {
+        'X-API-Key': this.headerProPublica,
+      },
+    });
+  };
+  getSpecificBillSubject = (statement: string) => {
+    return this.http.get(`${this.proPublicaUrl}bills/subjects/search.json`, {
+      headers: {
+        'X-API-Key': this.headerProPublica,
+      },
+      params: {
+        query: statement,
+      },
+    });
   };
 }
