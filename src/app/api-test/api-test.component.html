@@ -3,6 +3,11 @@
     (electionSearchEvent)="onElectionTermSubmit($event)"
   ></app-election-info>
 </div>
+<div>
+  <app-search-members-by-address
+    (addressSearchEvent)="onAddressSubmit($event)"
+  ></app-search-members-by-address>
+</div>
 
 <ul>
   <li *ngFor="let election of elections?.elections">

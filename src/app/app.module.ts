@@ -18,6 +18,7 @@ import { ElectionInfoComponent } from './election-info/election-info.component';
 import { SearchOrganizationsByNameComponent } from './search-organizations-by-name/search-organizations-by-name.component';
 import { HouseAndSenateComponent } from './house-and-senate/house-and-senate.component';
 import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.component';
+import { SearchMembersByAddressComponent } from './search-members-by-address/search-members-by-address.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.
     SearchOrganizationsByNameComponent,
     HouseAndSenateComponent,
     BillsFromMemberComponent,
+    SearchMembersByAddressComponent,
   ],
   imports: [
     BrowserModule,
