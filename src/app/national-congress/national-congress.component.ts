@@ -171,9 +171,10 @@ export class NationalCongressComponent implements OnInit {
       // this.senateDataShownPP = this.senateData;
       console.log(this.senateDataByStatePP);
     });
+    // this.congressDataByStatePP =
   };
 
-  mergeHouseAndSenate = () => {
-    this.congressDataByStatePP;
-  };
+  // mergeHouseAndSenate = () => {
+  //   this.congressDataByStatePP;
+  // };
 }
