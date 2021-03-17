@@ -35,7 +35,7 @@ export class ApiTest3Component implements OnInit {
   ngOnInit(): void {
     // this.getAndSetStatements();
     this.getAndSetBills();
-    this.getAndSetHouseAndSenate();
+    // this.getAndSetHouseAndSenate();
     // this.getAndSetSpecificBills();
     // this.getAndSetBillsById();
   }
@@ -84,18 +84,18 @@ export class ApiTest3Component implements OnInit {
     });
   };
 
-  getAndSetHouseAndSenate = () => {
-    this.voteService.getHouse().subscribe((response: any) => {
-      console.log(response);
-      this.houseData = response.results[0].members;
-      this.houseDataShown = this.houseData;
-    });
-    this.voteService.getSenate().subscribe((response: any) => {
-      console.log(response.results[0].members);
-      this.senateData = response.results[0].members;
-      this.senateDataShown = this.senateData;
-    });
-  };
+  // getAndSetHouseAndSenate = () => {
+  //   this.voteService.getHouse().subscribe((response: any) => {
+  //     console.log(response);
+  //     this.houseData = response.results[0].members;
+  //     this.houseDataShown = this.houseData;
+  //   });
+  //   this.voteService.getSenate().subscribe((response: any) => {
+  //     console.log(response.results[0].members);
+  //     this.senateData = response.results[0].members;
+  //     this.senateDataShown = this.senateData;
+  //   });
+  // };
 
   setSearchTerm = (searchTerm: string) => {
     console.log(searchTerm);
