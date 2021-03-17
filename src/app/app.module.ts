@@ -20,6 +20,7 @@ import { HouseAndSenateComponent } from './house-and-senate/house-and-senate.com
 import { SpecificBillsComponent } from './specific-bills/specific-bills.component';
 import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.component';
 import { SearchMembersByAddressComponent } from './search-members-by-address/search-members-by-address.component';
+import { MemberPositionComponent } from './member-position/member-position.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { SearchMembersByAddressComponent } from './search-members-by-address/sea
     SpecificBillsComponent,
     BillsFromMemberComponent,
     SearchMembersByAddressComponent,
+    MemberPositionComponent,
   ],
   imports: [
     BrowserModule,
