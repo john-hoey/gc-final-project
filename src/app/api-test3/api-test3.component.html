@@ -18,14 +18,13 @@
     <p>{{ bill.title }}</p>
   </li>
 </ul>
-<!-- <button (click)="displaySenate()">Hide or Show Senate</button> -->
+
 <ul *ngIf="showHouseAndSenate">
   <li *ngFor="let blank of senateDataShown">
     <p>{{ blank.first_name }}</p>
     <p>{{ blank.last_name }}</p>
-    <!-- <p>{{ blank.state }}</p> -->
     <button (click)="getAndSetBillsById(blank.id); displaySenate()">
-      <p>{{ blank.id }}</p>
+      {{ blank.id }}
     </button>
 
     <p>Senator from {{ blank.state }}</p>
@@ -36,8 +35,9 @@
   <li *ngFor="let house of houseDataShown">
     <p>{{ house.first_name }}</p>
     <p>{{ house.last_name }}</p>
-    <!-- <p>{{ house.state }}</p> -->
-    <p>{{ house.id }}</p>
+    <button (click)="getAndSetBillsById(house.id); displaySenate()">
+      {{ house.id }}
+    </button>
     <p>House member from {{ house.state }}</p>
   </li>
 </ul>
