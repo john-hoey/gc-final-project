@@ -3,11 +3,11 @@
     (searchLegislatorsByStateEvent)="onLegislatorsByStateSearchSubmit($event)"
   ></app-search-legislators>
 </div> -->
-<div class="search-org-by-name-bar">
+<!-- <div class="search-org-by-name-bar">
   <app-search-organizations-by-name
     (searchOrgsByNameEvent)="onOrgsByNameSearchSubmit($event)"
   ></app-search-organizations-by-name>
-</div>
+</div> -->
 <!-- <ul>
   <li *ngFor="let legislator of legislators">
     <p>Candidate ID: {{ legislator["@attributes"].cid }}</p>
@@ -140,7 +140,7 @@
     <p><b>Total Itemized Contributions: </b>${{ industry?.total }}</p>
   </li>
 </ul> -->
-<ul>
+<!-- <ul>
   <li>
     <p><b>Committee Name: </b>{{ cmteSummary?.committee_name }}</p>
     <p><b>Industry Name: </b>{{ cmteSummary?.industry }}</p>
@@ -149,7 +149,7 @@
     <p><b>Last Updated: </b>{{ cmteSummary?.last_updated }}</p>
   </li>
   <li *ngFor="let member of cmteMembers; index as i">
-    <!-- <li> -->
+ 
     <p><b>Member Name: </b>{{ member?.member_name }}</p>
     <p><b>MemberID: </b>{{ member?.cid }}</p>
     <p><b>Member Party: </b>{{ member?.party }}</p>
@@ -157,5 +157,64 @@
     <p><b>Total Individual Contributions: </b>${{ member?.indivs }}</p>
     <p><b>Total PAC Contributions: </b>${{ member?.pacs }}</p>
     <p><b>Total Itemized Contributions: </b>${{ member?.total }}</p>
+  </li>
+</ul> -->
+<ul>
+  <h2>Member</h2>
+  <li>
+    <p><b>Member Name: </b>{{ memberPFD?.name }}</p>
+    <p><b>Data Year: </b>{{ memberPFD?.data_year }}</p>
+    <p><b>Member ID: </b>{{ memberPFD?.member_id }}</p>
+    <p>
+      <b>Calculated Low Range Value of Net Worth: </b>${{ memberPFD?.net_low }}
+    </p>
+    <p>
+      <b>Calculated High Range Value of Net Worth: </b>${{
+        memberPFD?.net_high
+      }}
+    </p>
+    <p>
+      <b>Number of Position Records: </b>{{ memberPFD?.positions_held_count }}
+    </p>
+    <p><b>Number of Asset Records: </b>{{ memberPFD?.asset_count }}</p>
+    <p>
+      <b>Calculated Low Range Value of Assets: </b>${{ memberPFD?.asset_low }}
+    </p>
+    <p>
+      <b>Calculated High Range Value of Assets: </b>${{ memberPFD?.asset_high }}
+    </p>
+    <p>
+      <b>Number of Transaction Records: </b>{{ memberPFD?.transaction_count }}
+    </p>
+    <p><b>Lowest Value of Transaction Range: </b>${{ memberPFD?.tx_low }}</p>
+    <p><b>Highest Value of Transaction Range: </b>${{ memberPFD?.tx_high }}</p>
+    <p><b>Link to Data Source: </b>{{ memberPFD?.source }}</p>
+    <p><b>Origin of Data: </b>{{ memberPFD?.origin }}</p>
+    <p><b>Last Updated: </b>{{ memberPFD?.update_timestamp }}</p>
+  </li>
+  <h2>Assets</h2>
+  <li *ngFor="let asset of memberPFDAssets; index as i">
+    <p><b>Asset Name: </b>{{ asset?.name }}</p>
+    <p><b>Least Value of Asset's Worth: </b>${{ asset?.holdings_low }}</p>
+    <p><b>Most Value of Asset's Worth: </b>${{ asset?.holdings_high }}</p>
+    <p><b>Industry of Asset: </b>{{ asset?.industry }}</p>
+    <p><b>Industry Sector ID: </b>{{ asset?.sector }}</p>
+    <p><b>Parent Organization: </b>{{ asset?.subsidiary_of }}</p>
+  </li>
+  <h2>Transactions</h2>
+  <li *ngFor="let transaction of memberPFDTransactions; index as i">
+    <p><b>Asset Name: </b>{{ transaction?.asset_name }}</p>
+    <p><b>Date of Transaction: </b>{{ transaction?.tx_date }}</p>
+    <p><b>Bought, Sold, Exchanged: </b>{{ transaction?.tx_action }}</p>
+    <p><b>Minimum Value of Transaction: </b>${{ transaction?.value_low }}</p>
+    <p><b>Maximum Value of Transaction: </b>${{ transaction?.value_high }}</p>
+  </li>
+  <h2>Positions</h2>
+  <li *ngFor="let position of memberPFDPositions; index as i">
+    <p><b>Position Title: </b>{{ position?.title }}</p>
+    <p>
+      <b>Organization With Which Position is Held: </b
+      >{{ position?.organization }}
+    </p>
   </li>
 </ul>

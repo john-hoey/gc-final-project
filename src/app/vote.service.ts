@@ -148,6 +148,18 @@ export class VoteService {
     });
   };
 
+  getMemberPublicFinancialDisclosure = (candidateId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'memPFDprofile',
+        cid: candidateId,
+        year: '2016',
+        output: 'json',
+      },
+    });
+  };
+
   getOrgsByName = (orgName: string) => {
     return this.http.get(this.openSecretsURL, {
       params: {
