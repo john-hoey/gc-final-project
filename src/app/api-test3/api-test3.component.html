@@ -62,3 +62,9 @@
     <a href="{{ bills.govtrack_url }}">Want More Info?</a>
   </li>
 </ul>
+
+<ul>
+  <li *ngFor="let position of memberPosition">
+    <p>{{ position.member_id }}</p>
+  </li>
+</ul>
