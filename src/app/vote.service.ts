@@ -228,4 +228,14 @@ export class VoteService {
       },
     });
   };
+  getSpecificBillSubject = (statement: string) => {
+    return this.http.get(`${this.proPublicaUrl}bills/subjects/search.json`, {
+      headers: {
+        'X-API-Key': this.headerProPublica,
+      },
+      params: {
+        query: statement,
+      },
+    });
+  };
 }

@@ -7,6 +7,11 @@
   <app-house-and-senate (houseAndSenateEvent)="setSearchTerm($event)">
   </app-house-and-senate>
 </div>
+<div>
+  <app-specific-bills
+    (specificBillSearchEvent)="setSpecificBillSearchTerm($event)"
+  ></app-specific-bills>
+</div>
 <!-- <ul>
   <li *ngFor="let statement of statements">
     <p>{{ statement.url }}</p>
@@ -39,6 +44,12 @@
       {{ house.id }}
     </button>
     <p>House member from {{ house.state }}</p>
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let specific of specificBillDataShown">
+    <p>{{ specific.name }}</p>
   </li>
 </ul>
 
