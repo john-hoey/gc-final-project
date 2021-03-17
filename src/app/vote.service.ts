@@ -68,6 +68,17 @@ export class VoteService {
     });
   };
 
+  getRecentBillsByMember = (memberId: string) => {
+    return this.http.get(
+      `${this.proPublicaUrl}members/${memberId}/bills/introduced.json`,
+      {
+        headers: {
+          'X-API-Key': this.headerProPublica,
+        },
+      }
+    );
+  };
+
   searchLegislatorsbyState = (stateId: string): any => {
     return this.http.get(this.openSecretsURL, {
       params: {
@@ -144,23 +155,17 @@ export class VoteService {
   };
 
   getHouse = () => {
-    return this.http.get(
-      `${(this, this.proPublicaUrl)}117/house/members.json`,
-      {
-        headers: {
-          'X-API-Key': this.headerProPublica,
-        },
-      }
-    );
+    return this.http.get(`${this.proPublicaUrl}117/house/members.json`, {
+      headers: {
+        'X-API-Key': this.headerProPublica,
+      },
+    });
   };
   getSenate = () => {
-    return this.http.get(
-      `${(this, this.proPublicaUrl)}117/senate/members.json`,
-      {
-        headers: {
-          'X-API-Key': this.headerProPublica,
-        },
-      }
-    );
+    return this.http.get(`${this.proPublicaUrl}117/senate/members.json`, {
+      headers: {
+        'X-API-Key': this.headerProPublica,
+      },
+    });
   };
 }
