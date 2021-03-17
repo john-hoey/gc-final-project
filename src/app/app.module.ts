@@ -17,6 +17,7 @@ import { SearchBillsComponent } from './search-bills/search-bills.component';
 import { ElectionInfoComponent } from './election-info/election-info.component';
 import { SearchOrganizationsByNameComponent } from './search-organizations-by-name/search-organizations-by-name.component';
 import { HouseAndSenateComponent } from './house-and-senate/house-and-senate.component';
+import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { HouseAndSenateComponent } from './house-and-senate/house-and-senate.com
     ElectionInfoComponent,
     SearchOrganizationsByNameComponent,
     HouseAndSenateComponent,
+    BillsFromMemberComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,7 @@ import { HouseAndSenateComponent } from './house-and-senate/house-and-senate.com
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [ApiTest3Component, BillsFromMemberComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
