@@ -36,7 +36,7 @@ export class ApiTest3Component implements OnInit {
     // this.getAndSetStatements();
     this.getAndSetBills();
     this.getAndSetHouseAndSenate();
-    this.getAndSetSpecificBills();
+    // this.getAndSetSpecificBills();
     // this.getAndSetBillsById();
   }
 
@@ -55,9 +55,9 @@ export class ApiTest3Component implements OnInit {
     });
   };
 
-  getAndSetSpecificBills = () => {
+  getAndSetSpecificBills = (specificBill: string) => {
     this.voteService
-      .getSpecificBillSubject(this.specificBillTerm)
+      .getSpecificBillSubject(specificBill)
       .subscribe((response: any) => {
         console.log(response.results[0].subjects);
         this.specificBillData = response.results[0].subjects;
