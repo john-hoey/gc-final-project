@@ -113,6 +113,17 @@ export class VoteService {
     });
   };
 
+  getTotalSectorContributionsByCandidate = (candidateId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'candSector',
+        cid: candidateId,
+        output: 'json',
+      },
+    });
+  };
+
   getOrgsByName = (orgName: string) => {
     return this.http.get(this.openSecretsURL, {
       params: {
