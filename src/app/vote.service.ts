@@ -215,19 +215,25 @@ export class VoteService {
     });
   };
 
-  getHouse = () => {
-    return this.http.get(`${this.proPublicaUrl}117/house/members.json`, {
-      headers: {
-        'X-API-Key': this.headerProPublica,
-      },
-    });
+  getHouse = (stateAbbr: string) => {
+    return this.http.get(
+      `${this.proPublicaUrl}members/house/${stateAbbr}/current.json`,
+      {
+        headers: {
+          'X-API-Key': this.headerProPublica,
+        },
+      }
+    );
   };
-  getSenate = () => {
-    return this.http.get(`${this.proPublicaUrl}117/senate/members.json`, {
-      headers: {
-        'X-API-Key': this.headerProPublica,
-      },
-    });
+  getSenate = (stateAbbr: string) => {
+    return this.http.get(
+      `${this.proPublicaUrl}members/senate/${stateAbbr}/current.json`,
+      {
+        headers: {
+          'X-API-Key': this.headerProPublica,
+        },
+      }
+    );
   };
   getSpecificBillSubject = (statement: string) => {
     return this.http.get(`${this.proPublicaUrl}bills/subjects/search.json`, {
@@ -249,6 +255,7 @@ export class VoteService {
         },
       }
     );
+  };
 
   setAddress = (address: string) => {
     this.GcivAddress = address;

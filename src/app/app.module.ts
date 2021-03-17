@@ -20,6 +20,7 @@ import { HouseAndSenateComponent } from './house-and-senate/house-and-senate.com
 import { SpecificBillsComponent } from './specific-bills/specific-bills.component';
 import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.component';
 import { SearchMembersByAddressComponent } from './search-members-by-address/search-members-by-address.component';
+import { NationalCongressComponent } from './national-congress/national-congress.component';
 import { MemberPositionComponent } from './member-position/member-position.component';
 
 @NgModule({
@@ -41,6 +42,7 @@ import { MemberPositionComponent } from './member-position/member-position.compo
     SpecificBillsComponent,
     BillsFromMemberComponent,
     SearchMembersByAddressComponent,
+    NationalCongressComponent,
     MemberPositionComponent,
   ],
   imports: [
