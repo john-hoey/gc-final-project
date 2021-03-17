@@ -15,6 +15,7 @@ export class VoteService {
   openSecretsKey: string = secret.apikey;
   proPublicaUrl: string = 'https://api.propublica.org/congress/v1/';
   headerProPublica: string = secret.headers;
+  GcivAddress: string;
 
   constructor(private http: HttpClient) {}
 
@@ -237,5 +238,13 @@ export class VoteService {
         query: statement,
       },
     });
+  };
+
+  setAddress = (address: string) => {
+    this.GcivAddress = address;
+  };
+
+  getAddress = () => {
+    return this.GcivAddress;
   };
 }
