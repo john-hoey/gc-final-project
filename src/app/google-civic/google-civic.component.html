@@ -1,6 +1,8 @@
-<button>Show My State Officals</button>
+<button (click)="showAllReps()">Show My State Officals</button>
 
 <button (click)="showAllElections()">Show My Upcoming Elections</button>
+
+<button routerLink="/national-congress">Go to National Congress</button>
 
 <ul *ngIf="showElections">
   <li *ngFor="let election of GcivElections?.elections">
@@ -10,13 +12,11 @@
   </li>
 </ul>
 
-<ul>
-  <li>
-    <div *ngFor="let office of GcivRepresentatives?.offices">
-      <p>{{ office.name }}</p>
-    </div>
-    <div *ngFor="let official of GcivRepresentatives?.officials">
-      <p>{{ official.name }}</p>
+<ul *ngIf="showReps">
+  <li *ngFor="let reps of GcivRepresentativesData">
+    <p>{{ reps.name }}</p>
+    <div *ngFor="let names of reps.people">
+      <p>{{ names.name }}</p>
     </div>
   </li>
 </ul>
