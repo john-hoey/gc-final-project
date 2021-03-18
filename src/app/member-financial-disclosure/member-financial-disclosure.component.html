@@ -87,13 +87,13 @@
 </ul> -->
 -------------------------
 <h2>Top 10 Contributors</h2>
+<p><b>Explanatory Text: </b>{{ candTopContributors?.notice }}</p>
 <ul>
-  <li>
-    <!-- <p><b>Candidate Name (Party): </b>{{ candTopContributors?.cand_name }}</p> -->
-    <!-- <p><b>Candidate ID:</b>{{ candTopContributors?.cid }}</p> -->
-    <!-- <p><b>Cycle Year: </b>{{ candTopContributors?.cycle }}</p> -->
-    <p><b>Explanatory Text: </b>{{ candTopContributors?.notice }}</p>
-  </li>
+  <!-- <li> -->
+  <!-- <p><b>Candidate Name (Party): </b>{{ candTopContributors?.cand_name }}</p> -->
+  <!-- <p><b>Candidate ID:</b>{{ candTopContributors?.cid }}</p> -->
+  <!-- <p><b>Cycle Year: </b>{{ candTopContributors?.cycle }}</p> -->
+  <!-- </li> -->
 
   <li *ngFor="let contributor of candTopContributor; index as i">
     <p><b>Org Name: </b>{{ contributor?.org_name }}</p>
