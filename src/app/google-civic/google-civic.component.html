@@ -1,0 +1,22 @@
+<button>Show My State Officals</button>
+
+<button (click)="showAllElections()">Show My Upcoming Elections</button>
+
+<ul *ngIf="showElections">
+  <li *ngFor="let election of GcivElections?.elections">
+    <p>{{ election.name }}</p>
+    <p>{{ election.id }}</p>
+    <p>{{ election.election_date }}</p>
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <div *ngFor="let office of GcivRepresentatives?.offices">
+      <p>{{ office.name }}</p>
+    </div>
+    <div *ngFor="let official of GcivRepresentatives?.officials">
+      <p>{{ official.name }}</p>
+    </div>
+  </li>
+</ul>

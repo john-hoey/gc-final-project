@@ -6,16 +6,18 @@
   <input type="text" name="address" id="address" ngModel />
   <!-- <label for="state">Enter your State</label>
   <input type="text" name="state" id="state" ngModel /> -->
-  <button>Search</button>
+  <button>Submit Address</button>
 </form>
 
-<ul>
+<button routerLink="/google-civic">Want to know more?</button>
+
+<!-- <ul>
   <li *ngFor="let election of elections?.elections">
     <p>{{ election.name }}</p>
     <p>{{ election.id }}</p>
     <p>{{ election.election_date }}</p>
   </li>
-</ul>
+</ul> -->
 <!-- <form
   #electionForm="ngForm"
   (ngSubmit)="getAndSetElectionId(electionForm); getAndSetVoterInfo()"

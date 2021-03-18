@@ -10,6 +10,8 @@ export class VoteService {
     ' https://www.googleapis.com/civicinfo/v2/elections';
   googleCivicVoterUrl: string =
     'https://www.googleapis.com/civicinfo/v2/voterinfo';
+  googleCivicRepresentativesUrl: string =
+    'https://www.googleapis.com/civicinfo/v2/representatives';
   googleCivicKey: string = secret.key;
   openSecretsURL: string = 'http://www.opensecrets.org/api/';
   openSecretsKey: string = secret.apikey;
@@ -246,5 +248,14 @@ export class VoteService {
 
   getAddress = () => {
     return this.GcivAddress;
+  };
+
+  getRepresentativesByAddress = (address: string) => {
+    return this.http.get(this.googleCivicRepresentativesUrl, {
+      params: {
+        key: this.googleCivicKey,
+        address: address,
+      },
+    });
   };
 }
