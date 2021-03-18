@@ -15,9 +15,12 @@ export class MemberFinancialDisclosureComponent implements OnInit {
   memberPFDPositions: any[] = [];
   candTopIndustries: any;
   candTopIndustry: any[] = [];
+  showTopInd: boolean = false;
   candSummary: any;
+  showCandSumm: boolean = false;
   candTopContributors: any;
   candTopContributor: any[] = [];
+  showTopCont: boolean = false;
   constructor(
     private voteService: VoteService,
     private route: ActivatedRoute
@@ -110,6 +113,15 @@ export class MemberFinancialDisclosureComponent implements OnInit {
           console.log(this.candTopIndustry);
         }
       });
+  };
+  showCandSummary = () => {
+    this.showCandSumm = !this.showCandSumm;
+  };
+  showTopIndustries = () => {
+    this.showTopInd = !this.showTopInd;
+  };
+  showTopContributors = () => {
+    this.showTopCont = !this.showTopCont;
   };
 
   getAndSetCandSummaryById = () => {
