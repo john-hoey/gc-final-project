@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ApiTestComponent } from './api-test/api-test.component';
 import { ApiTest2Component } from './api-test2/api-test2.component';
 import { ApiTest3Component } from './api-test3/api-test3.component';
-import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.component';
+import { BillsByMemberComponent } from './bills-by-member/bills-by-member.component';
+
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { GoogleCivicComponent } from './google-civic/google-civic.component';
 import { HomeComponent } from './home/home.component';
@@ -25,8 +26,9 @@ const routes: Routes = [
     path: 'national-congress/member-details/pfd/:id',
     component: MemberFinancialDisclosureComponent,
   },
-  { path: 'bills-by-member', component: BillsFromMemberComponent },
+
   { path: 'google-civic', component: GoogleCivicComponent },
+  { path: 'bills-by-member', component: BillsByMemberComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: FourOhFourComponent }, // Wildcard route for a 404 page
 ];
