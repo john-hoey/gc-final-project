@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { VoteService } from '../vote.service';
 
 @Component({
@@ -34,40 +35,58 @@ export class NationalCongressComponent implements OnInit {
   //joint array
   congressionalDataArray: any[] = [];
 
-  constructor(private voteService: VoteService) {}
+  constructor(private voteService: VoteService, private router: Router) {}
 
   ngOnInit(): void {
     this.getAndSetLegislatorsByState();
     this.getAndSetHouseAndSenate();
   }
+
+  showMemberDetails = (id: number) => {
+    console.log(id);
+    this.router.navigate([`/member-details/${id}`]);
+    // console.log(id);
+  };
   //OpenSecrets API Methods
   getAndSetLegislatorsByState = () => {
-    this.voteService.getLegislators(this.state).subscribe((response: any) => {
-      this.stateLegislatorsOS = response.response.legislator;
-      console.log(this.stateLegislatorsOS);
-    });
+    console.log(this.state);
+
+    this.voteService
+      .getLegislatorsByState(this.state)
+      .subscribe((response: any) => {
+        this.stateLegislatorsOS = response.response.legislator;
+        // console.log(this.stateLegislatorsOS);
+      });
   };
   onLegislatorsByStateSearchSubmit = (stateId: string): void => {
     this.state = stateId;
+    console.log(this.state);
+
     this.voteService
       .searchLegislatorsbyState(this.state)
       .subscribe((response: any) => {
         this.stateLegislatorData = response;
         // console.log(response);
         // console.log(this.stateLegislatorDataShown);
+        this.congressionalDataArray = [];
+        this.stateLegislatorsOS = [];
+        this.houseDataByStatePP = [];
+        this.senateDataByStatePP = [];
+        this.congressDataByStatePP = [];
         this.getAndSetLegislatorsByState();
+        this.getAndSetHouseAndSenate();
       });
   };
 
-  getAndSetCandSummaryById = () => {
-    console.log(this.candId);
-    this.voteService
-      .getCandidateSummary(this.candId)
-      .subscribe((response: any) => {
-        console.log(response);
-        this.candSummary = response.response.summary['@attributes'];
-      });
-  };
+  // getAndSetCandSummaryById = () => {
+  //   console.log(this.candId);
+  //   this.voteService
+  //     .getCandidateSummary(this.candId)
+  //     .subscribe((response: any) => {
+  //       console.log(response);
+  //       this.candSummary = response.response.summary['@attributes'];
+  //     });
+  // };
 
   getAndSetCandTopContributorsById = () => {
     console.log(this.candId);
@@ -186,7 +205,7 @@ export class NationalCongressComponent implements OnInit {
 
   mergeHouseAndSenate = (array1: any, array2: any) => {
     this.congressDataByStatePP = array1.concat(array2);
-    console.log(this.congressDataByStatePP);
+    // console.log(this.congressDataByStatePP);
   };
 
   mergeOSAndPPArrays = (array1OS: any, array2PP: any) => {
@@ -196,7 +215,7 @@ export class NationalCongressComponent implements OnInit {
       let foundOS = array1OS.find((arr1OSItem) => {
         return arr2PPItem.id === arr1OSItem['@attributes'].bioguide_id;
       });
-      console.log(foundOS);
+      // console.log(foundOS);
       let merged: any = {};
       if (foundOS) {
         merged = {

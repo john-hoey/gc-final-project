@@ -23,6 +23,7 @@ import { SearchMembersByAddressComponent } from './search-members-by-address/sea
 import { GoogleCivicComponent } from './google-civic/google-civic.component';
 import { NationalCongressComponent } from './national-congress/national-congress.component';
 import { MemberPositionComponent } from './member-position/member-position.component';
+import { NationalCongressMemberComponent } from './national-congress-member/national-congress-member.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MemberPositionComponent } from './member-position/member-position.compo
     GoogleCivicComponent,
     NationalCongressComponent,
     MemberPositionComponent,
+    NationalCongressMemberComponent,
   ],
   imports: [
     BrowserModule,

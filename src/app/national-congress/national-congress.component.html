@@ -4,9 +4,9 @@
   ></app-search-legislators>
 </div>
 <ul>
-  <li *ngFor="let legislator of stateLegislatorsOS">
-    <p>Candidate ID: {{ legislator["@attributes"].cid }}</p>
-    <p>Candidate Name: {{ legislator["@attributes"].firstlast }}</p>
-    <p>Candidate Party: {{ legislator["@attributes"].party }}</p>
+  <li *ngFor="let legislator of congressionalDataArray">
+    <p (click)="showMemberDetails(legislator.cid)">
+      {{ legislator?.role }} {{ legislator?.name }} ({{ legislator?.party }})
+    </p>
   </li>
 </ul>
