@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'national-congress', component: NationalCongressComponent },
   { path: 'bills-by-member', component: BillsFromMemberComponent },
   { path: 'google-civic', component: GoogleCivicComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: FourOhFourComponent }, // Wildcard route for a 404 page
 ];
 
