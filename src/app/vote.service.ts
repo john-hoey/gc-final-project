@@ -272,6 +272,7 @@ export class VoteService {
       params: {
         key: this.googleCivicKey,
         address: address,
+        levels: 'administrativeArea1',
       },
     });
   };
