@@ -29,7 +29,10 @@ export class NationalCongressComponent implements OnInit {
   senateDataShownByStatePP: any;
   houseDataByStatePP: any;
   houseDataShownByStatePP: any;
-  congressDataByStatePP: any;
+  congressDataByStatePP: any[] = [];
+
+  //joint array
+  congressionalDataArray: any[] = [];
 
   constructor(private voteService: VoteService) {}
 
@@ -159,22 +162,55 @@ export class NationalCongressComponent implements OnInit {
 
   // ProPublica API Methods
   getAndSetHouseAndSenate = () => {
-    this.voteService.getHouse(this.state).subscribe((response: any) => {
+    this.voteService.getHouse(this.state).subscribe((house: any) => {
       // console.log(response);
 
-      this.houseDataByStatePP = response.results;
+      this.houseDataByStatePP = house.results;
       // this.houseDataShownPP = this.houseData;
-      console.log(this.houseDataByStatePP);
+      // console.log(this.houseDataByStatePP);
+      this.voteService.getSenate(this.state).subscribe((senate: any) => {
+        this.senateDataByStatePP = senate.results;
+        // this.senateDataShownPP = this.senateData;
+        // console.log(this.senateDataByStatePP);
+        this.mergeHouseAndSenate(
+          this.houseDataByStatePP,
+          this.senateDataByStatePP
+        );
+        this.mergeOSAndPPArrays(
+          this.stateLegislatorsOS,
+          this.congressDataByStatePP
+        );
+      });
     });
-    this.voteService.getSenate(this.state).subscribe((response: any) => {
-      this.senateDataByStatePP = response.results;
-      // this.senateDataShownPP = this.senateData;
-      console.log(this.senateDataByStatePP);
-    });
-    // this.congressDataByStatePP =
   };
 
-  // mergeHouseAndSenate = () => {
-  //   this.congressDataByStatePP;
-  // };
+  mergeHouseAndSenate = (array1: any, array2: any) => {
+    this.congressDataByStatePP = array1.concat(array2);
+    console.log(this.congressDataByStatePP);
+  };
+
+  mergeOSAndPPArrays = (array1OS: any, array2PP: any) => {
+    // console.log(array1[0]['@attributes'].bioguide_id, array2[0].id);
+
+    array2PP.forEach((arr2PPItem) => {
+      let foundOS = array1OS.find((arr1OSItem) => {
+        return arr2PPItem.id === arr1OSItem['@attributes'].bioguide_id;
+      });
+      console.log(foundOS);
+      let merged: any = {};
+      if (foundOS) {
+        merged = {
+          ...arr2PPItem,
+          ...foundOS['@attributes'],
+        };
+      } else {
+        merged = {
+          ...arr2PPItem,
+        };
+      }
+
+      this.congressionalDataArray.push(merged);
+    });
+    console.log(this.congressionalDataArray);
+  };
 }
