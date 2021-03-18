@@ -27,7 +27,7 @@ export class ApiTest3Component implements OnInit {
   specificBillData: any;
   specificBillDataShown: any;
   memberPosition: any;
-  memberPositionId: string = 'K000388';
+  memberPositionId: string = '';
 
   memberId: string = '';
   billsById: any;
@@ -40,7 +40,7 @@ export class ApiTest3Component implements OnInit {
     // this.getAndSetHouseAndSenate();
     // this.getAndSetSpecificBills();
     // this.getAndSetBillsById();
-    this.getAndSetMemberPosition();
+    // this.getAndSetMemberPosition();
   }
 
   getAndSetStatements = () => {
@@ -107,6 +107,11 @@ export class ApiTest3Component implements OnInit {
     this.updateHouse();
   };
 
+  setMemberPosition = (searchTerm: string) => {
+    console.log(searchTerm);
+    this.getAndSetMemberPosition(searchTerm);
+  };
+
   setSpecificBillSearchTerm = (specificBillTerm: string) => {
     console.log(specificBillTerm);
     this.specificBillTerm = specificBillTerm;
@@ -155,11 +160,11 @@ export class ApiTest3Component implements OnInit {
     this.showHouseAndSenate = !this.showHouseAndSenate;
   };
 
-  getAndSetMemberPosition = () => {
+  getAndSetMemberPosition = (memberPositionId) => {
     return this.voteService
-      .getMemberPosition(this.memberPositionId)
+      .getMemberPosition(memberPositionId)
       .subscribe((response: any) => {
-        console.log(response);
+        console.log(response.results);
         this.memberPosition = response.results;
       });
   };

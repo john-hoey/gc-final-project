@@ -12,6 +12,11 @@
     (specificBillSearchEvent)="getAndSetSpecificBills($event)"
   ></app-specific-bills>
 </div>
+<div>
+  <app-member-position
+    (memberPositionEvent)="setMemberPosition($event)"
+  ></app-member-position>
+</div>
 <!-- <ul>
   <li *ngFor="let statement of statements">
     <p>{{ statement.url }}</p>
@@ -66,5 +71,10 @@
 <ul>
   <li *ngFor="let position of memberPosition">
     <p>{{ position.member_id }}</p>
+    <div *ngFor="let votes of position.votes">
+      <p>{{ votes.position }}</p>
+      <p>{{ votes.bill.bill_id }}</p>
+      <p>{{ votes.description }}</p>
+    </div>
   </li>
 </ul>

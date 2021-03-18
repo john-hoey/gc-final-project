@@ -264,9 +264,9 @@ export class VoteService {
     });
   };
 
-  getMemberPosition = (memberId: string) => {
+  getMemberPosition = (memberPositionId: string) => {
     return this.http.get(
-      `${this.proPublicaUrl}members/${memberId}/votes.json`,
+      `${this.proPublicaUrl}members/${memberPositionId}/votes.json`,
       {
         headers: {
           'X-API-Key': this.headerProPublica,
@@ -288,6 +288,7 @@ export class VoteService {
       params: {
         key: this.googleCivicKey,
         address: address,
+        levels: 'administrativeArea1',
       },
     });
   };
