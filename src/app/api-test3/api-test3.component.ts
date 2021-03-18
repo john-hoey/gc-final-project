@@ -57,7 +57,7 @@ export class ApiTest3Component implements OnInit {
       this.bills = response.results[0].bills;
     });
   };
-
+  // ----------------------------------------------------------- need this
   getAndSetSpecificBills = (specificBill: string) => {
     this.voteService
       .getSpecificBillSubject(specificBill)
@@ -86,7 +86,7 @@ export class ApiTest3Component implements OnInit {
       this.getAndSetBills();
     });
   };
-
+  // ---------------------------------------------------------------------need this?
   // getAndSetHouseAndSenate = () => {
   //   this.voteService.getHouse().subscribe((response: any) => {
   //     console.log(response);
@@ -106,7 +106,7 @@ export class ApiTest3Component implements OnInit {
     this.updateSenate();
     this.updateHouse();
   };
-
+  // -------------------------------------------------------need this
   setMemberPosition = (searchTerm: string) => {
     console.log(searchTerm);
     this.getAndSetMemberPosition(searchTerm);
