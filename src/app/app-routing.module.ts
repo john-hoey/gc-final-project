@@ -14,14 +14,15 @@ import { NationalCongressComponent } from './national-congress/national-congress
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'api-test', component: ApiTestComponent },
+  { path: 'api-test2', component: ApiTest2Component },
   { path: 'api-test3', component: ApiTest3Component },
   { path: 'national-congress', component: NationalCongressComponent },
   {
-    path: 'member-details/:id',
+    path: 'national-congress/member-details/:id',
     component: NationalCongressMemberComponent,
   },
   {
-    path: 'member-details/pfd/:id',
+    path: 'national-congress/member-details/pfd/:id',
     component: MemberFinancialDisclosureComponent,
   },
   { path: 'bills-by-member', component: BillsFromMemberComponent },

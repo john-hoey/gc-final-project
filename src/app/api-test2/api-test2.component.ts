@@ -46,9 +46,9 @@ export class ApiTest2Component implements OnInit {
     // this.getAndSetOrgSummaryById();
     // this.getAndSetCandSummaryById();
     // this.getAndSetCandTopContributorsById();
-    // this.getAndSetTotalSectorContributionsByCandidate();
+    this.getAndSetTotalSectorContributionsByCandidate();
     // this.getAndSetCommitteeIndustryContributionsSummary();
-    this.getAndSetMemberPFD();
+    // this.getAndSetMemberPFD();
   }
   getAndSetLegislators = () => {
     this.voteService

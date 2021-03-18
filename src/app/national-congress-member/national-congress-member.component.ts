@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { VoteService } from '../vote.service';
 
 @Component({
@@ -13,6 +13,7 @@ export class NationalCongressMemberComponent implements OnInit {
   congressMember: any;
   constructor(
     private voteService: VoteService,
+    private router: Router,
     private route: ActivatedRoute
   ) {}
 
@@ -50,5 +51,10 @@ export class NationalCongressMemberComponent implements OnInit {
 
         // console.log(this.stateLegislatorsOS);
       });
+  };
+  showMemberPublicFinancialDisclosure = (id: number) => {
+    console.log(id);
+    this.router.navigate([`/national-congress/member-details/pfd/${id}`]);
+    // console.log(id);
   };
 }
