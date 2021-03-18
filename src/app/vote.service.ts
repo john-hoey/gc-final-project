@@ -63,7 +63,9 @@ export class VoteService {
   };
   getCongressMember = (id: string): any => {
     console.log(id);
-    return this.http.get(`${this.baseURL}/member-details/${id}`);
+    return this.http.get(
+      `${this.baseURL}/national-congress/member-details/${id}`
+    );
   };
 
   getCandidateSummary = (candId: string) => {

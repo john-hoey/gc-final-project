@@ -44,9 +44,10 @@ export class NationalCongressComponent implements OnInit {
 
   showMemberDetails = (id: number) => {
     console.log(id);
-    this.router.navigate([`/member-details/${id}`]);
+    this.router.navigate([`/national-congress/member-details/${id}`]);
     // console.log(id);
   };
+
   //OpenSecrets API Methods
   getAndSetLegislatorsByState = () => {
     console.log(this.state);
