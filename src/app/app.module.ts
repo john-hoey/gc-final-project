@@ -21,6 +21,8 @@ import { SpecificBillsComponent } from './specific-bills/specific-bills.componen
 import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.component';
 import { SearchMembersByAddressComponent } from './search-members-by-address/search-members-by-address.component';
 import { GoogleCivicComponent } from './google-civic/google-civic.component';
+import { NationalCongressComponent } from './national-congress/national-congress.component';
+import { MemberPositionComponent } from './member-position/member-position.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { GoogleCivicComponent } from './google-civic/google-civic.component';
     BillsFromMemberComponent,
     SearchMembersByAddressComponent,
     GoogleCivicComponent,
+    NationalCongressComponent,
+    MemberPositionComponent,
   ],
   imports: [
     BrowserModule,
