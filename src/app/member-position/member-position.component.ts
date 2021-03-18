@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-member-position',
@@ -10,4 +11,8 @@ export class MemberPositionComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+  emitMemberPosition = (form: NgForm) => {
+    console.log(form);
+    this.memberPositionEvent.emit(form.form.value.memberPositionId);
+  };
 }

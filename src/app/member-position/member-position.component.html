@@ -1,1 +1,14 @@
-<p>member-position works!</p>
+<form
+  #memberPositionForm="ngForm"
+  (ngSubmit)="emitMemberPosition(memberPositionForm)"
+>
+  <label for="memberPositionId">Search for member Id</label>
+  <input
+    type="text"
+    id="memberPositionId"
+    name="memberPositionId"
+    placeholder="Enter member Id"
+    ngModel
+  />
+  <button>Search</button>
+</form>
