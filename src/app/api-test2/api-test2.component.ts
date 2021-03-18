@@ -51,10 +51,12 @@ export class ApiTest2Component implements OnInit {
     this.getAndSetMemberPFD();
   }
   getAndSetLegislators = () => {
-    this.voteService.getLegislators(this.state).subscribe((response: any) => {
-      console.log(response.response.legislator[0]['@attributes']);
-      this.legislators = response.response.legislator;
-    });
+    this.voteService
+      .getLegislatorsByState(this.state)
+      .subscribe((response: any) => {
+        console.log(response.response.legislator[0]['@attributes']);
+        this.legislators = response.response.legislator;
+      });
   };
 
   getAndSetTop10ContributingIndByCandidate = () => {

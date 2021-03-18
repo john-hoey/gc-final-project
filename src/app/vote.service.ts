@@ -6,6 +6,7 @@ import { secret } from './secrets';
   providedIn: 'root',
 })
 export class VoteService {
+  baseURL: string = 'http://localhost:4200';
   googleCivicElectionUrl: string =
     ' https://www.googleapis.com/civicinfo/v2/elections';
   googleCivicVoterUrl: string =
@@ -39,7 +40,18 @@ export class VoteService {
     });
   };
 
-  getLegislators = (state: string) => {
+  getLegislatorById = (candId: string) => {
+    return this.http.get(this.openSecretsURL, {
+      params: {
+        apikey: this.openSecretsKey,
+        method: 'getLegislators',
+        id: candId,
+        output: 'json',
+      },
+    });
+  };
+
+  getLegislatorsByState = (state: string) => {
     return this.http.get(this.openSecretsURL, {
       params: {
         apikey: this.openSecretsKey,
@@ -48,6 +60,10 @@ export class VoteService {
         output: 'json',
       },
     });
+  };
+  getCongressMember = (id: string): any => {
+    console.log(id);
+    return this.http.get(`${this.baseURL}/member-details/${id}`);
   };
 
   getCandidateSummary = (candId: string) => {

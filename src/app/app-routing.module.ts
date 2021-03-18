@@ -7,6 +7,7 @@ import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { GoogleCivicComponent } from './google-civic/google-civic.component';
 import { HomeComponent } from './home/home.component';
+import { NationalCongressMemberComponent } from './national-congress-member/national-congress-member.component';
 import { NationalCongressComponent } from './national-congress/national-congress.component';
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
   { path: 'api-test', component: ApiTestComponent },
   { path: 'api-test3', component: ApiTest3Component },
   { path: 'national-congress', component: NationalCongressComponent },
+  {
+    path: 'member-details/:id',
+    component: NationalCongressMemberComponent,
+  },
   { path: 'bills-by-member', component: BillsFromMemberComponent },
   { path: 'google-civic', component: GoogleCivicComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
