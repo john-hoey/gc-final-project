@@ -7,6 +7,7 @@ import { BillsFromMemberComponent } from './bills-from-member/bills-from-member.
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { GoogleCivicComponent } from './google-civic/google-civic.component';
 import { HomeComponent } from './home/home.component';
+import { MemberFinancialDisclosureComponent } from './member-financial-disclosure/member-financial-disclosure.component';
 import { NationalCongressMemberComponent } from './national-congress-member/national-congress-member.component';
 import { NationalCongressComponent } from './national-congress/national-congress.component';
 
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'member-details/:id',
     component: NationalCongressMemberComponent,
+  },
+  {
+    path: 'member-details/pfd/:id',
+    component: MemberFinancialDisclosureComponent,
   },
   { path: 'bills-by-member', component: BillsFromMemberComponent },
   { path: 'google-civic', component: GoogleCivicComponent },

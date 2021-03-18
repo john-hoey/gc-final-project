@@ -3,10 +3,20 @@
     (searchLegislatorsByStateEvent)="onLegislatorsByStateSearchSubmit($event)"
   ></app-search-legislators>
 </div>
+<h4>Click a Legislator to View Their Profile:</h4>
 <ul>
   <li *ngFor="let legislator of congressionalDataArray">
-    <p (click)="showMemberDetails(legislator.cid)">
-      {{ legislator?.role }} {{ legislator?.name }} ({{ legislator?.party }})
+    <p *ngIf="legislator.cid" (click)="showMemberDetails(legislator.cid)">
+      {{ legislator?.role }} {{ legislator?.name }}
+      <b>({{ legislator?.party }})</b>
     </p>
+    <div *ngIf="!legislator.cid">
+      <p>
+        {{ legislator?.role }} {{ legislator?.name }}
+        <b>({{ legislator?.party }})</b> (<i
+          >*Newly Elected, No Profile Information Available*</i
+        >)
+      </p>
+    </div>
   </li>
 </ul>
