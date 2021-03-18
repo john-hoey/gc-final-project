@@ -1,9 +1,49 @@
 <ul>
   <li>
     <p>
-      {{ congressMember?.cid }} {{ congressMember?.firstlast }} ({{
-        congressMember?.bioguide_id
-      }})
+      <b>Name (Party): </b>{{ congressMember?.firstlast }}
+      <b>({{ congressMember?.party }})</b>
+    </p>
+    <p *ngIf="congressMember?.birthdate">
+      <b>D.O.B: </b>{{ congressMember?.birthdate }}
+    </p>
+    <p *ngIf="congressMember?.gender">
+      <b>Gender: </b>{{ congressMember?.gender }}
+    </p>
+    <p *ngIf="congressMember?.first_elected">
+      <b>First Elected: </b>{{ congressMember?.first_elected }}
+    </p>
+    <p *ngIf="congressMember?.congress_office">
+      <b>Office Address: </b>{{ congressMember?.congress_office }}, 27
+      Independence Ave SE, Washington, DC 20003
+    </p>
+    <p *ngIf="congressMember?.office">
+      <b>Held Office ID: </b>{{ congressMember?.office }}
+    </p>
+    <p *ngIf="congressMember?.fax"><b>Fax #: </b>{{ congressMember?.fax }}</p>
+    <p *ngIf="congressMember?.phone">
+      <b>Phone Number: </b>{{ congressMember?.phone }}
+    </p>
+    <p *ngIf="congressMember?.twitter_id">
+      <b>Twitter: </b>http://twitter.com/{{ congressMember?.twitter_id }}
+    </p>
+    <p *ngIf="congressMember?.facebook_id">
+      <b>Facebook: </b>http://facebook.com/{{ congressMember?.facebook_id }}
+    </p>
+    <p *ngIf="congressMember?.youtube_url">
+      <b>Youtube: </b>http://facebook.com/{{ congressMember?.youtube_url }}
+    </p>
+    <p *ngIf="congressMember?.website">
+      <b>Website: </b>{{ congressMember?.website }}
+    </p>
+    <p *ngIf="congressMember?.cid">
+      <b>OpenSecrets ID: </b>{{ congressMember?.cid }}
+    </p>
+    <p *ngIf="congressMember?.bioguide_id">
+      <b>ProPublica ID: </b>{{ congressMember?.bioguide_id }}
+    </p>
+    <p *ngIf="congressMember?.feccandid">
+      <b>FEC ID: </b>{{ congressMember?.feccandid }}
     </p>
   </li>
 </ul>

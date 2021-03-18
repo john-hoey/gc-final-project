@@ -24,6 +24,7 @@ import { GoogleCivicComponent } from './google-civic/google-civic.component';
 import { NationalCongressComponent } from './national-congress/national-congress.component';
 import { MemberPositionComponent } from './member-position/member-position.component';
 import { NationalCongressMemberComponent } from './national-congress-member/national-congress-member.component';
+import { MemberFinancialDisclosureComponent } from './member-financial-disclosure/member-financial-disclosure.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { NationalCongressMemberComponent } from './national-congress-member/nati
     NationalCongressComponent,
     MemberPositionComponent,
     NationalCongressMemberComponent,
+    MemberFinancialDisclosureComponent,
   ],
   imports: [
     BrowserModule,
