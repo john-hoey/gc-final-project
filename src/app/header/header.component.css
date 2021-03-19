@@ -5,6 +5,7 @@
   padding: 15px;
   background-color: #ed3338;
   /* background-color: #14682e; */
+  flex: 1;
 
   align-items: center;
 }
@@ -31,14 +32,25 @@
 .header-local {
   text-decoration: none;
   color: white;
-  margin-right: 20px;
+  margin-right: 10px;
   font-size: x-large;
+  padding: 3px 10px;
+}
+.header-local:hover {
+  background-color: #357abf;
+  border-radius: 10px;
 }
 
 .header-national-congress {
   text-decoration: none;
   color: white;
   font-size: x-large;
+  padding: 3px 10px;
+}
+
+.header-national-congress:hover {
+  background-color: #357abf;
+  border-radius: 10px;
 }
 
 .header-pro {

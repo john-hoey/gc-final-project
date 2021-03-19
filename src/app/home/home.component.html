@@ -3,10 +3,13 @@
     <img src="../../assets/circlecrest.png" alt="" class="seal-image" />
   </div>
   <p class="paragraph">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque placeat
-    voluptate vel id error architecto sunt laudantium. Inventore, ab error magni
-    aspernatur temporibus distinctio necessitatibus ullam illo, laborum id
-    adipisci.
+    Welcome to BuyPartisan! This tool was developed to help us all become more
+    informed citizens and voters on both a local and national scale. To start
+    using this app, enter your address and start your journey through
+    information relevant to you about local government. Otherwise, click to our
+    National Congress page to begin digesting information about the publicly
+    disclosed voting and financial records of your representatives in
+    Washington.
   </p>
 
   <div class="home-content">
@@ -15,7 +18,9 @@
       #addressStateForm="ngForm"
       (ngSubmit)="getAndSetValues(addressStateForm); setGlobalAddress()"
     >
-      <label for="address">Enter your address or two-letter state code</label>
+      <label class="form-label" for="address"
+        >Enter your address or two-letter state code</label
+      >
       <input
         class="home-input"
         type="text"
