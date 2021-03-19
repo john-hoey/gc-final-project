@@ -1,35 +1,46 @@
 .header {
   display: flex;
-  justify-content: space-between;
-  margin: 5px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+  background-color: #0fc2c4;
 
   align-items: center;
 }
 
 .header-buy {
+  display: flex;
+  justify-content: center;
   text-decoration: none;
   color: black;
 }
-
-.header-google {
-  text-decoration: none;
-  color: black;
+.logo-img {
+  display: flex;
+  width: 90%;
+  height: 90%;
 }
-
-.header-national-congress {
-  text-decoration: none;
-  color: black;
-}
-
-.header-pro {
-  text-decoration: none;
-  color: black;
-}
-
 .nav-bar {
   display: flex;
 }
 .list-container {
   display: flex;
   list-style-type: none;
+  margin-top: 10px;
+}
+.header-local {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  font-size: x-large;
+}
+
+.header-national-congress {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+}
+
+.header-pro {
+  text-decoration: none;
+  color: black;
 }
