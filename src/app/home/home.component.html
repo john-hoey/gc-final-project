@@ -1,24 +1,37 @@
 <section class="form-container">
-  <div>
+  <div class="paragraph-and-image">
     <img src="../../assets/circlecrest.png" alt="" class="seal-image" />
   </div>
-  <form
-    class="address-form"
-    #addressStateForm="ngForm"
-    (ngSubmit)="getAndSetValues(addressStateForm); setGlobalAddress()"
-  >
-    <label for="address">Enter your address or state tag</label>
-    <input type="text" name="address" id="address" ngModel />
+  <p class="paragraph">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque placeat
+    voluptate vel id error architecto sunt laudantium. Inventore, ab error magni
+    aspernatur temporibus distinctio necessitatibus ullam illo, laborum id
+    adipisci.
+  </p>
 
-    <button class="form-button">Submit Address</button>
-  </form>
-  <div class="button-container">
-    <button routerLink="/google-civic" class="buttons">
-      Want to know more?
-    </button>
+  <div class="home-content">
+    <form
+      class="address-form"
+      #addressStateForm="ngForm"
+      (ngSubmit)="getAndSetValues(addressStateForm); setGlobalAddress()"
+    >
+      <label for="address">Enter your address or two-letter state code</label>
+      <input
+        class="home-input"
+        type="text"
+        name="address"
+        id="address"
+        placeholder="Adress or two-letter state code goes here"
+        ngModel
+      />
 
-    <button routerLink="/national-congress" class="buttons">
-      Go to National Congress
-    </button>
+      <button class="form-button">Submit</button>
+    </form>
+    <div class="button-container">
+      <button routerLink="/national-congress" class="buttons">
+        Go to National Congress
+      </button>
+    </div>
+    <!-- <img class="bottom-photo" src="./assets/white.png" /> -->
   </div>
 </section>

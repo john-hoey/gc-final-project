@@ -1,16 +1,36 @@
+.paragraph-and-image {
+  margin: 0;
+}
+
+.paragraph {
+  margin: 10px;
+}
+
+.seal-image {
+  height: 225px;
+  width: 225px;
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+
+.home-content {
+  padding: 20px;
+}
+
+.home-input {
+  margin: 1px;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 30px;
   /* background-color: #737f87; */
+  /* background: radial-gradient(blue, white, red); */
 
   height: 100vh;
-}
-
-.seal-image {
-  height: 300px;
-  width: 300px;
 }
 
 .address-form {
@@ -24,10 +44,15 @@
 
 .button-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   margin: 5px;
 }
 
 .buttons {
   margin: 5px;
+}
+
+.bottom-photo {
+  width: 350px;
+  height: 250px;
 }
