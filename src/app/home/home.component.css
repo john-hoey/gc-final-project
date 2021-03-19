@@ -1,0 +1,33 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  /* background-color: #737f87; */
+
+  height: 100vh;
+}
+
+.seal-image {
+  height: 300px;
+  width: 300px;
+}
+
+.address-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-button {
+  margin: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+}
+
+.buttons {
+  margin: 5px;
+}
