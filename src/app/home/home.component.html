@@ -1,24 +1,42 @@
 <section class="form-container">
-  <div>
+  <div class="paragraph-and-image">
     <img src="../../assets/circlecrest.png" alt="" class="seal-image" />
   </div>
-  <form
-    class="address-form"
-    #addressStateForm="ngForm"
-    (ngSubmit)="getAndSetValues(addressStateForm); setGlobalAddress()"
-  >
-    <label for="address">Enter your address or state tag</label>
-    <input type="text" name="address" id="address" ngModel />
+  <p class="paragraph">
+    Welcome to BuyPartisan! This tool was developed to help us all become more
+    informed citizens and voters on both a local and national scale. To start
+    using this app, enter your address and start your journey through
+    information relevant to you about local government. Otherwise, click to our
+    National Congress page to begin digesting information about the publicly
+    disclosed voting and financial records of your representatives in
+    Washington.
+  </p>
 
-    <button class="form-button">Submit Address</button>
-  </form>
-  <div class="button-container">
-    <button routerLink="/google-civic" class="buttons">
-      Want to know more?
-    </button>
+  <div class="home-content">
+    <form
+      class="address-form"
+      #addressStateForm="ngForm"
+      (ngSubmit)="getAndSetValues(addressStateForm); setGlobalAddress()"
+    >
+      <label class="form-label" for="address"
+        >Enter your address or two-letter state code</label
+      >
+      <input
+        class="home-input"
+        type="text"
+        name="address"
+        id="address"
+        placeholder="Adress or two-letter state code goes here"
+        ngModel
+      />
 
-    <button routerLink="/national-congress" class="buttons">
-      Go to National Congress
-    </button>
+      <button class="form-button">Submit</button>
+    </form>
+    <div class="button-container">
+      <button routerLink="/national-congress" class="buttons">
+        Go to National Congress
+      </button>
+    </div>
+    <!-- <img class="bottom-photo" src="./assets/white.png" /> -->
   </div>
 </section>

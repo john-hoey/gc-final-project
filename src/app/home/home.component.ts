@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { VoteService } from '../vote.service';
 
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   elections: any;
   electionId: string;
   voterInfo: any;
-  constructor(private voteService: VoteService) {}
+  constructor(private voteService: VoteService, private route: Router) {}
 
   ngOnInit(): void {
     this.getAndSetElections();
@@ -23,6 +24,7 @@ export class HomeComponent implements OnInit {
   getAndSetValues = (form: NgForm) => {
     this.address = form.form.value.address;
     this.state = form.form.value.state;
+    this.routeToGoogleCiv();
   };
   // getAndSetVoterInfo = () => {
   //   this.voteService
@@ -56,5 +58,8 @@ export class HomeComponent implements OnInit {
   setGlobalAddress = () => {
     this.voteService.setAddress(this.address);
     console.log(this.voteService.getAddress());
+  };
+  routeToGoogleCiv = () => {
+    this.route.navigate(['/google-civic']);
   };
 }
