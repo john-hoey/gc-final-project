@@ -25,14 +25,11 @@ export class GoogleCivicComponent implements OnInit {
   }
 
   getAndSetAddress = () => {
-    console.log(this.voteService.getAddress());
     this.GcivAddress = this.voteService.getAddress();
-    console.log(this.GcivAddress);
   };
 
   getAndSetElections = () => {
     this.voteService.getElections().subscribe((response) => {
-      console.log(response);
       this.GcivElections = response;
     });
   };
@@ -42,7 +39,7 @@ export class GoogleCivicComponent implements OnInit {
       .getRepresentativesByAddress(this.GcivAddress)
       .subscribe((response: any) => {
         this.GcivRepresentativesOffices = response.offices;
-        console.log(response);
+
         this.GcivRepresentativesOfficials = response.officials;
         this.mergeRepArrays(
           this.GcivRepresentativesOffices,
@@ -71,7 +68,7 @@ export class GoogleCivicComponent implements OnInit {
       });
       offices.people = officialOffices;
     });
-    console.log(array1RepCopy);
+
     this.GcivRepresentativesData = array1RepCopy;
   };
 }
