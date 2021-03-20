@@ -26,19 +26,9 @@ export class HomeComponent implements OnInit {
     this.state = form.form.value.state;
     this.routeToGoogleCiv();
   };
-  // getAndSetVoterInfo = () => {
-  //   this.voteService
-  //     .getVoterInfo(this.address, this.electionId)
-  //     .subscribe((response) => {
-  //       console.log(response);
-  //       this.candidates = response;
-  //       this.voterInfo = response;
-  //     });
-  // };
 
   getAndSetElections = () => {
     this.voteService.getElections().subscribe((response) => {
-      console.log(response);
       this.elections = response;
     });
   };
@@ -51,13 +41,11 @@ export class HomeComponent implements OnInit {
     this.voteService
       .getVoterInfo(this.address, this.electionId)
       .subscribe((response) => {
-        console.log(response);
         this.voterInfo = response;
       });
   };
   setGlobalAddress = () => {
     this.voteService.setAddress(this.address);
-    console.log(this.voteService.getAddress());
   };
   routeToGoogleCiv = () => {
     this.route.navigate(['/google-civic']);
