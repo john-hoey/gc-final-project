@@ -5,6 +5,9 @@
 .paragraph {
   margin: 15px 10px 10px 10px;
   text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .form-label {
@@ -22,6 +25,9 @@
 .home-content {
   /* padding: 20px; */
   margin: 0px 10px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .home-input {
@@ -31,6 +37,7 @@
 
 .form-container {
   display: flex;
+  background-color: transparent;
   flex-direction: column;
   align-items: center;
   padding-top: 30px;
@@ -40,6 +47,7 @@
   height: 83vh;
   /* flex-grow: 1; */
   flex: 3;
+  color: white;
 }
 
 .address-form {
@@ -50,10 +58,15 @@
 .form-button {
   margin: 10px;
   padding: 10px;
-  background-color: #357abf;
+  /* background-color: #357abf; */
+  background: rgba(0, 0, 0, 0.7);
+
   border-radius: 5px;
   border: 0;
   color: white;
+}
+.form-button:hover {
+  background: rgba(255, 0, 0, 0.7);
 }
 
 .button-container {
@@ -64,11 +77,16 @@
 
 .buttons {
   margin: 5px;
-  background-color: #ed3338;
+  /* background-color: #ed3338; */
+  background: rgba(0, 0, 0, 0.7);
   padding: 10px;
   border-radius: 5px;
   border: 0;
   color: white;
+  width: 96%;
+}
+.buttons:hover {
+  background: rgba(255, 0, 0, 0.7);
 }
 
 .bottom-photo {
