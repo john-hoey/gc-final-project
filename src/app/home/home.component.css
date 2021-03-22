@@ -8,19 +8,20 @@
   background: rgba(0, 0, 0, 0.4);
   padding: 10px;
   border-radius: 5px;
+  width: 86%;
 }
 
 .form-label {
   font-weight: bold;
 }
 
-.seal-image {
+/* .seal-image {
   height: 180px;
   width: 180px;
   display: flex;
   margin: 0;
   align-items: center;
-}
+} */
 
 .home-content {
   /* padding: 20px; */
@@ -28,10 +29,11 @@
   background: rgba(0, 0, 0, 0.4);
   padding: 10px;
   border-radius: 5px;
+  width: 86%;
 }
 
 .home-input {
-  margin: 1px;
+  margin: 0 10px;
   padding: 5px;
 }
 
@@ -40,7 +42,7 @@
   background-color: transparent;
   flex-direction: column;
   align-items: center;
-  padding-top: 30px;
+  padding-top: 0px;
   /* background-color: #737f87; */
   /* background: radial-gradient(blue, white, red); */
   margin: 0px 10px;
@@ -56,7 +58,7 @@
 }
 
 .form-button {
-  margin: 10px;
+  margin: 10px 10px;
   padding: 10px;
   /* background-color: #357abf; */
   background: rgba(0, 0, 0, 0.7);
@@ -76,7 +78,7 @@
 }
 
 .buttons {
-  margin: 5px;
+  margin: 0px 5px;
   /* background-color: #ed3338; */
   background: rgba(0, 0, 0, 0.7);
   padding: 10px;
@@ -92,4 +94,26 @@
 .bottom-photo {
   width: 350px;
   height: 250px;
+}
+
+@media only screen and (min-width: 768px) {
+  .paragraph {
+    width: 60%;
+    font-size: larger;
+  }
+  .home-content {
+    width: 60%;
+    font-size: larger;
+  }
+  .form-label {
+    margin-left: 10px;
+    font-size: medium;
+  }
+  .home-input {
+    width: 96%;
+    margin-left: 10px;
+  }
+  .buttons {
+    width: 99%;
+  }
 }
