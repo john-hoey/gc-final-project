@@ -1,3 +1,34 @@
 .rep-box {
   border: black 1px solid;
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px 5px;
+}
+.list-background {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  /* margin-right: 45px; */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  width: 80%;
+  align-items: center;
+}
+
+.content-container {
+  height: 75vh;
+  justify-content: center;
+  display: flex;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.list-content {
+  width: 80%;
+  display: flex;
 }

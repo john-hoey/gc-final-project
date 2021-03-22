@@ -4,6 +4,7 @@
   ></app-search-legislators>
 </div>
 <h4>Click a Legislator to View Their Profile:</h4>
+
 <ul>
   <li *ngFor="let legislator of congressionalDataArray">
     <p *ngIf="legislator.cid" (click)="showMemberDetails(legislator.cid)">
