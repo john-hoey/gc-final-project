@@ -5,4 +5,7 @@
 }
 body {
   height: 100vh;
+  background-image: url("assets/moneybg.jpeg");
+  background-size: cover;
+  background-position: center;
 }

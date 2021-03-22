@@ -14,7 +14,7 @@ export class VoteService {
   googleCivicRepresentativesUrl: string =
     'https://www.googleapis.com/civicinfo/v2/representatives';
   googleCivicKey: string = secret.key;
-  openSecretsURL: string = 'http://www.opensecrets.org/api/';
+  openSecretsURL: string = 'https://www.opensecrets.org/api/';
   openSecretsKey: string = secret.apikey;
   proPublicaUrl: string = 'https://api.propublica.org/congress/v1/';
   headerProPublica: string = secret.headers;

@@ -6,8 +6,9 @@ footer {
   width: 100vw;
   height: 7vh;
   bottom: 0;
+  background: rgba(0, 0, 0, 0);
   /* left: 8vw; */
-  background-color: #357abf;
+  /* background-color: #357abf; */
   color: white;
   /* flex-shrink: 0; */
   flex: 1;
