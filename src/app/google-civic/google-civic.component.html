@@ -13,10 +13,17 @@
 </ul>
 
 <ul *ngIf="showReps">
-  <li *ngFor="let reps of GcivRepresentativesData">
+  <li *ngFor="let reps of GcivRepresentativesData" class="rep-box">
     <p>{{ reps.name }}</p>
     <div *ngFor="let names of reps.people">
-      <p>{{ names.name }}</p>
+      <a href="{{ names.urls }}"
+        ><p>{{ names.name }}</p></a
+      >
+      <p *ngIf="names.phones">{{ names.phones[0] }}</p>
+      <div *ngFor="let channels of names.channels">
+        <p>{{ channels.type }}</p>
+        <p>{{ channels.id }}</p>
+      </div>
     </div>
   </li>
 </ul>
