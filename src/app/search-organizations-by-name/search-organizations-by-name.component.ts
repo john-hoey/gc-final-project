@@ -13,7 +13,6 @@ export class SearchOrganizationsByNameComponent implements OnInit {
   ngOnInit(): void {}
 
   emitOrgSearchName = (form: NgForm) => {
-    console.log(form);
     this.searchOrgsByNameEvent.emit(form.form.value.orgSearchTerm);
   };
 }

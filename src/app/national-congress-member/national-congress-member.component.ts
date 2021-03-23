@@ -20,44 +20,37 @@ export class NationalCongressMemberComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((response) => {
       let id: string | null = response.get('id');
-      console.log(id);
+
       this.candId = id;
       if (id) {
-        this.getAndSetCongressMember(id);
-        console.log(response);
+        // this.getAndSetCongressMember(id);
+
         this.getAndSetLegislatorById();
       }
     });
   }
 
-  getAndSetCongressMember = (id: string): void => {
-    console.log(id);
+  // getAndSetCongressMember = (id: string): void => {
+  //
 
-    this.voteService.getCongressMember(id).subscribe((response: any) => {
-      console.log(response);
-      this.member = response[0];
-      console.log(this.member);
-    });
-  };
+  //   this.voteService.getCongressMember(id).subscribe((response: any) => {
+  //
+  //     this.member = response[0];
+  //
+  //   });
+  // };
 
   getAndSetLegislatorById = () => {
-    console.log(this.candId);
-
     this.voteService
       .getLegislatorById(this.candId)
       .subscribe((response: any) => {
         this.congressMember = response.response.legislator['@attributes'];
-        console.log(this.congressMember);
-        this.setGlobalPPId();
-        console.log(this.voteService.ppId);
 
-        // console.log(this.stateLegislatorsOS);
+        this.setGlobalPPId();
       });
   };
   showMemberPublicFinancialDisclosure = (id: number) => {
-    console.log(id);
     this.router.navigate([`/national-congress/member-details/pfd/${id}`]);
-    // console.log(id);
   };
 
   setGlobalPPId = () => {

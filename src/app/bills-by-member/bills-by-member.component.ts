@@ -23,7 +23,6 @@ export class BillsByMemberComponent implements OnInit {
     return this.voteService
       .getRecentBillsByMember(memberId)
       .subscribe((response: any) => {
-        console.log(response);
         this.billsById = response.results[0].bills;
       });
   };
@@ -32,12 +31,10 @@ export class BillsByMemberComponent implements OnInit {
     return this.voteService
       .getMemberPosition(memberPositionId)
       .subscribe((response: any) => {
-        console.log(response.results);
         this.memberPosition = response.results;
       });
   };
   setMemberPosition = (searchTerm: string) => {
-    console.log(searchTerm);
     this.getAndSetMemberPosition(searchTerm);
     this.getAndSetBillsById(searchTerm);
   };

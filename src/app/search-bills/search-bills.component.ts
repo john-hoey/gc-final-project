@@ -12,7 +12,6 @@ export class SearchBillsComponent implements OnInit {
 
   ngOnInit(): void {}
   emitBillSearch = (form: NgForm) => {
-    console.log(form);
     this.searchBillEvent.emit(form.form.value.billSearchTerm);
   };
 }

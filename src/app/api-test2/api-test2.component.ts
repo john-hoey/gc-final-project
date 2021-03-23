@@ -54,7 +54,6 @@ export class ApiTest2Component implements OnInit {
     this.voteService
       .getLegislatorsByState(this.state)
       .subscribe((response: any) => {
-        console.log(response.response.legislator[0]['@attributes']);
         this.legislators = response.response.legislator;
       });
   };
@@ -63,54 +62,38 @@ export class ApiTest2Component implements OnInit {
     this.voteService
       .getTop10ContributingIndByCandidate(this.candidateId)
       .subscribe((response: any) => {
-        console.log(response.response.industries);
-        console.log(response.response.industries.industry);
         this.contributingInds = response.response.industries.industry;
       });
   };
 
   getAndSetOrgsByName = () => {
-    console.log(this.organizationName);
-
     this.voteService
       .getOrgsByName(this.organizationName)
       .subscribe((response: any) => {
-        console.log(response.response.organization);
-        // console.log(response.response.organization['@attributes']);
         this.organizations = response.response.organization;
       });
   };
 
   getAndSetOrgSummaryById = () => {
-    console.log(this.orgId);
     this.voteService
       .getOrgSummaryById(this.orgId)
       .subscribe((response: any) => {
-        console.log(response.response.organization['@attributes']);
         this.organization = response.response.organization['@attributes'];
       });
   };
 
   getAndSetCandSummaryById = () => {
-    console.log(this.candId);
     this.voteService
       .getCandidateSummary(this.candId)
       .subscribe((response: any) => {
-        console.log(response);
         this.candSummary = response.response.summary['@attributes'];
       });
   };
 
   getAndSetCandTopContributorsById = () => {
-    console.log(this.candId);
     this.voteService
       .getCandTopContributors(this.candId)
       .subscribe((response: any) => {
-        console.log(
-          response.response.contributors.contributor[0]['@attributes']
-        );
-        console.log(response);
-
         this.candTopContributors =
           response.response.contributors['@attributes'];
         for (
@@ -127,19 +110,14 @@ export class ApiTest2Component implements OnInit {
   };
 
   getAndSetTotalSectorContributionsByCandidate = () => {
-    console.log(this.candId);
     this.voteService
       .getTotalSectorContributionsByCandidate(this.candId)
       .subscribe((response: any) => {
-        console.log(response.response.sectors.sector[0]['@attributes']);
-        console.log(response);
-
         this.candTopIndustries = response.response.sectors['@attributes'];
         for (let i = 0; i < response.response.sectors.sector.length; i++) {
           this.candTopIndustry.push(
             response.response.sectors.sector[i]['@attributes']
           );
-          console.log(this.candTopIndustry);
         }
       });
   };

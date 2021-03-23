@@ -12,11 +12,8 @@ export class BillsFromMemberComponent implements OnInit {
   ngOnInit(): void {}
 
   getAndSetBillsById = (memberId: string) => {
-    console.log(memberId);
     return this.voteService
       .getRecentBillsByMember(memberId)
-      .subscribe((response: any) => {
-        console.log(response);
-      });
+      .subscribe((response: any) => {});
   };
 }

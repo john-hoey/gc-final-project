@@ -12,7 +12,6 @@ export class MemberPositionComponent implements OnInit {
 
   ngOnInit(): void {}
   emitMemberPosition = (form: NgForm) => {
-    console.log(form);
     this.memberPositionEvent.emit(form.form.value.memberPositionId);
   };
 }
