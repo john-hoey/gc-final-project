@@ -19,6 +19,7 @@ export class VoteService {
   proPublicaUrl: string = 'https://api.propublica.org/congress/v1/';
   headerProPublica: string = secret.headers;
   GcivAddress: string;
+  ppId: string;
 
   constructor(private http: HttpClient) {}
 
@@ -283,6 +284,14 @@ export class VoteService {
 
   getAddress = () => {
     return this.GcivAddress;
+  };
+
+  setPPId = (ppId: string) => {
+    this.ppId = ppId;
+  };
+
+  getPPId = () => {
+    return this.ppId;
   };
 
   getRepresentativesByAddress = (address: string) => {

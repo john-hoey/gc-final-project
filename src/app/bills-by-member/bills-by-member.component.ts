@@ -12,10 +12,13 @@ export class BillsByMemberComponent implements OnInit {
 
   showMemberPosition: boolean = false;
   showBillsById: boolean = false;
+  ppIdFromService: string;
 
   constructor(private voteService: VoteService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPPIdFromServiceAndGetAndSetBillsById();
+  }
   getAndSetBillsById = (memberId) => {
     return this.voteService
       .getRecentBillsByMember(memberId)
@@ -45,5 +48,11 @@ export class BillsByMemberComponent implements OnInit {
 
   toggleBillsById = () => {
     this.showBillsById = !this.showBillsById;
+  };
+
+  getPPIdFromServiceAndGetAndSetBillsById = () => {
+    this.ppIdFromService = this.voteService.getPPId();
+    this.getAndSetBillsById(this.ppIdFromService);
+    this.getAndSetMemberPosition(this.ppIdFromService);
   };
 }
