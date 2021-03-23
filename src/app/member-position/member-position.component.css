@@ -1,0 +1,27 @@
+.member-search-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 5px;
+  margin: 5px;
+  text-align: center;
+}
+
+.button {
+  margin: 3px 3px;
+  padding: 3px;
+  /* background-color: #357abf; */
+  background: rgba(0, 0, 0, 0.7);
+
+  border-radius: 5px;
+  border: 0;
+  color: white;
+}
+
+.button:hover {
+  background: rgba(255, 0, 0, 0.7);
+}

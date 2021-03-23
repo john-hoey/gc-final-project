@@ -1,8 +1,9 @@
 <form
+  class="member-search-form"
   #memberPositionForm="ngForm"
   (ngSubmit)="emitMemberPosition(memberPositionForm)"
 >
-  <label for="memberPositionId">Search for member Id</label>
+  <label for="memberPositionId" class="label">Search for member Id</label>
   <input
     type="text"
     id="memberPositionId"
@@ -10,5 +11,5 @@
     placeholder="Enter member Id"
     ngModel
   />
-  <button>Search</button>
+  <button class="button">Search</button>
 </form>
