@@ -1,6 +1,7 @@
 footer {
-  display: flex;
-  position: fixed;
+  /* display: flex; */
+  position: absolute;
+
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -11,7 +12,7 @@ footer {
   /* background-color: #357abf; */
   color: white;
   /* flex-shrink: 0; */
-  flex: 1;
+  /* flex: 1; */
 }
 
 .footer-container {

@@ -1,21 +1,22 @@
 .rep-box {
-  border: black 1px solid;
+  border: white 1px solid;
+  border-radius: 10px;
   display: flex;
-  width: 98%;
+  width: 99%;
   flex-direction: column;
   text-align: center;
   padding: 10px 5px;
-  margin: 5px;
+  /* margin: 5px; */
 }
 .list-background {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
   /* margin-right: 45px; */
   color: white;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  width: 50%;
+  width: 75%;
   align-items: center;
 }
 
@@ -35,8 +36,8 @@
 }
 
 .form-button {
-  margin: 10px 10px;
-  padding: 10px;
+  margin: 3px 3px;
+  padding: 3px;
   /* background-color: #357abf; */
   background: rgba(0, 0, 0, 0.7);
 
@@ -47,4 +48,21 @@
 
 .form-button:hover {
   background: rgba(255, 0, 0, 0.7);
+}
+a {
+  text-decoration: none;
+  color: rgba(255, 0, 0, 0.7);
+}
+
+@media only screen and (min-width: 768px) {
+  .form-button {
+    margin: 10px 10px;
+    padding: 10px;
+    /* background-color: #357abf; */
+    background: rgba(0, 0, 0, 0.7);
+
+    border-radius: 5px;
+    border: 0;
+    color: white;
+  }
 }
