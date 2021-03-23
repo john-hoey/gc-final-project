@@ -49,13 +49,13 @@ export class GoogleCivicComponent implements OnInit {
       });
   };
 
-  showAllElections = () => {
-    this.showElections = !this.showElections;
-  };
+  // showAllElections = () => {
+  //   this.showElections = !this.showElections;
+  // };
 
-  showAllReps = () => {
-    this.showReps = !this.showReps;
-  };
+  // showAllReps = () => {
+  //   this.showReps = !this.showReps;
+  // };
 
   mergeRepArrays = (array1Rep: any, array2Rep: any) => {
     let array1RepCopy = [...array1Rep];
@@ -71,5 +71,23 @@ export class GoogleCivicComponent implements OnInit {
     });
 
     this.GcivRepresentativesData = array1RepCopy;
+  };
+
+  showAllElections = () => {
+    if ((this.showReps = true)) {
+      this.showReps = !this.showReps;
+      this.showElections = !this.showElections;
+    } else {
+      this.showElections = !this.showElections;
+    }
+  };
+
+  showAllReps = () => {
+    if ((this.showElections = true)) {
+      this.showElections = !this.showElections;
+      this.showReps = !this.showReps;
+    } else {
+      this.showReps = !this.showReps;
+    }
   };
 }
