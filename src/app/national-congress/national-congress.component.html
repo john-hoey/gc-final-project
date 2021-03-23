@@ -1,23 +1,25 @@
-<div class="searchStateLegislator-bar">
-  <app-search-legislators
-    (searchLegislatorsByStateEvent)="onLegislatorsByStateSearchSubmit($event)"
-  ></app-search-legislators>
-</div>
-<h4>Click a Legislator to View Their Profile:</h4>
+<div class="content-container">
+  <div class="searchStateLegislator-bar">
+    <app-search-legislators
+      (searchLegislatorsByStateEvent)="onLegislatorsByStateSearchSubmit($event)"
+    ></app-search-legislators>
+  </div>
+  <h4>Click a Legislator to View Their Profile:</h4>
 
-<ul>
-  <li *ngFor="let legislator of congressionalDataArray">
-    <p *ngIf="legislator.cid" (click)="showMemberDetails(legislator.cid)">
-      {{ legislator?.role }} {{ legislator?.name }}
-      <b>({{ legislator?.party }})</b>
-    </p>
-    <div *ngIf="!legislator.cid">
-      <p>
+  <ul>
+    <li class="leg-container" *ngFor="let legislator of congressionalDataArray">
+      <p *ngIf="legislator.cid" (click)="showMemberDetails(legislator.cid)">
         {{ legislator?.role }} {{ legislator?.name }}
-        <b>({{ legislator?.party }})</b> (<i
-          >*Newly Elected, No Profile Information Available*</i
-        >)
+        <b>({{ legislator?.party }})</b>
       </p>
-    </div>
-  </li>
-</ul>
+      <div *ngIf="!legislator.cid">
+        <p>
+          {{ legislator?.role }} {{ legislator?.name }}
+          <b>({{ legislator?.party }})</b> (<i
+            >*Newly Elected, No Profile Information Available*</i
+          >)
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>

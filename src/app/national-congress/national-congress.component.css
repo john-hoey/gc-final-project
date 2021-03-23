@@ -1,3 +1,14 @@
-.content-container {
+/* .content-container {
   overflow-y: scroll;
+} */
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.leg-container {
+  background-color: rgba(0, 0, 0, 0.4);
 }
