@@ -48,6 +48,8 @@ export class NationalCongressMemberComponent implements OnInit {
       .subscribe((response: any) => {
         this.congressMember = response.response.legislator['@attributes'];
         console.log(this.congressMember);
+        this.setGlobalPPId();
+        console.log(this.voteService.ppId);
 
         // console.log(this.stateLegislatorsOS);
       });
@@ -56,5 +58,9 @@ export class NationalCongressMemberComponent implements OnInit {
     console.log(id);
     this.router.navigate([`/national-congress/member-details/pfd/${id}`]);
     // console.log(id);
+  };
+
+  setGlobalPPId = () => {
+    this.voteService.setPPId(this.congressMember.bioguide_id);
   };
 }
