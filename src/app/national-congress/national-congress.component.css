@@ -26,12 +26,12 @@
   background-color: rgba(0, 0, 0, 0);
   color: white;
   list-style: none;
-  margin: 4px 2px;
+  margin: 6px 5px;
 }
 
 .footnote {
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
-  margin: 20px 5px 5px 5px;
+  margin: 8px 5px 5px 5px;
   border-radius: 5px;
 }
