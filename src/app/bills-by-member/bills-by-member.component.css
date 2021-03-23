@@ -1,3 +1,47 @@
 .div-box {
-  border: black solid 1px;
+  border: white solid 1px;
+  margin: 5px;
+}
+
+.member-search {
+  display: flex;
+  justify-content: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  margin: 3px 3px;
+  padding: 3px;
+  /* background-color: #357abf; */
+  background: rgba(0, 0, 0, 0.7);
+
+  border-radius: 5px;
+  border: 0;
+  color: white;
+}
+
+.buttons:hover {
+  background: rgba(255, 0, 0, 0.7);
+}
+
+.bills-list-container {
+  display: flex;
+  justify-content: center;
+  height: 65%;
+}
+
+.bills-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  /* margin-right: 45px; */
+  color: white;
+  /* display: flex;
+  flex-direction: column; */
+  overflow-y: scroll;
+  width: 75%;
+  align-items: center;
 }

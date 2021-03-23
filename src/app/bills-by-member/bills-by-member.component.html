@@ -1,29 +1,35 @@
-<div>
+<div class="member-search">
   <app-member-position
     (memberPositionEvent)="setMemberPosition($event)"
   ></app-member-position>
 </div>
+<div class="button-container">
+  <button (click)="toggleMemberPosition()" class="buttons">
+    Show Member Position
+  </button>
+  <button (click)="toggleBillsById()" class="buttons">
+    Show Sponsored Bills
+  </button>
+</div>
+<div class="bills-list-container">
+  <ul *ngIf="showMemberPosition" class="bills-container">
+    <li *ngFor="let position of memberPosition">
+      <p>{{ position.member_id }}</p>
+      <div *ngFor="let votes of position.votes" class="div-box">
+        <p>{{ votes.position }}</p>
+        <p>{{ votes.bill.bill_id }}</p>
+        <p>{{ votes.description }}</p>
+      </div>
+    </li>
+  </ul>
 
-<button (click)="toggleMemberPosition()">Show Member Position</button>
-<button (click)="toggleBillsById()">Show Sponsored Bills</button>
-
-<ul *ngIf="showMemberPosition">
-  <li *ngFor="let position of memberPosition">
-    <p>{{ position.member_id }}</p>
-    <div *ngFor="let votes of position.votes" class="div-box">
-      <p>{{ votes.position }}</p>
-      <p>{{ votes.bill.bill_id }}</p>
-      <p>{{ votes.description }}</p>
-    </div>
-  </li>
-</ul>
-
-<ul *ngIf="showBillsById">
-  <li *ngFor="let bill of billsById">
-    <div class="div-box">
-      <p>{{ bill.sponsor_name }}</p>
-      <p>{{ bill.bill_id }}</p>
-      <p>{{ bill.short_title }}</p>
-    </div>
-  </li>
-</ul>
+  <ul *ngIf="showBillsById" class="bills-container">
+    <li *ngFor="let bill of billsById">
+      <div class="div-box">
+        <p>{{ bill.sponsor_name }}</p>
+        <p>{{ bill.bill_id }}</p>
+        <p>{{ bill.short_title }}</p>
+      </div>
+    </li>
+  </ul>
+</div>
