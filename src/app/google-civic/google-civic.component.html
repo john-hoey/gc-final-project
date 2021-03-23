@@ -1,9 +1,15 @@
 <div class="buttons">
-  <button (click)="showAllReps()">Show My State Officals</button>
+  <button class="form-button" (click)="showAllReps()">
+    Show My State Officals
+  </button>
 
-  <button (click)="showAllElections()">Show My Upcoming Elections</button>
+  <button class="form-button" (click)="showAllElections()">
+    Show My Upcoming Elections
+  </button>
 
-  <button routerLink="/national-congress">Go to National Congress</button>
+  <button class="form-button" routerLink="/national-congress">
+    Go to National Congress
+  </button>
 </div>
 <div class="content-container">
   <ul class="list-background" *ngIf="showElections">
