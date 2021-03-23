@@ -106,13 +106,49 @@ export class MemberFinancialDisclosureComponent implements OnInit {
       });
   };
   showCandSummary = () => {
-    this.showCandSumm = !this.showCandSumm;
+    if (this.showTopInd) {
+      this.showCandSumm = !this.showCandSumm;
+      this.showTopInd = !this.showTopInd;
+    } else if (this.showTopCont) {
+      this.showTopCont = !this.showTopCont;
+      this.showCandSumm = !this.showCandSumm;
+    } else if (this.showTopInd && this.showTopCont) {
+      this.showCandSumm = !this.showCandSumm;
+      this.showTopCont = !this.showTopCont;
+      this.showTopInd = !this.showTopInd;
+    } else {
+      this.showCandSumm = !this.showCandSumm;
+    }
   };
   showTopIndustries = () => {
-    this.showTopInd = !this.showTopInd;
+    if (this.showCandSumm) {
+      this.showTopInd = !this.showTopInd;
+      this.showCandSumm = !this.showCandSumm;
+    } else if (this.showTopCont) {
+      this.showTopInd = !this.showTopInd;
+      this.showTopCont = !this.showTopCont;
+    } else if (this.showCandSumm && this.showTopCont) {
+      this.showTopInd = !this.showTopInd;
+      this.showCandSumm = !this.showCandSumm;
+      this.showTopCont = !this.showTopCont;
+    } else {
+      this.showTopInd = !this.showTopInd;
+    }
   };
   showTopContributors = () => {
-    this.showTopCont = !this.showTopCont;
+    if (this.showCandSumm) {
+      this.showTopCont = !this.showTopCont;
+      this.showCandSumm = !this.showCandSumm;
+    } else if (this.showTopInd) {
+      this.showTopCont = !this.showTopCont;
+      this.showTopInd = !this.showTopInd;
+    } else if (this.showCandSumm && this.showTopInd) {
+      this.showTopCont = !this.showTopCont;
+      this.showCandSumm = !this.showCandSumm;
+      this.showTopInd = !this.showTopInd;
+    } else {
+      this.showTopCont = !this.showTopCont;
+    }
   };
 
   getAndSetCandSummaryById = () => {
