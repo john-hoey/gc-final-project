@@ -38,8 +38,8 @@ export class NationalCongressComponent implements OnInit {
   constructor(private voteService: VoteService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getAndSetLegislatorsByState();
-    this.getAndSetHouseAndSenate();
+    // this.getAndSetLegislatorsByState();
+    this.getAndSetLegislatorsByStateAndGetAndSetHouseAndSenate();
   }
 
   showMemberDetails = (id: number) => {
@@ -74,8 +74,8 @@ export class NationalCongressComponent implements OnInit {
         this.houseDataByStatePP = [];
         this.senateDataByStatePP = [];
         this.congressDataByStatePP = [];
-        this.getAndSetLegislatorsByState();
-        this.getAndSetHouseAndSenate();
+        // this.getAndSetLegislatorsByState();
+        this.getAndSetLegislatorsByStateAndGetAndSetHouseAndSenate();
       });
   };
 
@@ -181,7 +181,7 @@ export class NationalCongressComponent implements OnInit {
   };
 
   // ProPublica API Methods
-  getAndSetHouseAndSenate = () => {
+  getAndSetLegislatorsByStateAndGetAndSetHouseAndSenate = () => {
     this.voteService.getHouse(this.state).subscribe((house: any) => {
       // console.log(response);
 
@@ -192,14 +192,20 @@ export class NationalCongressComponent implements OnInit {
         this.senateDataByStatePP = senate.results;
         // this.senateDataShownPP = this.senateData;
         // console.log(this.senateDataByStatePP);
-        this.mergeHouseAndSenate(
-          this.houseDataByStatePP,
-          this.senateDataByStatePP
-        );
-        this.mergeOSAndPPArrays(
-          this.stateLegislatorsOS,
-          this.congressDataByStatePP
-        );
+        this.voteService
+          .getLegislatorsByState(this.state)
+          .subscribe((response: any) => {
+            this.stateLegislatorsOS = response.response.legislator;
+            // console.log(this.stateLegislatorsOS);
+            this.mergeHouseAndSenate(
+              this.houseDataByStatePP,
+              this.senateDataByStatePP
+            );
+            this.mergeOSAndPPArrays(
+              this.stateLegislatorsOS,
+              this.congressDataByStatePP
+            );
+          });
       });
     });
   };
