@@ -1,55 +1,80 @@
-<ul>
-  <li>
-    <p>
-      <b>Name (Party): </b>{{ congressMember?.firstlast }}
-      <b>({{ congressMember?.party }})</b>
-    </p>
-    <p *ngIf="congressMember?.birthdate">
-      <b>D.O.B: </b>{{ congressMember?.birthdate }}
-    </p>
-    <p *ngIf="congressMember?.gender">
-      <b>Gender: </b>{{ congressMember?.gender }}
-    </p>
-    <p *ngIf="congressMember?.first_elected">
-      <b>First Elected: </b>{{ congressMember?.first_elected }}
-    </p>
-    <p *ngIf="congressMember?.congress_office">
-      <b>Office Address: </b>{{ congressMember?.congress_office }}, 27
-      Independence Ave SE, Washington, DC 20003
-    </p>
-    <p *ngIf="congressMember?.office">
-      <b>Held Office ID: </b>{{ congressMember?.office }}
-    </p>
-    <p *ngIf="congressMember?.fax"><b>Fax #: </b>{{ congressMember?.fax }}</p>
-    <p *ngIf="congressMember?.phone">
-      <b>Phone Number: </b>{{ congressMember?.phone }}
-    </p>
-    <p *ngIf="congressMember?.twitter_id">
-      <b>Twitter: </b>http://twitter.com/{{ congressMember?.twitter_id }}
-    </p>
-    <p *ngIf="congressMember?.facebook_id">
-      <b>Facebook: </b>http://facebook.com/{{ congressMember?.facebook_id }}
-    </p>
-    <p *ngIf="congressMember?.youtube_url">
-      <b>Youtube: </b>http://facebook.com/{{ congressMember?.youtube_url }}
-    </p>
-    <p *ngIf="congressMember?.website">
-      <b>Website: </b>{{ congressMember?.website }}
-    </p>
-    <p *ngIf="congressMember?.cid">
-      <b>OpenSecrets ID: </b>{{ congressMember?.cid }}
-    </p>
-    <p *ngIf="congressMember?.bioguide_id">
-      <b>ProPublica ID: </b>{{ congressMember?.bioguide_id }}
-    </p>
-    <p *ngIf="congressMember?.feccandid">
-      <b>FEC ID: </b>{{ congressMember?.feccandid }}
-    </p>
-  </li>
-</ul>
-<button (click)="showMemberPublicFinancialDisclosure(congressMember?.cid)">
-  See Public Financial Disclosure Information
-</button>
-<button routerLink="/bills-by-member">
-  See Voting Record and Bills Sponsored
-</button>
+<div class="member-container">
+  <ul class="member-list-container">
+    <li class="member-container">
+      <p class="p-container">
+        <span class="descriptive-text"><b>Name (Party): </b></span
+        >{{ congressMember?.firstlast }}
+        <b>({{ congressMember?.party }})</b>
+      </p>
+      <p class="p-container" *ngIf="congressMember?.birthdate">
+        <span class="descriptive-text"><b>D.O.B: </b></span
+        >{{ congressMember?.birthdate }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.gender">
+        <span class="descriptive-text"><b>Gender: </b></span
+        >{{ congressMember?.gender }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.first_elected">
+        <span class="descriptive-text"><b>First Elected: </b></span
+        >{{ congressMember?.first_elected }}
+      </p>
+      <div class="office-div" *ngIf="congressMember?.congress_office">
+        <p>
+          <span class="descriptive-text"><b>Office Address: </b></span>
+        </p>
+        <p>{{ congressMember?.congress_office }},</p>
+        <p>27 Independence Ave SE,</p>
+        <p>Washington, DC 20003</p>
+      </div>
+      <p class="p-container" *ngIf="congressMember?.office">
+        <span class="descriptive-text"><b>Held Office ID: </b></span
+        >{{ congressMember?.office }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.fax">
+        <span class="descriptive-text"><b>Fax #: </b></span
+        >{{ congressMember?.fax }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.phone">
+        <span class="descriptive-text"><b>Phone Number: </b></span
+        >{{ congressMember?.phone }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.twitter_id">
+        <span class="descriptive-text"><b>Twitter: </b></span
+        >http://twitter.com/{{ congressMember?.twitter_id }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.facebook_id">
+        <span class="descriptive-text"><b>Facebook: </b></span
+        >http://facebook.com/{{ congressMember?.facebook_id }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.youtube_url">
+        <span class="descriptive-text"><b>Youtube: </b></span
+        >http://facebook.com/{{ congressMember?.youtube_url }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.website">
+        <span class="descriptive-text"><b>Website: </b></span
+        >{{ congressMember?.website }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.cid">
+        <span class="descriptive-text"><b>OpenSecrets ID: </b></span
+        >{{ congressMember?.cid }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.bioguide_id">
+        <span class="descriptive-text"><b>ProPublica ID: </b></span
+        >{{ congressMember?.bioguide_id }}
+      </p>
+      <p class="p-container" *ngIf="congressMember?.feccandid">
+        <span class="descriptive-text"><b>FEC ID: </b></span
+        >{{ congressMember?.feccandid }}
+      </p>
+    </li>
+  </ul>
+  <button
+    class="button"
+    (click)="showMemberPublicFinancialDisclosure(congressMember?.cid)"
+  >
+    See Public Financial Disclosure Information
+  </button>
+  <button class="button" routerLink="/bills-by-member">
+    See Voting Record and Bills Sponsored
+  </button>
+</div>
