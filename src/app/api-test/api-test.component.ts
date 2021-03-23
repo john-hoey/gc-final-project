@@ -21,7 +21,6 @@ export class ApiTestComponent implements OnInit {
   }
   getAndSetElections = () => {
     this.voteService.getElections().subscribe((response) => {
-      console.log(response);
       this.elections = response;
     });
   };
@@ -30,7 +29,6 @@ export class ApiTestComponent implements OnInit {
     this.voteService
       .getVoterInfo(this.address, this.electionId)
       .subscribe((response) => {
-        console.log(response);
         this.candidates = response;
         this.voterInfo = response;
       });
@@ -41,7 +39,6 @@ export class ApiTestComponent implements OnInit {
     this.voteService
       .searchVoterInfo(this.address, electionId)
       .subscribe((response) => {
-        console.log(response);
         this.voterInfo = response;
 
         this.getAndSetVoterInfo();

@@ -13,7 +13,6 @@ export class SearchMembersByAddressComponent implements OnInit {
   ngOnInit(): void {}
 
   emitAddress = (form: NgForm) => {
-    console.log(form);
     this.addressSearchEvent.emit(form.form.value.address);
     form.reset();
   };

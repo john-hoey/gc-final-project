@@ -13,7 +13,6 @@ export class SearchStatementsComponent implements OnInit {
   ngOnInit(): void {}
 
   emitStatementSearch = (form: NgForm) => {
-    console.log(form);
     this.searchStatementEvent.emit(form.form.value.statementSearchTerm);
   };
 }
