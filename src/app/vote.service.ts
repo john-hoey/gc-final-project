@@ -62,12 +62,12 @@ export class VoteService {
       },
     });
   };
-  getCongressMember = (id: string): any => {
-    console.log(id);
-    return this.http.get(
-      `${this.baseURL}/national-congress/member-details/${id}`
-    );
-  };
+  // getCongressMember = (id: string): any => {
+  //
+  //   return this.http.get(
+  //     `${this.openSecretsURL}national-congress/member-details/${id}`
+  //   );
+  // };
 
   getCandidateSummary = (candId: string) => {
     return this.http.get(this.openSecretsURL, {
@@ -223,7 +223,6 @@ export class VoteService {
         query: statement,
       },
     });
-    console.log(statement);
   };
 
   searchVoterInfo = (address: string, electionId: string) => {

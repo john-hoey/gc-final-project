@@ -12,7 +12,6 @@ export class HouseAndSenateComponent implements OnInit {
 
   ngOnInit(): void {}
   emitHouseAndSenate = (form: NgForm) => {
-    console.log(form.form.value);
     this.houseAndSenateEvent.emit(form.form.value.houseAndSenate);
   };
 }

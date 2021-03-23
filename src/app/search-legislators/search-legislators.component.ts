@@ -13,7 +13,6 @@ export class SearchLegislatorsComponent implements OnInit {
   ngOnInit(): void {}
 
   emitLegislatorSearchStateId = (form: NgForm) => {
-    console.log(form);
     this.searchLegislatorsByStateEvent.emit(form.form.value.stateSearchTerm);
   };
 }

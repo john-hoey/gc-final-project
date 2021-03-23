@@ -38,7 +38,6 @@ export class GoogleCivicComponent implements OnInit {
     this.voteService
       .getRepresentativesByAddress(this.GcivAddress)
       .subscribe((response: any) => {
-        console.log(response);
         this.GcivRepresentativesOffices = response.offices;
 
         this.GcivRepresentativesOfficials = response.officials;

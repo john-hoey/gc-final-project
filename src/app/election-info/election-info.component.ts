@@ -12,7 +12,6 @@ export class ElectionInfoComponent implements OnInit {
 
   ngOnInit(): void {}
   emitElectionTerm = (form: NgForm) => {
-    console.log(form.form.value.electionSearch);
     this.electionSearchEvent.emit(form.form.value.electionSearch);
   };
 }
