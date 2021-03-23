@@ -40,11 +40,21 @@ export class BillsByMemberComponent implements OnInit {
   };
 
   toggleMemberPosition = () => {
-    this.showMemberPosition = !this.showMemberPosition;
+    if ((this.showBillsById = true)) {
+      this.showBillsById = !this.showBillsById;
+      this.showMemberPosition = !this.showMemberPosition;
+    } else {
+      this.showMemberPosition = !this.showMemberPosition;
+    }
   };
 
   toggleBillsById = () => {
-    this.showBillsById = !this.showBillsById;
+    if ((this.showMemberPosition = true)) {
+      this.showMemberPosition = !this.showMemberPosition;
+      this.showBillsById = !this.showBillsById;
+    } else {
+      this.showBillsById = !this.showBillsById;
+    }
   };
 
   getPPIdFromServiceAndGetAndSetBillsById = () => {
