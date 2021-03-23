@@ -1,10 +1,11 @@
 .rep-box {
   border: black 1px solid;
   display: flex;
-  width: 80%;
+  width: 98%;
   flex-direction: column;
   text-align: center;
   padding: 10px 5px;
+  margin: 5px;
 }
 .list-background {
   background-color: rgba(0, 0, 0, 0.4);
@@ -14,7 +15,7 @@
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
-  width: 80%;
+  width: 50%;
   align-items: center;
 }
 
@@ -31,4 +32,19 @@
 .list-content {
   width: 80%;
   display: flex;
+}
+
+.form-button {
+  margin: 10px 10px;
+  padding: 10px;
+  /* background-color: #357abf; */
+  background: rgba(0, 0, 0, 0.7);
+
+  border-radius: 5px;
+  border: 0;
+  color: white;
+}
+
+.form-button:hover {
+  background: rgba(255, 0, 0, 0.7);
 }
