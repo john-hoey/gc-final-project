@@ -1,0 +1,26 @@
+.leg-form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: larger;
+}
+
+.form-input {
+  padding: 5px;
+}
+
+.form-button {
+  /* background-color: #ed3338; */
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+}
+
+.form-button:hover {
+  background: rgba(255, 0, 0, 0.7);
+}

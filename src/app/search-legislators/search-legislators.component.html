@@ -1,14 +1,16 @@
 <form
+  class="leg-form"
   #searchLegislatorsByStateForm="ngForm"
   (ngSubmit)="emitLegislatorSearchStateId(searchLegislatorsByStateForm)"
 >
   <label for="stateSearchTerm">Search for Legislators by State:</label>
   <input
+    class="form-input"
     type="text"
     id="stateSearchTerm"
     name="stateSearchTerm"
     placeholder="Enter State Initials"
     ngModel
   />
-  <button>Search</button>
+  <button class="form-button">Search</button>
 </form>

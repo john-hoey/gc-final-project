@@ -4,9 +4,9 @@
       (searchLegislatorsByStateEvent)="onLegislatorsByStateSearchSubmit($event)"
     ></app-search-legislators>
   </div>
-  <h4>Click a Legislator to View Their Profile:</h4>
+  <h4 class="h4-leg">Click a Legislator to View Their Profile:</h4>
 
-  <ul>
+  <ul class="leg-list-container">
     <li class="leg-container" *ngFor="let legislator of congressionalDataArray">
       <p *ngIf="legislator.cid" (click)="showMemberDetails(legislator.cid)">
         {{ legislator?.role }} {{ legislator?.name }}
@@ -15,11 +15,13 @@
       <div *ngIf="!legislator.cid">
         <p>
           {{ legislator?.role }} {{ legislator?.name }}
-          <b>({{ legislator?.party }})</b> (<i
-            >*Newly Elected, No Profile Information Available*</i
-          >)
+          <b>({{ legislator?.party }})</b> (<i>*Info Unavailable</i>)
         </p>
       </div>
     </li>
   </ul>
+  <p class="footnote">
+    *Info Unavailable means the member is newly elected and their information is
+    too recent to have been updated in the database.
+  </p>
 </div>
