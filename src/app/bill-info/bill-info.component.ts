@@ -20,8 +20,7 @@ export class BillInfoComponent implements OnInit {
   getAndSetCongressAndBillId = () => {
     this.congressId = this.voteService.getCongress();
     this.billId = this.voteService.getBillId();
-    console.log(this.congressId);
-    console.log(this.billId);
+
     this.getAndSetSpecificBill();
   };
 
@@ -30,7 +29,6 @@ export class BillInfoComponent implements OnInit {
       .getBillById(this.congressId, this.billId)
       .subscribe((response: any) => {
         this.specificBill = response.results;
-        console.log(response.results);
       });
   };
 }
