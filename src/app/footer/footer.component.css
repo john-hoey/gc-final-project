@@ -43,3 +43,9 @@ footer {
   font-style: italic;
   font-weight: bolder;
 }
+
+@media (orientation: landscape) {
+  footer {
+    bottom: 10px;
+  }
+}
