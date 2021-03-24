@@ -44,6 +44,12 @@
   height: 60vh;
   padding-top: 20px;
 }
+.top10-list {
+  list-style: none;
+}
+.topInd-list {
+  list-style: none;
+}
 
 .button {
   margin: 3px 3px;
@@ -54,6 +60,9 @@
   border-radius: 5px;
   border: 0;
   color: white;
+}
+.descriptive-text {
+  color: rgba(255, 0, 0, 0.7);
 }
 
 @media only screen and (min-width: 768px) {
@@ -76,8 +85,4 @@
     margin-bottom: 200px;
     margin-top: 0px;
   }
-}
-
-.descriptive-text {
-  color: red;
 }
