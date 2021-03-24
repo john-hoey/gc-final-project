@@ -8,15 +8,17 @@
   color: white;
   border-radius: 5px;
   margin: 5px;
+  padding: 10px;
   text-align: center;
+  border: solid white 1px;
 }
 
 .button {
-  margin: 3px 3px;
+  margin: 5px 5px;
   padding: 3px;
   /* background-color: #357abf; */
   background: rgba(0, 0, 0, 0.7);
-
+  border: solid white 1px;
   border-radius: 5px;
   border: 0;
   color: white;
@@ -24,4 +26,32 @@
 
 .button:hover {
   background: rgba(255, 0, 0, 0.7);
+}
+
+@media only screen and (min-width: 768px) {
+  .button {
+    margin: 10px 10px;
+    padding: 10px;
+    /* background-color: #357abf; */
+    background: rgba(0, 0, 0, 0.7);
+
+    border-radius: 5px;
+    border: 0;
+    border: solid white 1px;
+    color: white;
+  }
+  .label {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+    border: solid white 1px;
+  }
+  .member-input {
+    padding: 10px;
+    margin: 5px;
+    width: 400px;
+  }
 }
