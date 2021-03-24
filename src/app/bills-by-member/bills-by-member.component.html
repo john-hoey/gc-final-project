@@ -28,6 +28,7 @@
       <div class="div-box">
         <p>{{ bill.sponsor_name }}</p>
         <a
+          class="hyper-link"
           routerLink="/bill-info"
           (click)="setService(bill.congress, bill.bill_id)"
         >
