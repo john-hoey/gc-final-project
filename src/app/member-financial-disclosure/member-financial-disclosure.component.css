@@ -62,7 +62,7 @@
   color: white;
 }
 .descriptive-text {
-  color: rgba(255, 0, 0, 0.7);
+  color: rgba(255, 0, 0, 0.9);
 }
 
 @media only screen and (min-width: 768px) {
