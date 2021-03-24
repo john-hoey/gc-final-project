@@ -1,3 +1,7 @@
+.bills-page-container {
+  display: flex;
+  flex-direction: column;
+}
 .div-box {
   border: white solid 1px;
   margin: 5px;
@@ -31,18 +35,24 @@
 .bills-list-container {
   display: flex;
   justify-content: center;
-  height: 65%;
+  width: 100vw;
+  height: 63vh;
+}
+
+.bills-list-content {
+  overflow-y: scroll;
+  height: 63vh;
+  /* width: 90vw; */
 }
 
 .bills-container {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
-  /* margin-right: 45px; */
+
   color: white;
-  /* display: flex;
-  flex-direction: column; */
+
   overflow-y: scroll;
-  width: 75%;
+  width: 90%;
   align-items: center;
 }
 

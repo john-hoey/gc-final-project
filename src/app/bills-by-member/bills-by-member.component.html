@@ -1,41 +1,45 @@
-<div class="member-search">
-  <app-member-position
-    (memberPositionEvent)="setMemberPosition($event)"
-  ></app-member-position>
-</div>
-<div class="button-container">
-  <button (click)="toggleMemberPosition()" class="buttons">
-    Show Member Position
-  </button>
-  <button (click)="toggleBillsById()" class="buttons">
-    Show Sponsored Bills
-  </button>
-</div>
-<div class="bills-list-container">
-  <ul *ngIf="showMemberPosition" class="bills-container">
-    <li *ngFor="let position of memberPosition">
-      <p>{{ position.member_id }}</p>
-      <div *ngFor="let votes of position.votes" class="div-box">
-        <p>{{ votes.position }}</p>
-        <p>{{ votes.bill.bill_id }}</p>
-        <p>{{ votes.description }}</p>
-      </div>
-    </li>
-  </ul>
+<div class="bills-page-container">
+  <div class="bill-page-header-butoons">
+    <div class="member-search">
+      <app-member-position
+        (memberPositionEvent)="setMemberPosition($event)"
+      ></app-member-position>
+    </div>
+    <div class="button-container">
+      <button (click)="toggleMemberPosition()" class="buttons">
+        Show Member Position
+      </button>
+      <button (click)="toggleBillsById()" class="buttons">
+        Show Sponsored Bills
+      </button>
+    </div>
+  </div>
+  <div class="bills-list-container">
+    <ul *ngIf="showMemberPosition" class="bills-container">
+      <li class="bills-list-content" *ngFor="let position of memberPosition">
+        <p>{{ position.member_id }}</p>
+        <div *ngFor="let votes of position.votes" class="div-box">
+          <p>{{ votes.position }}</p>
+          <p>{{ votes.bill.bill_id }}</p>
+          <p>{{ votes.description }}</p>
+        </div>
+      </li>
+    </ul>
 
-  <ul *ngIf="showBillsById" class="bills-container">
-    <li *ngFor="let bill of billsById">
-      <div class="div-box">
-        <p>{{ bill.sponsor_name }}</p>
-        <a
-          class="hyper-link"
-          routerLink="/bill-info"
-          (click)="setService(bill.congress, bill.bill_id)"
-        >
-          <p>{{ bill.bill_id }}</p>
-        </a>
-        <p>{{ bill.short_title }}</p>
-      </div>
-    </li>
-  </ul>
+    <ul *ngIf="showBillsById" class="bills-container">
+      <li *ngFor="let bill of billsById">
+        <div class="div-box">
+          <p>{{ bill.sponsor_name }}</p>
+          <a
+            class="hyper-link"
+            routerLink="/bill-info"
+            (click)="setService(bill.congress, bill.bill_id)"
+          >
+            <p>{{ bill.bill_id }}</p>
+          </a>
+          <p>{{ bill.short_title }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
