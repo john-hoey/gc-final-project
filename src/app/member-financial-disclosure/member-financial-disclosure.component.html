@@ -12,28 +12,67 @@
     <ul *ngIf="showCandSumm">
       <li class="summary-container">
         <h2>Financial Summary</h2>
-        <p><b>Candidate Name: </b>{{ candSummary?.cand_name }}</p>
-        <p><b>State: </b>{{ candSummary?.state }}</p>
+        <p>
+          <span class="descriptive-text"><b>Candidate Name: </b></span
+          >{{ candSummary?.cand_name }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>State: </b></span
+          >{{ candSummary?.state }}
+        </p>
         <!-- <p><b>Cycle of Reports: </b>{{ candSummary?.cycle }}</p> -->
         <!-- <p><b>Party: </b>{{ candSummary?.party }}</p>
         <p><b>Chamber: </b>{{ candSummary?.chamber }}</p> -->
-        <p><b>First Eected: </b>{{ candSummary?.first_elected }}</p>
-        <p><b>Next Election: </b>{{ candSummary?.next_election }}</p>
-        <p><b>Total Receipts Reported: $</b>{{ candSummary?.total }}</p>
-        <p><b>Total Expenditures Reported: $</b>{{ candSummary?.spent }}</p>
         <p>
-          <b>Total Cash on Hand Reported: $</b>{{ candSummary?.cash_on_hand }}
+          <span class="descriptive-text"><b>First Eected: </b></span
+          >{{ candSummary?.first_elected }}
         </p>
-        <p><b>Total Debts Reported: $</b>{{ candSummary?.debt }}</p>
-        <p><b>Candidate ID: </b>{{ candSummary?.cid }}</p>
-        <p><b>Source of Attribution: </b>{{ candSummary?.origin }}</p>
-        <p><b>Link to Source Data on OpenSecrets: </b></p>
+        <p>
+          <span class="descriptive-text"><b>Next Election: </b></span
+          >{{ candSummary?.next_election }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>Total Receipts Reported: </b></span
+          >${{ candSummary?.total }}
+        </p>
+        <p>
+          <span class="descriptive-text"
+            ><b>Total Expenditures Reported: </b></span
+          >${{ candSummary?.spent }}
+        </p>
+        <p>
+          <span class="descriptive-text"
+            ><b>Total Cash on Hand Reported: </b></span
+          >${{ candSummary?.cash_on_hand }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>Total Debts Reported: </b></span>${{
+            candSummary?.debt
+          }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>Candidate ID: </b></span
+          >{{ candSummary?.cid }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>Source of Attribution: </b></span
+          >{{ candSummary?.origin }}
+        </p>
+        <p>
+          <span class="descriptive-text"
+            ><b>Link to Source Data on OpenSecrets: </b></span
+          >
+        </p>
         <center>
           <p>
             {{ candSummary?.source }}
           </p>
         </center>
-        <p><b>Date of Last Filed Report: </b>{{ candSummary?.last_updated }}</p>
+        <p>
+          <span class="descriptive-text"
+            ><b>Date of Last Filed Report: </b></span
+          >{{ candSummary?.last_updated }}
+        </p>
         <!-- <p>------------------------------------------</p> -->
       </li>
     </ul>
