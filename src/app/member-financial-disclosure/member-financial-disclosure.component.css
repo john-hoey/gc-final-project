@@ -1,10 +1,125 @@
+/* Entire Page Container */
 .financial-page-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
-  /* width: 95vw; */
+  margin: 0 15px;
+  border-radius: 5px;
+  color: white;
+  border: solid white 1px;
+  width: 92vw;
+}
+/* Where Our Buttons and Page Header Live */
+.header-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.PFD-h1 {
+  text-align: center;
+}
+/* Buttons on the Page */
+.button {
+  margin: 3px 3px;
+  padding: 3px;
+  background: rgba(0, 0, 0, 0.7);
+  border: solid white 1px;
+  border-radius: 5px;
+  border: 0;
+  color: white;
+}
+/* Container for All the Lists */
+.financial-lists-container {
+  width: 90vw;
+  height: 65vh;
+}
+
+/* Summary List Container */
+.summary-container {
+  width: 90vw;
+}
+/* Summary List */
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+/* Top Contributing Industry Sectors List Container */
+.topInd-container {
+  overflow-y: scroll;
+  height: 63vh;
+}
+/* Top Contributing Industry Header List (attribution and link etc */
+.topInd-header-list {
+  list-style: none;
+}
+/* Top Contributing Industry Content List (the meat of it) */
+.topInd-content-list {
+  list-style: none;
+}
+/* Top 10 Contributors List Container */
+.top10-container {
+  overflow-y: scroll;
+  height: 63vh;
+}
+/* Top 10 Contributors Header List (explanatory text etc) */
+.top10-header-list {
+  list-style: none;
+}
+/* Top 10 Contributors Content List (the meat of it) */
+.top10-content-list {
+  list-style: none;
+}
+/* Top 10 Contributors Attribution List (where the data comes from) */
+.top10-attribution-list {
+  list-style: none;
+}
+/* Our Descriptive Text Span Style */
+.descriptive-text {
+  color: rgba(255, 0, 0, 0.9);
+  font-weight: bold;
+}
+
+@media only screen and (min-width: 768px) {
+  .financial-page-container {
+    position: relative;
+    left: 3%;
+  }
+
+  /* Summary List Container */
+  .summary-container {
+    height: 30vh;
+  }
+  .summary-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+  }
+  /* Top Contributing Industry Sectors List Container */
+  .topInd-container {
+    overflow-y: scroll;
+    height: 80vh;
+  }
+  /* Top 10 Contributors List Container */
+  .top10-container {
+    overflow-y: scroll;
+    height: 80vh;
+  }
+}
+
+/* .financial-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
   margin: 30px;
   border-radius: 5px;
   color: white;
@@ -15,15 +130,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* overflow-y: scroll; */
 }
 .summary-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  /* overflow-y: scroll; */
 }
 .top10-container {
   display: flex;
@@ -54,7 +166,6 @@
 .button {
   margin: 3px 3px;
   padding: 3px;
-  /* background-color: #357abf; */
   background: rgba(0, 0, 0, 0.7);
   border: solid white 1px;
   border-radius: 5px;
@@ -63,13 +174,13 @@
 }
 .descriptive-text {
   color: rgba(255, 0, 0, 0.9);
+  font-weight: bold;
 }
 
 @media only screen and (min-width: 768px) {
   .button {
     margin: 5px 5px;
     padding: 10px;
-    /* background-color: #357abf; */
     background: rgba(0, 0, 0, 0.7);
 
     border-radius: 5px;
@@ -85,4 +196,4 @@
     margin-bottom: 200px;
     margin-top: 0px;
   }
-}
+} */

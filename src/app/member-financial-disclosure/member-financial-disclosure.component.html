@@ -1,250 +1,169 @@
 <div class="financial-page-container">
-  <h1>Public Financial Disclosures</h1>
-
-  <button class="button" (click)="showCandSummary()">
-    Show Financial Summary
-  </button>
-  <button class="button" (click)="showTopIndustries()">
-    Show Total Contributions by Sector
-  </button>
-  <button class="button" (click)="showTopContributors()">
-    Show Top 10 Contributing Organizations
-  </button>
-  <div class="financial-container">
-    <ul *ngIf="showCandSumm">
-      <li class="summary-container">
-        <h2>Financial Summary</h2>
-        <p>
-          <span class="descriptive-text"><b>Candidate Name: </b></span
-          >{{ candSummary?.cand_name }}
-        </p>
-        <p>
-          <span class="descriptive-text"><b>State: </b></span
-          >{{ candSummary?.state }}
-        </p>
-        <!-- <p><b>Cycle of Reports: </b>{{ candSummary?.cycle }}</p> -->
-        <!-- <p><b>Party: </b>{{ candSummary?.party }}</p>
-        <p><b>Chamber: </b>{{ candSummary?.chamber }}</p> -->
-        <p>
-          <span class="descriptive-text"><b>First Eected: </b></span
-          >{{ candSummary?.first_elected }}
-        </p>
-        <p>
-          <span class="descriptive-text"><b>Next Election: </b></span
-          >{{ candSummary?.next_election }}
-        </p>
-        <p>
-          <span class="descriptive-text"><b>Total Receipts Reported: </b></span
-          >${{ candSummary?.total }}
-        </p>
-        <p>
-          <span class="descriptive-text"
-            ><b>Total Expenditures Reported: </b></span
-          >${{ candSummary?.spent }}
-        </p>
-        <p>
-          <span class="descriptive-text"
-            ><b>Total Cash on Hand Reported: </b></span
-          >${{ candSummary?.cash_on_hand }}
-        </p>
-        <p>
-          <span class="descriptive-text"><b>Total Debts Reported: </b></span>${{
-            candSummary?.debt
-          }}
-        </p>
-        <p>
-          <span class="descriptive-text"><b>Candidate ID: </b></span
-          >{{ candSummary?.cid }}
-        </p>
-        <p>
-          <span class="descriptive-text"><b>Source of Attribution: </b></span
-          >{{ candSummary?.origin }}
-        </p>
-        <p>
-          <span class="descriptive-text"
-            ><b>Link to Source Data on OpenSecrets: </b></span
-          >
-        </p>
-        <center>
+  <div class="header-buttons">
+    <h2 class="PFD-h1">Public Financial Disclosures</h2>
+    <button class="button" (click)="showCandSummary()">
+      Show Financial Summary
+    </button>
+    <button class="button" (click)="showTopIndustries()">
+      Show Total Contributions by Sector
+    </button>
+    <button class="button" (click)="showTopContributors()">
+      Show Top 10 Contributing Organizations
+    </button>
+  </div>
+  <div class="financial-lists-container">
+    <div class="summary-container">
+      <ul *ngIf="showCandSumm">
+        <li class="summary-list">
+          <h3>Financial Summary</h3>
+          <p>
+            <span class="descriptive-text">Candidate Name: </span
+            >{{ candSummary?.cand_name }}
+          </p>
+          <p>
+            <span class="descriptive-text">State: </span
+            >{{ candSummary?.state }}
+          </p>
+          <p>
+            <span class="descriptive-text">First Eected: </span
+            >{{ candSummary?.first_elected }}
+          </p>
+          <p>
+            <span class="descriptive-text">Next Election: </span
+            >{{ candSummary?.next_election }}
+          </p>
+          <p>
+            <span class="descriptive-text">Total Receipts Reported: </span>${{
+              candSummary?.total
+            }}
+          </p>
+          <p>
+            <span class="descriptive-text">Total Expenditures Reported: </span
+            >${{ candSummary?.spent }}
+          </p>
+          <p>
+            <span class="descriptive-text">Total Cash on Hand Reported: </span
+            >${{ candSummary?.cash_on_hand }}
+          </p>
+          <p>
+            <span class="descriptive-text">Total Debts Reported: </span>${{
+              candSummary?.debt
+            }}
+          </p>
+          <p>
+            <span class="descriptive-text">Candidate ID: </span
+            >{{ candSummary?.cid }}
+          </p>
+          <p>
+            <span class="descriptive-text">Source of Attribution: </span
+            >{{ candSummary?.origin }}
+          </p>
+          <p>
+            <span class="descriptive-text"
+              >Link to Source Data on OpenSecrets:
+            </span>
+          </p>
           <p>
             {{ candSummary?.source }}
           </p>
-        </center>
-        <p>
-          <span class="descriptive-text"
-            ><b>Date of Last Filed Report: </b></span
-          >{{ candSummary?.last_updated }}
-        </p>
-        <!-- <p>------------------------------------------</p> -->
-      </li>
-    </ul>
-
-    <!-- <ul *ngIf="memberPFD?.name">
-  <li>
-    <p><b>Member Name: </b>{{ memberPFD?.name }}</p>
-    <p><b>Data Year: </b>{{ memberPFD?.data_year }}</p>
-    <p><b>Member ID: </b>{{ memberPFD?.member_id }}</p>
-    <p>
-      <b>Calculated Low Range Value of Net Worth: </b>${{ memberPFD?.net_low }}
-    </p>
-    <p>
-      <b>Calculated High Range Value of Net Worth: </b>${{
-        memberPFD?.net_high
-      }}
-    </p>
-    <p>
-      <b>Number of Position Records: </b>{{ memberPFD?.positions_held_count }}
-    </p>
-    <p><b>Number of Asset Records: </b>{{ memberPFD?.asset_count }}</p>
-    <p>
-      <b>Calculated Low Range Value of Assets: </b>${{ memberPFD?.asset_low }}
-    </p>
-    <p>
-      <b>Calculated High Range Value of Assets: </b>${{ memberPFD?.asset_high }}
-    </p>
-    <p>
-      <b>Number of Transaction Records: </b>{{ memberPFD?.transaction_count }}
-    </p>
-    <p><b>Lowest Value of Transaction Range: </b>${{ memberPFD?.tx_low }}</p>
-    <p><b>Highest Value of Transaction Range: </b>${{ memberPFD?.tx_high }}</p>
-    <p><b>Link to Data Source: </b>{{ memberPFD?.source }}</p>
-    <p><b>Origin of Data: </b>{{ memberPFD?.origin }}</p>
-    <p><b>Last Updated: </b>{{ memberPFD?.update_timestamp }}</p>
-  </li>
-</ul>
-<ul *ngIf="memberPFDAssets[0]">
-  <h2>Assets</h2>
-  <li *ngFor="let asset of memberPFDAssets; index as i">
-    <p><b>Asset Name: </b>{{ asset?.name }}</p>
-    <p><b>Least Value of Asset's Worth: </b>${{ asset?.holdings_low }}</p>
-    <p><b>Most Value of Asset's Worth: </b>${{ asset?.holdings_high }}</p>
-    <p><b>Industry of Asset: </b>{{ asset?.industry }}</p>
-    <p><b>Industry Sector ID: </b>{{ asset?.sector }}</p>
-    <p><b>Parent Organization: </b>{{ asset?.subsidiary_of }}</p>
-  </li>
-</ul>
-<ul *ngIf="memberPFDTransactions[0]">
-  <h2>Transactions</h2>
-  <li *ngFor="let transaction of memberPFDTransactions; index as i">
-    <p><b>Asset Name: </b>{{ transaction?.asset_name }}</p>
-    <p><b>Date of Transaction: </b>{{ transaction?.tx_date }}</p>
-    <p><b>Bought, Sold, Exchanged: </b>{{ transaction?.tx_action }}</p>
-    <p><b>Minimum Value of Transaction: </b>${{ transaction?.value_low }}</p>
-    <p><b>Maximum Value of Transaction: </b>${{ transaction?.value_high }}</p>
-  </li>
-</ul>
-<ul *ngIf="memberPFDPositions[0]">
-  <h2>Positions</h2>
-  <li *ngFor="let position of memberPFDPositions; index as i">
-    <p><b>Position Title: </b>{{ position?.title }}</p>
-    <p>
-      <b>Organization With Which Position is Held: </b
-      >{{ position?.organization }}
-    </p>
-  </li>
-</ul> -->
-
-    <div class="top10-container" *ngIf="showTopCont">
-      <h2>Top 10 Contributing Organizations</h2>
-      <p>
-        <span class="descriptive-text"><b>Explanatory Text: </b></span
-        >{{ candTopContributors?.notice }}
-      </p>
-      <ul>
-        <!-- <li> -->
-        <!-- <p><b>Candidate Name (Party): </b>{{ candTopContributors?.cand_name }}</p> -->
-        <!-- <p><b>Candidate ID:</b>{{ candTopContributors?.cid }}</p> -->
-        <!-- <p><b>Cycle Year: </b>{{ candTopContributors?.cycle }}</p> -->
-        <!-- </li> -->
-
-        <li
-          class="top10-list"
-          *ngFor="let contributor of candTopContributor; index as i"
-        >
           <p>
-            <span class="descriptive-text"><b>Org Name: </b></span
-            >{{ contributor?.org_name }}
+            <span class="descriptive-text">Date of Last Filed Report: </span
+            >{{ candSummary?.last_updated }}
           </p>
-          <p>
-            <span class="descriptive-text"
-              ><b>Total From All Itemized Source: </b></span
-            >${{ contributor?.total }}
-          </p>
-          <p>
-            <span class="descriptive-text"
-              ><b>Total PAC Contributions: </b></span
-            >${{ contributor?.pacs }}
-          </p>
-          <p>
-            <span class="descriptive-text"
-              ><b>Total Individual Contributions: </b></span
-            >${{ contributor?.indivs }}
-          </p>
-        </li>
-      </ul>
-      <ul>
-        <li>
-          <p>
-            <span class="descriptive-text"><b>Attribution Origin: </b></span
-            >{{ candTopContributors?.origin }}
-          </p>
-          <p>
-            <span class="descriptive-text"><b>Link to Data: </b></span
-            >{{ candTopContributors?.source }}
-          </p>
-          <!-- <p>----------------------------------------</p> -->
         </li>
       </ul>
     </div>
-
     <div class="topInd-container" *ngIf="showTopInd">
-      <h2>Total Contributions by Sector:</h2>
       <ul>
-        <li class="topInd-list">
-          <!-- <p><b>Candidate Name (Party): </b>{{ candTopIndustries?.cand_name }}</p> -->
-          <!-- <p><b>Candidate ID:</b>{{ candTopIndustries?.cid }}</p> -->
-          <!-- <p><b>Cycle Year Reported: </b>{{ candTopIndustries?.cycle }}</p> -->
+        <li class="topInd-header-list">
+          <h3>Total Contributions by Sector:</h3>
           <p>
-            <span class="descriptive-text"><b>Attribution Origin: </b></span
+            <span class="descriptive-text">Attribution Origin: </span
             >{{ candTopIndustries?.origin }}
           </p>
           <p>
-            <span class="descriptive-text"><b>Link to Data: </b></span
+            <span class="descriptive-text">Link to Data: </span
             >{{ candTopIndustries?.source }}
           </p>
           <p>
-            <span class="descriptive-text"><b>Last Updated: </b></span
+            <span class="descriptive-text">Last Updated: </span
             >{{ candTopIndustries?.last_updated }}
           </p>
         </li>
-        <li *ngFor="let industry of candTopIndustry; index as i">
+        <li
+          class="topInd-content-list"
+          *ngFor="let industry of candTopIndustry; index as i"
+        >
           <p>
-            <span class="descriptive-text"><b>Sector Name: </b></span
+            <span class="descriptive-text">Sector Name: </span
             >{{ industry?.sector_name }}
           </p>
           <p>
-            <span class="descriptive-text"><b>SectorID: </b></span>${{
+            <span class="descriptive-text">SectorID: </span>${{
               industry?.sectorid
             }}
           </p>
           <p>
             <span class="descriptive-text"
-              ><b>Total Individual Contributions: </b></span
+              >Total Individual Contributions: </span
             >${{ industry?.indivs }}
           </p>
           <p>
-            <span class="descriptive-text"
-              ><b>Total PAC Contributions: </b></span
-            >${{ industry?.pacs }}
+            <span class="descriptive-text">Total PAC Contributions: </span>${{
+              industry?.pacs
+            }}
           </p>
           <p>
-            <span class="descriptive-text"
-              ><b>Total Itemized Contributions: </b></span
+            <span class="descriptive-text">Total Itemized Contributions: </span
             >${{ industry?.total }}
           </p>
         </li>
       </ul>
-      <!-- --------------------------------------------- -->
+    </div>
+    <div class="top10-container" *ngIf="showTopCont">
+      <ul>
+        <li class="top10-header-list">
+          <h3>Top 10 Contributing Organizations</h3>
+          <p>
+            <span class="descriptive-text">Explanatory Text: </span
+            >{{ candTopContributors?.notice }}
+          </p>
+        </li>
+        <li
+          class="top10-content-list"
+          *ngFor="let contributor of candTopContributor; index as i"
+        >
+          <p>
+            <span class="descriptive-text">Org Name: </span
+            >{{ contributor?.org_name }}
+          </p>
+          <p>
+            <span class="descriptive-text"
+              >Total From All Itemized Source: </span
+            >${{ contributor?.total }}
+          </p>
+          <p>
+            <span class="descriptive-text">Total PAC Contributions: </span>${{
+              contributor?.pacs
+            }}
+          </p>
+          <p>
+            <span class="descriptive-text"
+              >Total Individual Contributions: </span
+            >${{ contributor?.indivs }}
+          </p>
+        </li>
+        <li class="top10-attribution-list">
+          <p>
+            <span class="descriptive-text">Attribution Origin: </span
+            >{{ candTopContributors?.origin }}
+          </p>
+          <p>
+            <span class="descriptive-text">Link to Data: </span
+            >{{ candTopContributors?.source }}
+          </p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
