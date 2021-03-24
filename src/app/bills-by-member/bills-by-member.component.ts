@@ -23,7 +23,6 @@ export class BillsByMemberComponent implements OnInit {
     return this.voteService
       .getRecentBillsByMember(memberId)
       .subscribe((response: any) => {
-        console.log(response);
         this.billsById = response.results[0].bills;
       });
   };
