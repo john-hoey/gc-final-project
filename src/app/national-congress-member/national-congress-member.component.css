@@ -1,21 +1,27 @@
-.member-container {
+.member-page-container {
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
   color: white;
   border-radius: 5px;
+  /* width: 5vw; */
 }
 .member-list-container {
   background-color: rgba(0, 0, 0, 0.8);
   width: 95vw;
+  height: 65vh;
   border-radius: 5px;
+  /* overflow-x: hidden; */
 }
 .member-container {
   background-color: rgba(0, 0, 0, 0);
   color: white;
   list-style: none;
   margin: 4px 2px;
+  height: 65vh;
+  /* width: 95vw; */
+  overflow: scroll;
 }
 .office-div {
   display: flex;
@@ -26,12 +32,22 @@
 }
 
 .p-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 5px 0px;
 }
 .descriptive-text {
   color: red;
+  font-weight: bold;
 }
-
+.buttons-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .button {
   margin-top: 10px;
   /* background-color: #ed3338; */

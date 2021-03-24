@@ -1,73 +1,73 @@
-<div class="member-container">
+<div class="member-page-container">
   <ul class="member-list-container">
     <li class="member-container">
       <p class="p-container">
-        <span class="descriptive-text"><b>Name (Party): </b></span
-        >{{ congressMember?.firstlast }}
-        <b>({{ congressMember?.party }})</b>
+        <span class="descriptive-text">Name (Party): </span
+        >{{ congressMember?.firstlast }} ({{ congressMember?.party }})
       </p>
       <p class="p-container" *ngIf="congressMember?.birthdate">
-        <span class="descriptive-text"><b>D.O.B: </b></span
+        <span class="descriptive-text">D.O.B: </span
         >{{ congressMember?.birthdate }}
       </p>
       <p class="p-container" *ngIf="congressMember?.gender">
-        <span class="descriptive-text"><b>Gender: </b></span
+        <span class="descriptive-text">Gender: </span
         >{{ congressMember?.gender }}
       </p>
       <p class="p-container" *ngIf="congressMember?.first_elected">
-        <span class="descriptive-text"><b>First Elected: </b></span
+        <span class="descriptive-text">First Elected: </span
         >{{ congressMember?.first_elected }}
       </p>
       <div class="office-div" *ngIf="congressMember?.congress_office">
         <p>
-          <span class="descriptive-text"><b>Office Address: </b></span>
+          <span class="descriptive-text">Office Address: </span>
         </p>
         <p>{{ congressMember?.congress_office }},</p>
         <p>27 Independence Ave SE,</p>
         <p>Washington, DC 20003</p>
       </div>
       <p class="p-container" *ngIf="congressMember?.office">
-        <span class="descriptive-text"><b>Held Office ID: </b></span
+        <span class="descriptive-text">Held Office ID: </span
         >{{ congressMember?.office }}
       </p>
       <p class="p-container" *ngIf="congressMember?.fax">
-        <span class="descriptive-text"><b>Fax #: </b></span
-        >{{ congressMember?.fax }}
+        <span class="descriptive-text">Fax #: </span>{{ congressMember?.fax }}
       </p>
       <p class="p-container" *ngIf="congressMember?.phone">
-        <span class="descriptive-text"><b>Phone Number: </b></span
+        <span class="descriptive-text">Phone Number: </span
         >{{ congressMember?.phone }}
       </p>
-      <p class="p-container" *ngIf="congressMember?.twitter_id">
-        <span class="descriptive-text"><b>Twitter: </b></span
-        >http://twitter.com/{{ congressMember?.twitter_id }}
-      </p>
-      <p class="p-container" *ngIf="congressMember?.facebook_id">
-        <span class="descriptive-text"><b>Facebook: </b></span
-        >http://facebook.com/{{ congressMember?.facebook_id }}
-      </p>
-      <p class="p-container" *ngIf="congressMember?.youtube_url">
-        <span class="descriptive-text"><b>Youtube: </b></span
-        >http://facebook.com/{{ congressMember?.youtube_url }}
-      </p>
-      <p class="p-container" *ngIf="congressMember?.website">
-        <span class="descriptive-text"><b>Website: </b></span
-        >{{ congressMember?.website }}
-      </p>
+      <div class="p-container" *ngIf="congressMember?.twitter_id">
+        <div><span class="descriptive-text">Twitter: </span></div>
+        <p>http://twitter.com/{{ congressMember?.twitter_id }}</p>
+      </div>
+      <div class="p-container" *ngIf="congressMember?.facebook_id">
+        <div><span class="descriptive-text">Facebook: </span></div>
+        <p>http://facebook.com/{{ congressMember?.facebook_id }}</p>
+      </div>
+      <div class="p-container" *ngIf="congressMember?.youtube_url">
+        <div><span class="descriptive-text">Youtube: </span></div>
+        <p>http://youtube.com/{{ congressMember?.youtube_url }}</p>
+      </div>
+      <div class="p-container" *ngIf="congressMember?.website">
+        <div><span class="descriptive-text">Website: </span></div>
+        <p>{{ congressMember?.website }}</p>
+      </div>
       <p class="p-container" *ngIf="congressMember?.cid">
-        <span class="descriptive-text"><b>OpenSecrets ID: </b></span
+        <span class="descriptive-text">OpenSecrets ID: </span
         >{{ congressMember?.cid }}
       </p>
       <p class="p-container" *ngIf="congressMember?.bioguide_id">
-        <span class="descriptive-text"><b>ProPublica ID: </b></span
+        <span class="descriptive-text">ProPublica ID: </span
         >{{ congressMember?.bioguide_id }}
       </p>
       <p class="p-container" *ngIf="congressMember?.feccandid">
-        <span class="descriptive-text"><b>FEC ID: </b></span
+        <span class="descriptive-text">FEC ID: </span
         >{{ congressMember?.feccandid }}
       </p>
     </li>
   </ul>
+</div>
+<div class="buttons-div">
   <button
     class="button"
     (click)="showMemberPublicFinancialDisclosure(congressMember?.cid)"
