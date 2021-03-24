@@ -14,28 +14,67 @@
     <ul *ngIf="showCandSumm">
       <li class="summary-container">
         <h2>Financial Summary</h2>
-        <p><b>Candidate Name: </b>{{ candSummary?.cand_name }}</p>
-        <p><b>State: </b>{{ candSummary?.state }}</p>
+        <p>
+          <span class="descriptive-text"><b>Candidate Name: </b></span
+          >{{ candSummary?.cand_name }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>State: </b></span
+          >{{ candSummary?.state }}
+        </p>
         <!-- <p><b>Cycle of Reports: </b>{{ candSummary?.cycle }}</p> -->
         <!-- <p><b>Party: </b>{{ candSummary?.party }}</p>
         <p><b>Chamber: </b>{{ candSummary?.chamber }}</p> -->
-        <p><b>First Eected: </b>{{ candSummary?.first_elected }}</p>
-        <p><b>Next Election: </b>{{ candSummary?.next_election }}</p>
-        <p><b>Total Receipts Reported: $</b>{{ candSummary?.total }}</p>
-        <p><b>Total Expenditures Reported: $</b>{{ candSummary?.spent }}</p>
         <p>
-          <b>Total Cash on Hand Reported: $</b>{{ candSummary?.cash_on_hand }}
+          <span class="descriptive-text"><b>First Eected: </b></span
+          >{{ candSummary?.first_elected }}
         </p>
-        <p><b>Total Debts Reported: $</b>{{ candSummary?.debt }}</p>
-        <p><b>Candidate ID: </b>{{ candSummary?.cid }}</p>
-        <p><b>Source of Attribution: </b>{{ candSummary?.origin }}</p>
-        <p><b>Link to Source Data on OpenSecrets: </b></p>
+        <p>
+          <span class="descriptive-text"><b>Next Election: </b></span
+          >{{ candSummary?.next_election }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>Total Receipts Reported: </b></span
+          >${{ candSummary?.total }}
+        </p>
+        <p>
+          <span class="descriptive-text"
+            ><b>Total Expenditures Reported: </b></span
+          >${{ candSummary?.spent }}
+        </p>
+        <p>
+          <span class="descriptive-text"
+            ><b>Total Cash on Hand Reported: </b></span
+          >${{ candSummary?.cash_on_hand }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>Total Debts Reported: </b></span>${{
+            candSummary?.debt
+          }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>Candidate ID: </b></span
+          >{{ candSummary?.cid }}
+        </p>
+        <p>
+          <span class="descriptive-text"><b>Source of Attribution: </b></span
+          >{{ candSummary?.origin }}
+        </p>
+        <p>
+          <span class="descriptive-text"
+            ><b>Link to Source Data on OpenSecrets: </b></span
+          >
+        </p>
         <center>
           <p>
             {{ candSummary?.source }}
           </p>
         </center>
-        <p><b>Date of Last Filed Report: </b>{{ candSummary?.last_updated }}</p>
+        <p>
+          <span class="descriptive-text"
+            ><b>Date of Last Filed Report: </b></span
+          >{{ candSummary?.last_updated }}
+        </p>
         <!-- <p>------------------------------------------</p> -->
       </li>
     </ul>
@@ -107,7 +146,10 @@
 
     <div class="top10-container" *ngIf="showTopCont">
       <h2>Top 10 Contributing Organizations</h2>
-      <p><b>Explanatory Text: </b>{{ candTopContributors?.notice }}</p>
+      <p>
+        <span class="descriptive-text"><b>Explanatory Text: </b></span
+        >{{ candTopContributors?.notice }}
+      </p>
       <ul>
         <!-- <li> -->
         <!-- <p><b>Candidate Name (Party): </b>{{ candTopContributors?.cand_name }}</p> -->
@@ -115,22 +157,42 @@
         <!-- <p><b>Cycle Year: </b>{{ candTopContributors?.cycle }}</p> -->
         <!-- </li> -->
 
-        <li *ngFor="let contributor of candTopContributor; index as i">
-          <p><b>Org Name: </b>{{ contributor?.org_name }}</p>
+        <li
+          class="top10-list"
+          *ngFor="let contributor of candTopContributor; index as i"
+        >
           <p>
-            <b>Total From All Itemized Source: </b>${{ contributor?.total }}
+            <span class="descriptive-text"><b>Org Name: </b></span
+            >{{ contributor?.org_name }}
           </p>
-          <p><b>Total PAC Contributions: </b>${{ contributor?.pacs }}</p>
           <p>
-            <b>Total Individual Contributions: </b>${{ contributor?.indivs }}
+            <span class="descriptive-text"
+              ><b>Total From All Itemized Source: </b></span
+            >${{ contributor?.total }}
+          </p>
+          <p>
+            <span class="descriptive-text"
+              ><b>Total PAC Contributions: </b></span
+            >${{ contributor?.pacs }}
+          </p>
+          <p>
+            <span class="descriptive-text"
+              ><b>Total Individual Contributions: </b></span
+            >${{ contributor?.indivs }}
           </p>
         </li>
       </ul>
       <ul>
         <li>
-          <p><b>Attribution Origin: </b>{{ candTopContributors?.origin }}</p>
-          <p><b>Link to Data: </b>{{ candTopContributors?.source }}</p>
-          <p>----------------------------------------</p>
+          <p>
+            <span class="descriptive-text"><b>Attribution Origin: </b></span
+            >{{ candTopContributors?.origin }}
+          </p>
+          <p>
+            <span class="descriptive-text"><b>Link to Data: </b></span
+            >{{ candTopContributors?.source }}
+          </p>
+          <!-- <p>----------------------------------------</p> -->
         </li>
       </ul>
     </div>
@@ -138,23 +200,51 @@
     <div class="topInd-container" *ngIf="showTopInd">
       <h2>Total Contributions by Sector:</h2>
       <ul>
-        <li>
+        <li class="topInd-list">
           <!-- <p><b>Candidate Name (Party): </b>{{ candTopIndustries?.cand_name }}</p> -->
           <!-- <p><b>Candidate ID:</b>{{ candTopIndustries?.cid }}</p> -->
           <!-- <p><b>Cycle Year Reported: </b>{{ candTopIndustries?.cycle }}</p> -->
-          <p><b>Attribution Origin: </b>{{ candTopIndustries?.origin }}</p>
-          <p><b>Link to Data: </b>{{ candTopIndustries?.source }}</p>
-          <p><b>Last Updated: </b>{{ candTopIndustries?.last_updated }}</p>
+          <p>
+            <span class="descriptive-text"><b>Attribution Origin: </b></span
+            >{{ candTopIndustries?.origin }}
+          </p>
+          <p>
+            <span class="descriptive-text"><b>Link to Data: </b></span
+            >{{ candTopIndustries?.source }}
+          </p>
+          <p>
+            <span class="descriptive-text"><b>Last Updated: </b></span
+            >{{ candTopIndustries?.last_updated }}
+          </p>
         </li>
         <li *ngFor="let industry of candTopIndustry; index as i">
-          <p><b>Sector Name: </b>{{ industry?.sector_name }}</p>
-          <p><b>SectorID: </b>${{ industry?.sectorid }}</p>
-          <p><b>Total Individual Contributions: </b>${{ industry?.indivs }}</p>
-          <p><b>Total PAC Contributions: </b>${{ industry?.pacs }}</p>
-          <p><b>Total Itemized Contributions: </b>${{ industry?.total }}</p>
+          <p>
+            <span class="descriptive-text"><b>Sector Name: </b></span
+            >{{ industry?.sector_name }}
+          </p>
+          <p>
+            <span class="descriptive-text"><b>SectorID: </b></span>${{
+              industry?.sectorid
+            }}
+          </p>
+          <p>
+            <span class="descriptive-text"
+              ><b>Total Individual Contributions: </b></span
+            >${{ industry?.indivs }}
+          </p>
+          <p>
+            <span class="descriptive-text"
+              ><b>Total PAC Contributions: </b></span
+            >${{ industry?.pacs }}
+          </p>
+          <p>
+            <span class="descriptive-text"
+              ><b>Total Itemized Contributions: </b></span
+            >${{ industry?.total }}
+          </p>
         </li>
       </ul>
-      ---------------------------------------------
+      <!-- --------------------------------------------- -->
     </div>
   </div>
 </div>
