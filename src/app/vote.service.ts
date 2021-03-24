@@ -20,6 +20,9 @@ export class VoteService {
   headerProPublica: string = secret.headers;
   GcivAddress: string;
   ppId: string;
+  congress: string;
+  billId: any;
+  memberId: string;
 
   constructor(private http: HttpClient) {}
 
@@ -301,5 +304,34 @@ export class VoteService {
         levels: 'administrativeArea1',
       },
     });
+  };
+  // https://api.propublica.org/congress/v1/115/bills/hr21.json
+  getBillById = (congress: string, billId: string) => {
+    return this.http.get(`${this.proPublicaUrl}${congress}/bills/${billId}`, {
+      headers: {
+        'X-API-Key': this.headerProPublica,
+      },
+    });
+  };
+
+  setCongressAndBillId = (congress: string, billid: string) => {
+    this.congress = congress;
+    this.billId = billid.split('-');
+  };
+
+  getCongress = () => {
+    return this.congress;
+  };
+
+  getBillId = () => {
+    return this.billId[0];
+  };
+
+  setMemberId = (memberId: string) => {
+    this.memberId = memberId;
+  };
+
+  getMemberId = () => {
+    return this.memberId;
   };
 }

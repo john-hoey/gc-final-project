@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ApiTestComponent } from './api-test/api-test.component';
 import { ApiTest2Component } from './api-test2/api-test2.component';
 import { ApiTest3Component } from './api-test3/api-test3.component';
+import { BillInfoComponent } from './bill-info/bill-info.component';
 import { BillsByMemberComponent } from './bills-by-member/bills-by-member.component';
 
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
 
   { path: 'google-civic', component: GoogleCivicComponent },
   { path: 'bills-by-member', component: BillsByMemberComponent },
+  { path: 'bill-info', component: BillInfoComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: FourOhFourComponent }, // Wildcard route for a 404 page
 ];

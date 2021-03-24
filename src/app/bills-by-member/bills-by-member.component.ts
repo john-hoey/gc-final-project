@@ -23,6 +23,7 @@ export class BillsByMemberComponent implements OnInit {
     return this.voteService
       .getRecentBillsByMember(memberId)
       .subscribe((response: any) => {
+        console.log(response);
         this.billsById = response.results[0].bills;
       });
   };
@@ -35,8 +36,10 @@ export class BillsByMemberComponent implements OnInit {
       });
   };
   setMemberPosition = (searchTerm: string) => {
-    this.getAndSetMemberPosition(searchTerm);
-    this.getAndSetBillsById(searchTerm);
+    this.voteService.setMemberId(searchTerm);
+    this.getAndSetMemberPosition(this.voteService.getMemberId());
+    this.getAndSetBillsById(this.voteService.getMemberId());
+    this.voteService.setPPId(searchTerm);
   };
 
   toggleMemberPosition = () => {
@@ -61,5 +64,9 @@ export class BillsByMemberComponent implements OnInit {
     this.ppIdFromService = this.voteService.getPPId();
     this.getAndSetBillsById(this.ppIdFromService);
     this.getAndSetMemberPosition(this.ppIdFromService);
+  };
+
+  setService = (congress: string, billId: string) => {
+    this.voteService.setCongressAndBillId(congress, billId);
   };
 }

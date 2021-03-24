@@ -27,7 +27,12 @@
     <li *ngFor="let bill of billsById">
       <div class="div-box">
         <p>{{ bill.sponsor_name }}</p>
-        <p>{{ bill.bill_id }}</p>
+        <a
+          routerLink="/bill-info"
+          (click)="setService(bill.congress, bill.bill_id)"
+        >
+          <p>{{ bill.bill_id }}</p>
+        </a>
         <p>{{ bill.short_title }}</p>
       </div>
     </li>

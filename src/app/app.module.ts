@@ -26,6 +26,7 @@ import { MemberPositionComponent } from './member-position/member-position.compo
 import { NationalCongressMemberComponent } from './national-congress-member/national-congress-member.component';
 import { MemberFinancialDisclosureComponent } from './member-financial-disclosure/member-financial-disclosure.component';
 import { BillsByMemberComponent } from './bills-by-member/bills-by-member.component';
+import { BillInfoComponent } from './bill-info/bill-info.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { BillsByMemberComponent } from './bills-by-member/bills-by-member.compon
     NationalCongressMemberComponent,
     MemberFinancialDisclosureComponent,
     BillsByMemberComponent,
+    BillInfoComponent,
   ],
   imports: [
     BrowserModule,
