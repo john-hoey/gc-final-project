@@ -1,15 +1,18 @@
-<form
-  class="member-search-form"
-  #memberPositionForm="ngForm"
-  (ngSubmit)="emitMemberPosition(memberPositionForm)"
->
-  <label for="memberPositionId" class="label">Search for member Id</label>
-  <input
-    type="text"
-    id="memberPositionId"
-    name="memberPositionId"
-    placeholder="Enter member Id"
-    ngModel
-  />
-  <button class="button">Search</button>
-</form>
+<div class="label">
+  <form
+    class="member-search-form"
+    #memberPositionForm="ngForm"
+    (ngSubmit)="emitMemberPosition(memberPositionForm)"
+  >
+    <label for="memberPositionId">Search for member Id</label>
+    <input
+      class="member-input"
+      type="text"
+      id="memberPositionId"
+      name="memberPositionId"
+      placeholder="Enter member Id"
+      ngModel
+    />
+    <button class="button">Search</button>
+  </form>
+</div>
