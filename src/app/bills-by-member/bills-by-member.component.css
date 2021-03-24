@@ -46,6 +46,10 @@
   align-items: center;
 }
 
+.hyper-link {
+  color: rgba(255, 0, 0, 0.7);
+}
+
 @media only screen and (min-width: 768px) {
   .buttons {
     margin: 10px 10px;
