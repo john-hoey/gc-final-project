@@ -22,6 +22,7 @@ export class VoteService {
   ppId: string;
   congress: string;
   billId: any;
+  memberId: string;
 
   constructor(private http: HttpClient) {}
 
@@ -324,5 +325,13 @@ export class VoteService {
 
   getBillId = () => {
     return this.billId[0];
+  };
+
+  setMemberId = (memberId: string) => {
+    this.memberId = memberId;
+  };
+
+  getMemberId = () => {
+    return this.memberId;
   };
 }

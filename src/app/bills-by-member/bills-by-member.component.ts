@@ -36,8 +36,10 @@ export class BillsByMemberComponent implements OnInit {
       });
   };
   setMemberPosition = (searchTerm: string) => {
-    this.getAndSetMemberPosition(searchTerm);
-    this.getAndSetBillsById(searchTerm);
+    this.voteService.setMemberId(searchTerm);
+    this.getAndSetMemberPosition(this.voteService.getMemberId());
+    this.getAndSetBillsById(this.voteService.getMemberId());
+    this.voteService.setPPId(searchTerm);
   };
 
   toggleMemberPosition = () => {
