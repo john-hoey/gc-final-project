@@ -77,13 +77,19 @@
     height: 38vh;
   }
 }
-@media only screen and (min-width: 768px) {
+/* @media only screen and (min-width: 768) and (max-height: 690px) {
+  .member-container {
+    height: 70vh;
+  }
+} */
+@media only screen and (min-width: 768px) and (min-height: 690px) {
   .member-list-container {
     height: 70vh;
   }
   .member-container {
     height: 69vh;
     overflow-x: hidden;
+    overflow-y: scroll;
     font-size: large;
   }
 }

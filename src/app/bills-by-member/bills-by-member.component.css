@@ -68,7 +68,7 @@
     height: 40vh;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (min-height: 690px) {
   .buttons {
     margin: 10px 10px;
     padding: 10px;
