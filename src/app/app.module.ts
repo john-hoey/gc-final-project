@@ -6,11 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
-import { ApiTestComponent } from './api-test/api-test.component';
+
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ApiTest2Component } from './api-test2/api-test2.component';
-import { ApiTest3Component } from './api-test3/api-test3.component';
+
 import { SearchLegislatorsComponent } from './search-legislators/search-legislators.component';
 import { SearchStatementsComponent } from './search-statements/search-statements.component';
 import { SearchBillsComponent } from './search-bills/search-bills.component';
@@ -33,11 +32,10 @@ import { BillInfoComponent } from './bill-info/bill-info.component';
     AppComponent,
     HomeComponent,
     FourOhFourComponent,
-    ApiTestComponent,
+
     HeaderComponent,
     FooterComponent,
-    ApiTest2Component,
-    ApiTest3Component,
+
     SearchLegislatorsComponent,
     SearchStatementsComponent,
     SearchBillsComponent,
@@ -62,7 +60,7 @@ import { BillInfoComponent } from './bill-info/bill-info.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [ApiTest3Component, BillsFromMemberComponent],
+  providers: [BillsFromMemberComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

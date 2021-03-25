@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ApiTestComponent } from './api-test/api-test.component';
-import { ApiTest2Component } from './api-test2/api-test2.component';
-import { ApiTest3Component } from './api-test3/api-test3.component';
+
 import { BillInfoComponent } from './bill-info/bill-info.component';
 import { BillsByMemberComponent } from './bills-by-member/bills-by-member.component';
 
@@ -15,9 +13,7 @@ import { NationalCongressComponent } from './national-congress/national-congress
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'api-test', component: ApiTestComponent },
-  { path: 'api-test2', component: ApiTest2Component },
-  { path: 'api-test3', component: ApiTest3Component },
+
   { path: 'national-congress', component: NationalCongressComponent },
   {
     path: 'national-congress/member-details/:id',
