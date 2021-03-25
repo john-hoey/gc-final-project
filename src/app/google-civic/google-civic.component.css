@@ -10,7 +10,7 @@
 .list-background {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
-
+  overflow-x: hidden;
   color: white;
   display: flex;
   flex-direction: column;
