@@ -1,25 +1,27 @@
 <div class="parent-container">
   <ul class="list-parent">
-    <li class="list-container" *ngFor="let dog of specificBill">
+    <li class="list-container" *ngFor="let info of specificBill">
       <button class="return-button" routerLink="/bills-by-member">X</button>
-      <p><i class="titles">Bill Number</i>: {{ dog.bill }}</p>
-      <p><i class="titles">Committees</i>: {{ dog.committees }}</p>
-      <a class="hyper-links" href="{{ dog.congressdotgov_url }}"
+      <p><i class="titles">Bill Number</i>: {{ info.bill }}</p>
+      <p><i class="titles">Committees</i>: {{ info.committees }}</p>
+      <a class="hyper-links" href="{{ info.congressdotgov_url }}"
         >Congress.gov</a
       >
-      <a class="hyper-links" href="{{ dog.govtrack_url }}"><p>GovTrack</p></a>
-      <p><i class="titles"> Major Action</i>: {{ dog.latest_major_action }}</p>
+      <a class="hyper-links" href="{{ info.govtrack_url }}"><p>GovTrack</p></a>
+      <p><i class="titles"> Major Action</i>: {{ info.latest_major_action }}</p>
       <p>
         <i class="titles">Date Since latest Action</i>:
-        {{ dog.latest_major_action_date }}
+        {{ info.latest_major_action_date }}
       </p>
       <p>
         <i class="titles">Presidential Statements</i>:
-        {{ dog.presidential_statements }}
+        {{ info.presidential_statements }}
       </p>
 
-      <p><i class="titles">Title</i>: <br />{{ dog.title }}</p>
-      <p><i class="titles">Summary</i>: {{ dog.summary }}</p>
+      <p><i class="titles">Title</i>: <br />{{ info.title }}</p>
+      <p *ngIf="info.summary">
+        <i class="titles">Summary</i>: {{ info.summary }}
+      </p>
     </li>
   </ul>
 </div>
