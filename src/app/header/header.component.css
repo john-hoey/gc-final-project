@@ -3,9 +3,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 15px;
-  /* background: rgba(0, 0, 0, 0.2); */
-  /* background-color: #ed3338; */
-  /* background-color: #14682e; */
+
   flex: 1;
 
   align-items: center;
@@ -38,7 +36,6 @@
   padding: 3px 10px;
 }
 .header-local:hover {
-  /* background-color: #357abf; */
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
 }
@@ -51,7 +48,6 @@
 }
 
 .header-national-congress:hover {
-  /* background-color: #357abf; */
   background: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
 }

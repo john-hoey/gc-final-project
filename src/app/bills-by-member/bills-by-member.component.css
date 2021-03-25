@@ -20,7 +20,7 @@
 .buttons {
   margin: 3px 3px;
   padding: 3px;
-  /* background-color: #357abf; */
+
   background: rgba(0, 0, 0, 0.7);
   border: solid white 1px;
   border-radius: 5px;
@@ -42,7 +42,6 @@
 .bills-list-content {
   /* overflow-y: scroll; */
   height: 63vh;
-  /* width: 90vw; */
 }
 
 .member-id {
@@ -69,7 +68,7 @@
   .buttons {
     margin: 10px 10px;
     padding: 10px;
-    /* background-color: #357abf; */
+
     background: rgba(0, 0, 0, 0.7);
 
     border-radius: 5px;
