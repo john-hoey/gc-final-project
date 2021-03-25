@@ -40,9 +40,14 @@
 }
 
 .bills-list-content {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   height: 63vh;
   /* width: 90vw; */
+}
+
+.member-id {
+  padding-top: 5px;
+  padding-left: 10px;
 }
 
 .bills-container {

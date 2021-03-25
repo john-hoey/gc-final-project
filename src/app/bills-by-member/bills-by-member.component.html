@@ -17,7 +17,7 @@
   <div class="bills-list-container">
     <ul *ngIf="showMemberPosition" class="bills-container">
       <li class="bills-list-content" *ngFor="let position of memberPosition">
-        <p>{{ position.member_id }}</p>
+        <p class="member-id">{{ position.member_id }}</p>
         <div *ngFor="let votes of position.votes" class="div-box">
           <p>{{ votes.position }}</p>
           <p>{{ votes.bill.bill_id }}</p>
