@@ -10,9 +10,10 @@
   color: white;
   border-radius: 5px;
 }
+
 .h4-leg {
   color: white;
-  font-size: larger;
+  font-size: medium;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 3px;
   border-radius: 5px;
@@ -21,6 +22,8 @@
   background-color: rgba(0, 0, 0, 0.8);
   width: 95vw;
   border-radius: 5px;
+  overflow-y: scroll;
+  height: 55vh;
 }
 .leg-container {
   background-color: rgba(0, 0, 0, 0);
@@ -28,10 +31,33 @@
   list-style: none;
   margin: 6px 5px;
 }
+.party-span {
+  font-weight: bold;
+}
+.no-info-span {
+  font-style: italic;
+  color: red;
+}
 
 .footnote {
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
   margin: 8px 5px 5px 5px;
   border-radius: 5px;
+}
+@media only screen and (orientation: landscape) {
+  .leg-list-container {
+    height: 20vh;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .leg-list-container {
+    overflow-y: hidden;
+    height: 100%;
+    width: 60vw;
+    font-size: larger;
+  }
+  .leg-paragraph:hover {
+    color: red;
+  }
 }

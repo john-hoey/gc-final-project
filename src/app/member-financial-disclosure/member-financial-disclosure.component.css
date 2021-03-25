@@ -14,6 +14,7 @@
 /* Where Our Buttons and Page Header Live */
 .header-buttons {
   display: flex;
+  /* margin-left: 1%; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -23,6 +24,11 @@
 }
 .PFD-h1 {
   text-align: center;
+  font-size: medium;
+}
+
+.buttons-div {
+  display: flex;
 }
 /* Buttons on the Page */
 .button {
@@ -43,6 +49,7 @@
 /* Summary List Container */
 .summary-container {
   width: 90vw;
+  /* margin-left: 2%; */
   /* background-color: rgba(0, 0, 0, 0.7);
   border: solid white 1px;
   border-radius: 10px; */
@@ -51,15 +58,19 @@
 .summary-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
   /* justify-content: center;
   align-items: center; */
   background-color: rgba(0, 0, 0, 0.7);
   border: solid white 1px;
   border-radius: 5px;
+  overflow-y: scroll;
+  height: 60vh;
 }
 
 /* Top Contributing Industry Sectors List Container */
 .topInd-container {
+  /* margin-left: 5%; */
   overflow-y: scroll;
   height: 63vh;
   background-color: rgba(0, 0, 0, 0.7);
@@ -69,10 +80,17 @@
 /* Top Contributing Industry Header List (attribution and link etc */
 .topInd-header-list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* Top Contributing Industry Content List (the meat of it) */
 .topInd-content-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   list-style: none;
+  border: 1px solid white;
 }
 /* Top 10 Contributors List Container */
 .top10-container {
@@ -81,17 +99,28 @@
   background-color: rgba(0, 0, 0, 0.7);
   border: solid white 1px;
   border-radius: 10px;
+  /* margin-left: 5%; */
 }
 /* Top 10 Contributors Header List (explanatory text etc) */
 .top10-header-list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 /* Top 10 Contributors Content List (the meat of it) */
 .top10-content-list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
 }
 /* Top 10 Contributors Attribution List (where the data comes from) */
 .top10-attribution-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   list-style: none;
 }
 /* Our Descriptive Text Span Style */
@@ -99,7 +128,18 @@
   color: rgba(255, 0, 0, 0.9);
   font-weight: bold;
 }
-
+@media only screen and (orientation: landscape) {
+  .summary-list {
+    height: 40vh;
+  }
+  .top10-container {
+    height: 45vh;
+    /* margin-left: 5%; */
+  }
+  .topInd-container {
+    height: 45vh;
+  }
+}
 @media only screen and (min-width: 768px) {
   .financial-page-container {
     position: relative;
@@ -113,8 +153,8 @@
   .summary-list {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     list-style: none;
   }
   /* Top Contributing Industry Sectors List Container */
@@ -129,87 +169,3 @@
     background-color: rgba(0, 0, 0, 0.7);
   }
 }
-
-/* .financial-page-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  margin: 30px;
-  border-radius: 5px;
-  color: white;
-  border: solid white 1px;
-}
-.financial-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.summary-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.top10-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: scroll;
-  height: 60vh;
-  padding-top: 20px;
-}
-
-.topInd-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow-y: scroll;
-  height: 60vh;
-  padding-top: 20px;
-}
-.top10-list {
-  list-style: none;
-}
-.topInd-list {
-  list-style: none;
-}
-
-.button {
-  margin: 3px 3px;
-  padding: 3px;
-  background: rgba(0, 0, 0, 0.7);
-  border: solid white 1px;
-  border-radius: 5px;
-  border: 0;
-  color: white;
-}
-.descriptive-text {
-  color: rgba(255, 0, 0, 0.9);
-  font-weight: bold;
-}
-
-@media only screen and (min-width: 768px) {
-  .button {
-    margin: 5px 5px;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
-
-    border-radius: 5px;
-    border: 0;
-    color: white;
-    border: solid white 1px;
-  }
-  .button:hover {
-    background: rgba(255, 0, 0, 0.7);
-  }
-  .financial-page-container {
-    margin: 250px;
-    margin-bottom: 200px;
-    margin-top: 0px;
-  }
-} */
