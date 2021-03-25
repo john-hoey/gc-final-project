@@ -38,19 +38,41 @@
       </p>
       <div class="p-container" *ngIf="congressMember?.twitter_id">
         <div><span class="descriptive-text">Twitter: </span></div>
-        <p>http://twitter.com/{{ congressMember?.twitter_id }}</p>
+        <p>
+          <a
+            class="member-links"
+            href="http://twitter.com/{{ congressMember?.twitter_id }}"
+            >{{ congressMember?.twitter_id }}</a
+          >
+        </p>
       </div>
       <div class="p-container" *ngIf="congressMember?.facebook_id">
         <div><span class="descriptive-text">Facebook: </span></div>
-        <p>http://facebook.com/{{ congressMember?.facebook_id }}</p>
+        <p>
+          <a
+            class="member-links"
+            href="http://facebook.com/{{ congressMember?.facebook_id }}"
+            >{{ congressMember?.facebook_id }}</a
+          >
+        </p>
       </div>
       <div class="p-container" *ngIf="congressMember?.youtube_url">
         <div><span class="descriptive-text">Youtube: </span></div>
-        <p>http://youtube.com/{{ congressMember?.youtube_url }}</p>
+        <p>
+          <a
+            class="member-links"
+            href="http://youtube.com/{{ congressMember?.youtube_url }}"
+            >{{ congressMember?.youtube_url }}</a
+          >
+        </p>
       </div>
       <div class="p-container" *ngIf="congressMember?.website">
         <div><span class="descriptive-text">Website: </span></div>
-        <p>{{ congressMember?.website }}</p>
+        <p>
+          <a class="member-links" href="{{ congressMember?.website }}">{{
+            congressMember?.website
+          }}</a>
+        </p>
       </div>
       <p class="p-container" *ngIf="congressMember?.cid">
         <span class="descriptive-text">OpenSecrets ID: </span

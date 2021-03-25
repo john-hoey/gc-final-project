@@ -42,6 +42,14 @@
   color: red;
   font-weight: bold;
 }
+.member-links {
+  text-decoration: none;
+  color: white;
+}
+.member-links:hover {
+  color: red;
+  background-color: white;
+}
 .buttons-div {
   display: flex;
   flex-direction: column;
