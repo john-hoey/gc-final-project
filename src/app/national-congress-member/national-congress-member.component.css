@@ -19,7 +19,7 @@
   color: white;
   list-style: none;
   margin: 4px 2px;
-  height: 65vh;
+  height: 64vh;
   /* width: 95vw; */
   overflow: scroll;
 }
@@ -60,4 +60,22 @@
 }
 .button:hover {
   background: rgba(255, 0, 0, 0.7);
+}
+@media only screen and (orientation: landscape) {
+  .member-list-container {
+    height: 40vh;
+  }
+  .member-container {
+    height: 38vh;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .member-list-container {
+    height: 70vh;
+  }
+  .member-container {
+    height: 69vh;
+    overflow: hidden;
+    font-size: large;
+  }
 }

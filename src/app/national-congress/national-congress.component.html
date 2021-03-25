@@ -8,14 +8,19 @@
 
   <ul class="leg-list-container">
     <li class="leg-container" *ngFor="let legislator of congressionalDataArray">
-      <p *ngIf="legislator.cid" (click)="showMemberDetails(legislator.cid)">
+      <p
+        class="leg-paragraph"
+        *ngIf="legislator.cid"
+        (click)="showMemberDetails(legislator.cid)"
+      >
         {{ legislator?.role }} {{ legislator?.name }}
-        <b>({{ legislator?.party }})</b>
+        <span class="party-span">({{ legislator?.party }})</span>
       </p>
       <div *ngIf="!legislator.cid">
         <p>
           {{ legislator?.role }} {{ legislator?.name }}
-          <b>({{ legislator?.party }})</b> (<i>*Info Unavailable</i>)
+          <span class="party-span">({{ legislator?.party }})</span>
+          <span class="no-info-span"> (*Info Unavailable )</span>
         </p>
       </div>
     </li>
