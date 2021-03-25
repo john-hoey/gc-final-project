@@ -41,6 +41,7 @@
         <p>
           <a
             class="member-links"
+            target="_blank"
             href="http://twitter.com/{{ congressMember?.twitter_id }}"
             >{{ congressMember?.twitter_id }}</a
           >
@@ -51,6 +52,7 @@
         <p>
           <a
             class="member-links"
+            target="_blank"
             href="http://facebook.com/{{ congressMember?.facebook_id }}"
             >{{ congressMember?.facebook_id }}</a
           >
@@ -61,6 +63,7 @@
         <p>
           <a
             class="member-links"
+            target="_blank"
             href="http://youtube.com/{{ congressMember?.youtube_url }}"
             >{{ congressMember?.youtube_url }}</a
           >
@@ -69,9 +72,12 @@
       <div class="p-container" *ngIf="congressMember?.website">
         <div><span class="descriptive-text">Website: </span></div>
         <p>
-          <a class="member-links" href="{{ congressMember?.website }}">{{
-            congressMember?.website
-          }}</a>
+          <a
+            class="member-links"
+            href="{{ congressMember?.website }}"
+            target="_blank"
+            >{{ congressMember?.website }}</a
+          >
         </p>
       </div>
       <p class="p-container" *ngIf="congressMember?.cid">
