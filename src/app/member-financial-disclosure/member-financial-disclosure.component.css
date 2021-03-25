@@ -30,6 +30,22 @@
 .buttons-div {
   display: flex;
 }
+.attribution-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.source-link {
+  text-decoration: none;
+  color: white;
+}
+
+.source-link:hover {
+  text-decoration: none;
+  color: red;
+  background-color: white;
+}
 /* Buttons on the Page */
 .button {
   margin: 3px 3px;
@@ -83,6 +99,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+}
+.explanatory-text-paragraph {
+  text-align: center;
 }
 /* Top Contributing Industry Content List (the meat of it) */
 .topInd-content-list {

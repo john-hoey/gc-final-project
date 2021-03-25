@@ -56,17 +56,22 @@
             <span class="descriptive-text">Candidate ID: </span
             >{{ candSummary?.cid }}
           </p>
-          <p>
-            <span class="descriptive-text">Source of Attribution: </span
-            >{{ candSummary?.origin }}
-          </p>
+          <div class="attribution-div">
+            <span class="descriptive-text">Source of Attribution:</span>
+            <p>{{ candSummary?.origin }}</p>
+          </div>
           <p>
             <span class="descriptive-text"
               >Link to Source Data on OpenSecrets:
             </span>
           </p>
           <p>
-            {{ candSummary?.source }}
+            <a
+              class="source-link"
+              target="_blank"
+              href="{{ candSummary?.source }}"
+              >Source Page (click to visit)</a
+            >
           </p>
           <p>
             <span class="descriptive-text">Date of Last Filed Report: </span
@@ -80,12 +85,17 @@
         <li class="topInd-header-list">
           <h3>Total Contributions by Sector:</h3>
           <p>
-            <span class="descriptive-text">Attribution Origin: </span
-            >{{ candTopIndustries?.origin }}
+            <span class="descriptive-text">Attribution Origin: </span>
           </p>
+          <p>{{ candTopIndustries?.origin }}</p>
           <p>
             <span class="descriptive-text">Link to Data: </span
-            >{{ candTopIndustries?.source }}
+            ><a
+              class="source-link"
+              target="_blank"
+              href="{{ candTopIndustries?.source }}"
+              >Source Page (click to visit)</a
+            >
           </p>
           <p>
             <span class="descriptive-text">Last Updated: </span
@@ -127,8 +137,10 @@
         <li class="top10-header-list">
           <h3>Top 10 Contributing Organizations</h3>
           <p>
-            <span class="descriptive-text">Explanatory Text: </span
-            >{{ candTopContributors?.notice }}
+            <span class="descriptive-text">Explanatory Text: </span>
+          </p>
+          <p class="explanatory-text-paragraph">
+            {{ candTopContributors?.notice }}
           </p>
         </li>
         <li
@@ -157,12 +169,19 @@
         </li>
         <li class="top10-attribution-list">
           <p>
-            <span class="descriptive-text">Attribution Origin: </span
-            >{{ candTopContributors?.origin }}
+            <span class="descriptive-text">Attribution Origin: </span>
+          </p>
+          <p>{{ candTopContributors?.origin }}</p>
+          <p>
+            <span class="descriptive-text">Link to Data: </span>
           </p>
           <p>
-            <span class="descriptive-text">Link to Data: </span
-            >{{ candTopContributors?.source }}
+            <a
+              class="source-link"
+              target="_blank"
+              href="{{ candTopContributors?.source }}"
+              >Source Page (click to visit)</a
+            >
           </p>
         </li>
       </ul>
