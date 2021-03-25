@@ -75,7 +75,7 @@
   }
   .member-container {
     height: 69vh;
-    overflow: hidden;
+    overflow-x: hidden;
     font-size: large;
   }
 }
