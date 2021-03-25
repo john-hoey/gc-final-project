@@ -6,12 +6,11 @@
   flex-direction: column;
   text-align: center;
   padding: 10px 5px;
-  /* margin: 5px; */
 }
 .list-background {
   background-color: rgba(0, 0, 0, 0.7);
   border-radius: 10px;
-  /* margin-right: 45px; */
+
   color: white;
   display: flex;
   flex-direction: column;
@@ -38,7 +37,7 @@
 .form-button {
   margin: 3px 3px;
   padding: 3px;
-  /* background-color: #357abf; */
+
   background: rgba(0, 0, 0, 0.7);
 
   border-radius: 5px;
@@ -58,7 +57,7 @@ a {
   .form-button {
     margin: 10px 10px;
     padding: 10px;
-    /* background-color: #357abf; */
+
     background: rgba(0, 0, 0, 0.7);
 
     border-radius: 5px;
