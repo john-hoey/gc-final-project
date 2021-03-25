@@ -13,6 +13,10 @@
 </div>
 <div class="content-container">
   <ul class="list-background" *ngIf="showElections">
+    <p class="info-paragraph">
+      *This page currently shows all upcoming elections nationwide and local. Be
+      sure to double check if an election is for your local or not.*
+    </p>
     <li class="rep-box" *ngFor="let election of GcivElections?.elections">
       <p>{{ election.name }}</p>
       <p>{{ election.id }}</p>
@@ -23,13 +27,22 @@
   <ul class="list-background" *ngIf="showReps">
     <li *ngFor="let reps of GcivRepresentativesData" class="rep-box">
       <p>{{ reps.name }}</p>
-      <div *ngFor="let names of reps.people">
-        <a href="{{ names.urls }}"
-          ><p>{{ names.name }}</p></a
-        >
-        <p *ngIf="names.phones">{{ names.phones[0] }}</p>
+      <div class="rep-box-div" *ngFor="let names of reps.people">
+        <p><span class="descriptive-text">Name: </span>{{ names.name }}</p>
+        <p *ngIf="names.urls">
+          <span class="descriptive-text">Website: </span>
+          <a class="website-link" href="{{ names.urls }}" target="_blank"
+            >(click to visit)</a
+          >
+        </p>
+        <p *ngIf="names.phones">
+          <span class="descriptive-text">Phone: </span>{{ names.phones[0] }}
+        </p>
         <div *ngFor="let channels of names.channels">
-          <p>{{ channels.type }}: {{ channels.id }}</p>
+          <p>
+            <span class="descriptive-text">{{ channels.type }}: </span
+            >{{ channels.id }}
+          </p>
         </div>
       </div>
     </li>
